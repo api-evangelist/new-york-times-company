@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/draft/2024/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-structure/concept-structure.json",
+  "title": "NYT Concept Structure",
+  "type": "object",
+  "properties": {
+    "concept_id": {"type": "int64"},
+    "concept_name": {"type": "string"},
+    "concept_status": {"type": "string"},
+    "concept_type": {"type": "string"},
+    "vernacular": {"type": "string"},
+    "is_times_tag": {"type": "int32"},
+    "concept_created": {"type": "datetime"},
+    "concept_updated": {"type": "datetime"}
+  },
+  "required": ["concept_name", "concept_type"]
+}

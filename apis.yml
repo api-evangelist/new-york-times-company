@@ -1,0 +1,369 @@
+name: The New York Times Company
+description: |
+  The New York Times Company (NYSE: NYT) is the publisher of The New York Times and operator of a portfolio of news,
+  product-review, sports, cooking, and games products including The Athletic, Wirecutter, Wordle, NYT Cooking,
+  and NYT Games. The company also runs a public developer program at developer.nytimes.com that exposes a family
+  of read-only REST APIs over its newsroom content: article search, top stories, most popular, archive going back
+  to 1851, best-seller and book-review lists, movie reviews, the Times Newswire firehose, the controlled
+  vocabulary that powers Times Topics (TimesTags), the Semantic API, and a Geographic API that pairs Times
+  geo-tagged content with the GeoNames database. All APIs share api.nytimes.com as the host, use a query-string
+  api-key for authentication, and respond as JSON.
+image: https://avatars.githubusercontent.com/u/221409?v=4
+url: https://nytimes.com
+created: 2010-03-12
+modified: 2026-05-23
+specificationVersion: "0.20"
+tags:
+  - News
+  - Media
+  - Publishing
+  - Newspapers
+  - Articles
+  - Books
+  - Movies
+  - Sports
+  - Games
+  - Cooking
+  - Reviews
+  - Search
+  - Semantic
+  - Tagging
+  - Controlled Vocabulary
+  - Geographic
+  - Archive
+specifications:
+  - name: OpenAPI 2.0
+    url: https://swagger.io/specification/v2/
+  - name: API Commons Plans 0.1
+    url: https://github.com/apis-json/api-commons-plans
+  - name: API Commons Rate Limits 0.1
+    url: https://github.com/apis-json/api-commons-rate-limits
+common:
+  - type: AboutCompany
+    url: https://www.nytco.com/
+  - type: DeveloperPortal
+    url: https://developer.nytimes.com/
+  - type: APIs
+    url: https://developer.nytimes.com/apis
+  - type: SignUp
+    url: https://developer.nytimes.com/accounts/create
+  - type: FAQ
+    url: https://developer.nytimes.com/faq
+  - type: TermsOfUse
+    url: https://developer.nytimes.com/terms
+  - type: AttributionGuidelines
+    url: https://developer.nytimes.com/attribution
+  - type: Blog
+    url: https://open.nytimes.com/
+  - type: GitHub
+    url: https://github.com/nytimes
+  - type: OpenAPISpecsRepo
+    url: https://github.com/nytimes/public_api_specs
+  - type: ContactEmail
+    url: mailto:code@nytimes.com
+  - type: Wikipedia
+    url: https://en.wikipedia.org/wiki/The_New_York_Times_Company
+  - type: AboutTheAthletic
+    url: https://www.nytco.com/products/the-athletic/
+  - type: AboutWirecutter
+    url: https://www.nytco.com/products/wirecutter/
+  - type: AboutCooking
+    url: https://www.nytco.com/products/cooking/
+  - type: AboutGames
+    url: https://www.nytco.com/products/games/
+  - type: SpectralRules
+    url: rules/new-york-times-rules.yml
+  - type: Vocabulary
+    url: vocabulary/new-york-times-company-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/new-york-times-company-context.jsonld
+  - type: PlansPricing
+    url: plans/new-york-times-company-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/new-york-times-company-rate-limits.yml
+  - type: FinOps
+    url: finops/new-york-times-company-finops.yml
+  - type: CapabilityWorkflow
+    url: capabilities/newsroom-monitoring.yaml
+  - type: CapabilityWorkflow
+    url: capabilities/archive-research.yaml
+  - type: CapabilityWorkflow
+    url: capabilities/culture-discovery.yaml
+apis:
+  - name: Article Search API
+    description: |
+      Look up New York Times articles by keyword. Supports filtering with Lucene-style filter queries (fq=...)
+      against an Elasticsearch-backed index, facets, date range filters, and pagination up to 100 pages of
+      10 results each (1,000 results max). Coverage runs from 1851 to today.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+    baseURL: https://api.nytimes.com/svc/search/v2
+    tags:
+      - Articles
+      - Search
+      - Elasticsearch
+      - News
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+      - type: OpenAPI
+        url: openapi/article-search-v2-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/article-search.yaml
+      - type: JSONSchema
+        url: json-schema/article-schema.json
+      - type: Example
+        url: examples/article-search-example.json
+      - type: SignUp
+        url: https://developer.nytimes.com/accounts/create
+
+  - name: Top Stories API
+    description: |
+      Returns an array of articles currently on a specified NYTimes.com section (or the homepage). 26
+      sections are supported including arts, business, opinion, politics, science, sports, technology,
+      upshot, and world.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/top-stories-product/1/overview
+    baseURL: https://api.nytimes.com/svc/topstories/v2
+    tags:
+      - Articles
+      - Top Stories
+      - Sections
+      - News
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+      - type: OpenAPI
+        url: openapi/top-stories-v2-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/top-stories.yaml
+      - type: JSONSchema
+        url: json-schema/article-schema.json
+      - type: Example
+        url: examples/top-stories-home-example.json
+
+  - name: Most Popular API
+    description: |
+      Returns the most emailed, most shared (Facebook), and most viewed articles on NYTimes.com for the
+      last 1, 7, or 30 days.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/most-popular-product/1/overview
+    baseURL: https://api.nytimes.com/svc/mostpopular/v2
+    tags:
+      - Articles
+      - Most Popular
+      - Analytics
+      - Sharing
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+      - type: OpenAPI
+        url: openapi/most-popular-api-v2-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/most-popular.yaml
+      - type: JSONSchema
+        url: json-schema/article-schema.json
+      - type: Example
+        url: examples/most-popular-emailed-example.json
+
+  - name: Times Newswire API
+    description: |
+      An up-to-the-minute stream of metadata and links for articles as soon as they are published on
+      NYTimes.com. Can be filtered by source (all, nyt, iht) and one or more sections.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/timeswire-product/1/overview
+    baseURL: https://api.nytimes.com/svc/news/v3
+    tags:
+      - Articles
+      - Firehose
+      - Newswire
+      - Real Time
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+      - type: OpenAPI
+        url: openapi/timeswire-v3-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/timeswire.yaml
+      - type: JSONSchema
+        url: json-schema/article-schema.json
+      - type: Example
+        url: examples/timeswire-content-example.json
+
+  - name: Archive API
+    description: |
+      Returns an array of NYT articles for a given month, going back to 1851. Response fields mirror the
+      Article Search API. Useful for bulk-loading article metadata locally. Responses can be ~20MB and
+      contain thousands of articles per month.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/archive-product/1/overview
+    baseURL: https://api.nytimes.com/svc/archive/v1
+    tags:
+      - Articles
+      - Archive
+      - History
+      - Bulk Data
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/archive-product/1/overview
+      - type: OpenAPI
+        url: openapi/archive-api-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/archive.yaml
+      - type: JSONSchema
+        url: json-schema/article-schema.json
+      - type: Example
+        url: examples/archive-month-example.json
+
+  - name: Books API
+    description: |
+      Provides information about NYT book reviews and The New York Times Best Sellers lists. Some lists
+      are weekly and some monthly. Supports current and historical date lookups, list metadata, and
+      review lookup by author, ISBN, or title.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/books-product/1/overview
+    baseURL: https://api.nytimes.com/svc/books/v3
+    tags:
+      - Books
+      - Best Sellers
+      - Reviews
+      - Lists
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/books-product/1/overview
+      - type: OpenAPI
+        url: openapi/books-api-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/books.yaml
+      - type: JSONSchema
+        url: json-schema/best-seller-book-schema.json
+      - type: Example
+        url: examples/books-best-sellers-list-example.json
+
+  - name: Movie Reviews API
+    description: |
+      Search NYT movie reviews by keyword, filter by Critics' Picks, and retrieve metadata about Times
+      movie critics.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+    baseURL: https://api.nytimes.com/svc/movies/v2
+    tags:
+      - Movies
+      - Reviews
+      - Critics
+      - Culture
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+      - type: OpenAPI
+        url: openapi/movie-reviews-v2-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/movie-reviews.yaml
+      - type: JSONSchema
+        url: json-schema/movie-review-schema.json
+      - type: Example
+        url: examples/movie-reviews-search-example.json
+
+  - name: TimesTags API
+    description: |
+      Auto-suggest service over the New York Times controlled vocabulary used to build Times Topics pages
+      (approximately 27,000 tags: 3,000 Descriptors, 1,500 Geographic, 7,500 Organizations, 15,000 People).
+      Useful for building tag pickers, normalizing entity names, or feeding the Article Search fq=
+      parameter.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/timestags-product/1/overview
+    baseURL: https://api.nytimes.com/svc/suggest/v1
+    tags:
+      - Tags
+      - Controlled Vocabulary
+      - Semantic
+      - Auto Suggest
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/timestags-product/1/overview
+      - type: OpenAPI
+        url: openapi/times-tags-v3-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/times-tags.yaml
+      - type: JSONSchema
+        url: json-schema/tag-schema.json
+      - type: Example
+        url: examples/times-tags-example.json
+
+  - name: Semantic API
+    description: |
+      Complements Article Search by exposing the full controlled vocabulary of over 100,000 people,
+      places, organizations, and descriptors used as metadata by The New York Times since 1981. Returns
+      the full Times Topics record for a concept, including ticker symbols, related URLs, taxonomic
+      relations, and combinations of search criteria.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+    baseURL: https://api.nytimes.com/svc/semantic/v2/concept
+    tags:
+      - Semantic
+      - Concepts
+      - Linked Data
+      - Controlled Vocabulary
+      - Entities
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+      - type: OpenAPI
+        url: openapi/semantic-api-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/semantic.yaml
+      - type: JSONSchema
+        url: json-schema/concept-schema.json
+      - type: Example
+        url: examples/semantic-concept-example.json
+
+  - name: Geographic API
+    description: |
+      Linked-data extension of the Semantic API that pairs the location concepts in the Times controlled
+      vocabulary with the GeoNames database, returning a normalized record for places (events, venues,
+      film ratings, etc.) with lat/long, bounding-box, and date-range filtering.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/geo-product/1/overview
+    baseURL: https://api.nytimes.com/svc/semantic/v2/geocodes
+    tags:
+      - Geographic
+      - Places
+      - Linked Data
+      - GeoNames
+      - Events
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/geo-product/1/overview
+      - type: OpenAPI
+        url: openapi/geo-api-v2-openapi.yml
+      - type: NaftikoCapability
+        url: capabilities/shared/geo.yaml
+      - type: Example
+        url: examples/geo-query-example.json
+
+  - name: Community API (Deprecated)
+    description: |
+      Get access to comments from registered users on New York Times articles. Marked deprecated by NYT;
+      a replacement was in progress at the time the spec was published. Documented here for completeness
+      and historical use only. Documented daily limit was 5,000 requests per day.
+    image: https://avatars.githubusercontent.com/u/221409?v=4
+    humanURL: https://developer.nytimes.com/docs/community-api-product/1/overview
+    baseURL: http://api.nytimes.com/svc/community/v3
+    tags:
+      - Community
+      - Comments
+      - User Generated Content
+      - Deprecated
+    properties:
+      - type: Documentation
+        url: https://developer.nytimes.com/docs/community-api-product/1/overview
+      - type: OpenAPI
+        url: openapi/community-api-v3-openapi.yml
+      - type: Example
+        url: examples/community-comments-example.json
+      - type: Status
+        url: https://developer.nytimes.com/docs/community-api-product/1/overview
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com
+    email: info@apievangelist.com

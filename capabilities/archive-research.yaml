@@ -1,0 +1,39 @@
+apiVersion: naftiko.io/v1
+kind: CapabilityWorkflow
+metadata:
+  name: archive-research
+  provider: new-york-times-company
+  tags:
+    - Research
+    - Archive
+    - Search
+    - History
+spec:
+  summary: |
+    Composable research workflow for historians, journalists, and analysts:
+    keyword-search the article archive, drill into entities via the Semantic
+    API, and (optionally) bulk-pull every article from a specific month.
+  steps:
+    - id: search-articles
+      capability: nyt-article-search
+      with:
+        query: "{{ inputs.query }}"
+        beginDate: "{{ inputs.beginDate }}"
+        endDate: "{{ inputs.endDate }}"
+        sort: relevance
+    - id: resolve-people
+      capability: nyt-semantic
+      forEach: search-articles.docs[*].keywords[?name=='persons'].value
+      with:
+        conceptType: nytd_per
+        conceptName: "{{ item }}"
+    - id: bulk-month-pull
+      capability: nyt-archive
+      when: "{{ inputs.includeFullMonth }}"
+      with:
+        year: "{{ inputs.year }}"
+        month: "{{ inputs.month }}"
+  outputs:
+    - matchingArticles
+    - peopleConcepts
+    - monthCorpus

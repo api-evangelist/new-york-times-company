@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-schema/best-seller-book-schema.json",
+  "title": "NYT Best-Seller Book",
+  "type": "object",
+  "properties": {
+    "rank": {"type": "integer"},
+    "rank_last_week": {"type": "integer"},
+    "weeks_on_list": {"type": "integer"},
+    "primary_isbn10": {"type": "string"},
+    "primary_isbn13": {"type": "string"},
+    "publisher": {"type": "string"},
+    "description": {"type": "string"},
+    "price": {"type": "string"},
+    "title": {"type": "string"},
+    "author": {"type": "string"},
+    "contributor": {"type": "string"},
+    "book_image": {"type": "string", "format": "uri"},
+    "amazon_product_url": {"type": "string", "format": "uri"},
+    "buy_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "url": {"type": "string", "format": "uri"}
+        }
+      }
+    }
+  },
+  "required": ["title", "author"]
+}

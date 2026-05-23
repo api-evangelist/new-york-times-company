@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/draft/2024/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-structure/media-structure.json",
+  "title": "NYT Media Structure",
+  "type": "object",
+  "properties": {
+    "url": {"type": "uri"},
+    "format": {"type": "string"},
+    "height": {"type": "int32"},
+    "width": {"type": "int32"},
+    "type": {"type": "string"},
+    "subtype": {"type": "string"},
+    "caption": {"type": "string"},
+    "copyright": {"type": "string"}
+  },
+  "required": ["url"]
+}

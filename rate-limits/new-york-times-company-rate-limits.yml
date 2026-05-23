@@ -1,0 +1,65 @@
+specVersion: "API Commons Rate Limits 0.1"
+provider: new-york-times-company
+modified: 2026-05-23
+authentication:
+  type: apiKey
+  in: query
+  name: api-key
+notes: |
+  NYT publishes a single, account-wide rate-limit policy that NYT itself describes
+  as "subject to change". Every operation across the public surface documents
+  HTTP 429 ("Too many requests. You reached your per minute or per day rate
+  limit.") as a possible response, confirming both a per-minute and a per-day
+  cap. The Community API spec (now deprecated) explicitly stated 5,000 requests
+  per day. The currently-active surface ties limits to the API key rather than
+  to an individual endpoint, and quotas reset per minute and per day.
+
+limits:
+  - scope: per-api-key
+    policy: per-minute
+    enforcement: HTTP 429
+    documented: true
+    quantitative: not-published
+    notes: |
+      All operations document a 429 response keyed to "per minute or per day
+      rate limit". NYT does not publish the exact per-minute integer in the
+      public OpenAPI specs.
+  - scope: per-api-key
+    policy: per-day
+    enforcement: HTTP 429
+    documented: true
+    quantitative:
+      historical-default: 5000
+      api-historically-bound-to: community-api
+      caveat: "subject to change"
+    notes: |
+      A daily cap is documented; the Community API's now-deprecated spec
+      published 5,000 requests/day. Other APIs use the same per-day envelope
+      pattern but do not publish the integer in spec metadata.
+  - scope: per-operation
+    policy: response-size
+    documented: true
+    notes: |
+      The Archive API explicitly warns that responses can be "~20 megabytes"
+      and contain thousands of articles per month, so callers must budget
+      bandwidth and parsing time accordingly.
+  - scope: per-operation
+    policy: pagination
+    documented: true
+    notes: |
+      Article Search caps pagination at 100 pages of 10 results (1,000 results
+      max per query) and recommends date-range filters as a workaround.
+      Times Newswire pages 20 items at a time. Most Popular returns up to 20.
+      Movie Reviews paginates in multiples of 20.
+
+errorContract:
+  - code: 401
+    meaning: Unauthorized request. Make sure api-key is set.
+  - code: 429
+    meaning: Too many requests. You reached your per minute or per day rate limit.
+
+requestForIncrease:
+  documented: false
+  notes: |
+    There is no documented upgrade path or self-service increase. Developers
+    can email code@nytimes.com to discuss but no SLA is published.

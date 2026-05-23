@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-schema/movie-review-schema.json",
+  "title": "NYT Movie Review",
+  "type": "object",
+  "properties": {
+    "display_title": {"type": "string"},
+    "mpaa_rating": {"type": "string"},
+    "critics_pick": {"type": "integer", "enum": [0, 1]},
+    "byline": {"type": "string"},
+    "headline": {"type": "string"},
+    "summary_short": {"type": "string"},
+    "publication_date": {"type": "string"},
+    "opening_date": {"type": "string"},
+    "date_updated": {"type": "string"},
+    "link": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string"},
+        "url": {"type": "string", "format": "uri"},
+        "suggested_link_text": {"type": "string"}
+      }
+    },
+    "multimedia": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string"},
+        "src": {"type": "string", "format": "uri"},
+        "width": {"type": "integer"},
+        "height": {"type": "integer"}
+      }
+    }
+  },
+  "required": ["display_title"]
+}

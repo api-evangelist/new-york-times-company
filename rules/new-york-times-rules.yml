@@ -1,0 +1,115 @@
+extends:
+  - [spectral:oas, all]
+
+rules:
+  # NYT-specific naming and structural conventions distilled from the
+  # 11 OpenAPI specs at github.com/nytimes/public_api_specs.
+
+  nyt-host-must-be-api-nytimes-com:
+    description: All NYT public APIs are served from api.nytimes.com.
+    message: "host must be 'api.nytimes.com'"
+    severity: error
+    given: "$"
+    then:
+      field: host
+      function: pattern
+      functionOptions:
+        match: "^api\\.nytimes\\.com$"
+
+  nyt-must-use-apikey-security:
+    description: NYT APIs require a query-string api-key.
+    message: "security must reference the 'apikey' query-string scheme"
+    severity: error
+    given: "$.security"
+    then:
+      function: truthy
+
+  nyt-apikey-must-be-query-parameter:
+    description: NYT publishes the api-key as a query-string parameter named api-key.
+    message: "apikey securityDefinition must be (type=apiKey, in=query, name=api-key)"
+    severity: error
+    given: "$.securityDefinitions.apikey"
+    then:
+      - field: type
+        function: pattern
+        functionOptions:
+          match: "^apiKey$"
+      - field: in
+        function: pattern
+        functionOptions:
+          match: "^query$"
+      - field: name
+        function: pattern
+        functionOptions:
+          match: "^api-key$"
+
+  nyt-schemes-must-include-https:
+    description: NYT APIs must be reachable over HTTPS.
+    message: "schemes must include 'https'"
+    severity: error
+    given: "$.schemes"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          contains:
+            type: string
+            const: https
+
+  nyt-paths-must-end-in-dot-json:
+    description: NYT response paths are .json files (e.g. /home.json, /{section}.json).
+    message: "NYT path operations should terminate in '.json'"
+    severity: warn
+    given: "$.paths"
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        match: "(\\.json|\\.json/?$|/section-list\\.json|reviews/search\\.json|/timestags)$"
+
+  nyt-operations-must-return-401-on-missing-key:
+    description: All NYT operations should document the 401 unauthorized response.
+    message: "operation must document a 401 response"
+    severity: warn
+    given: "$.paths.*.*.responses"
+    then:
+      field: "401"
+      function: truthy
+
+  nyt-operations-must-return-429-on-rate-limit:
+    description: All NYT operations should document the 429 too-many-requests response.
+    message: "operation must document a 429 response"
+    severity: warn
+    given: "$.paths.*.*.responses"
+    then:
+      field: "429"
+      function: truthy
+
+  nyt-tags-must-be-title-case:
+    description: NYT tags must use Title Case (e.g. 'Top Stories', not 'topstories').
+    message: "operation tag must use Title Case"
+    severity: warn
+    given: "$..tags[*]"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][A-Za-z0-9 ']*( [A-Z][A-Za-z0-9 ']*)*$"
+
+  nyt-info-must-include-version:
+    description: All NYT specs declare a version under info.
+    message: "info.version is required"
+    severity: error
+    given: "$.info"
+    then:
+      field: version
+      function: truthy
+
+  nyt-info-must-include-description:
+    description: Every NYT spec embeds a descriptive overview in info.description.
+    message: "info.description is required"
+    severity: error
+    given: "$.info"
+    then:
+      field: description
+      function: truthy

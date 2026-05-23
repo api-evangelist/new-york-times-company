@@ -1,0 +1,30 @@
+apiVersion: naftiko.io/v1
+kind: CapabilityWorkflow
+metadata:
+  name: culture-discovery
+  provider: new-york-times-company
+  tags:
+    - Books
+    - Movies
+    - Culture
+    - Discovery
+spec:
+  summary: |
+    Cross-domain culture-discovery workflow: pull the current NYT best-seller
+    list for a category, then surface Critics' Pick movie reviews from the
+    same period.
+  steps:
+    - id: best-sellers
+      capability: nyt-books
+      with:
+        operation: currentList
+        list: "{{ inputs.list }}"
+    - id: critics-picks
+      capability: nyt-movie-reviews
+      with:
+        operation: searchReviews
+        criticsPick: true
+        order: by-publication-date
+  outputs:
+    - books
+    - movieReviews

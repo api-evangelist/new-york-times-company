@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-schema/tag-schema.json",
+  "title": "NYT Tag",
+  "description": "Tag from the NYT controlled vocabulary, ranked Times-Topics term with dictionary suffix in parentheses.",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "Display label including dictionary suffix, e.g. 'Obama, Barack (Per)'."
+    },
+    "dictionary": {
+      "type": "string",
+      "enum": ["Des", "Geo", "Org", "Per"]
+    }
+  },
+  "required": ["label"]
+}

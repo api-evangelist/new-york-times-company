@@ -1,0 +1,51 @@
+specVersion: "FinOps Framework / FOCUS-aligned 0.1"
+provider: new-york-times-company
+modified: 2026-05-23
+notes: |
+  The developer.nytimes.com surface has no billable cost model: every API on
+  the public developer portal is free under the Developer (Free) plan. There
+  are no invoices, billing accounts, usage meters, or cost attribution
+  surfaces exposed to API consumers. Because there is no chargeback or
+  showback dimension at the public-API layer, NYT has no FOCUS-compatible
+  billing data to publish. NYT's commercial syndication offering (NYT
+  Licensing, content-syndication contracts, internal data products) is
+  managed off-portal via direct sales and is out of scope for this file.
+
+billingModel:
+  type: free-only
+  invoicing: none
+  metering: enforced-only-for-rate-limits
+  paymentMethods: []
+  currency: USD
+
+costDrivers:
+  - dimension: api-calls
+    metered: false
+    chargedFor: false
+    behavior: |
+      Excess calls trigger HTTP 429 and are denied rather than billed.
+      Rate-limit semantics live in rate-limits/new-york-times-company-rate-limits.yml.
+  - dimension: response-bandwidth
+    metered: false
+    chargedFor: false
+    notes: |
+      Archive API responses are flagged at ~20MB each; this is a developer
+      cost (transfer, parse, store) but is not billed by NYT.
+  - dimension: storage-or-redistribution
+    metered: false
+    chargedFor: false
+    governedBy: terms-of-use + attribution-guidelines
+
+attribution:
+  required: true
+  guidelinesURL: https://developer.nytimes.com/attribution
+
+costAllocation:
+  showback: not-applicable
+  chargeback: not-applicable
+  tagging: not-applicable
+
+contractualSurface:
+  termsURL: https://developer.nytimes.com/terms
+  attributionURL: https://developer.nytimes.com/attribution
+  contact: mailto:code@nytimes.com

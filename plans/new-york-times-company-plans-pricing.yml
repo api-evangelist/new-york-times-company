@@ -1,0 +1,54 @@
+specVersion: "API Commons Plans 0.1"
+provider: new-york-times-company
+modified: 2026-05-23
+notes: |
+  The New York Times Company's public developer program at developer.nytimes.com
+  offers a single, free, self-service tier. Developers register an account, create
+  an "app", enable one or more APIs against that app, and receive an api-key that
+  is passed as a query-string parameter on every request. There is no published
+  paid tier, no per-call billing, and no documented enterprise upgrade path for
+  the public APIs. NYT's commercial syndication products (NYT Licensing) are sold
+  outside this developer surface and not represented here.
+plans:
+  - id: developer-free
+    name: Developer (Free)
+    description: |
+      Self-service developer tier covering all 11 public APIs. Free of charge.
+      Rate limits are enforced and documented to be subject to change.
+    type: free
+    price:
+      amount: 0
+      currency: USD
+      interval: monthly
+    eligibility: anyone
+    signupURL: https://developer.nytimes.com/accounts/create
+    requires:
+      - email address
+      - confirmation
+    apis:
+      - article-search-api
+      - top-stories-api
+      - most-popular-api
+      - times-newswire-api
+      - archive-api
+      - books-api
+      - movie-reviews-api
+      - times-tags-api
+      - semantic-api
+      - geo-api
+    rateLimits:
+      reference: rate-limits/new-york-times-company-rate-limits.yml
+    termsOfUse:
+      url: https://developer.nytimes.com/terms
+    attributionRequired: true
+    attributionGuidelinesURL: https://developer.nytimes.com/attribution
+    paymentRequired: false
+    creditCardRequired: false
+    overage: not-supported
+    upgradePath: not-published
+deprecated:
+  - id: community-api
+    name: Community API
+    note: |
+      Marked deprecated by NYT in the spec itself; documented daily limit was
+      "5000 requests per day (rate limits are subject to change)".

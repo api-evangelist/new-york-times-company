@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-schema/article-schema.json",
+  "title": "NYT Article",
+  "description": "Canonical envelope for a New York Times article as returned by the Top Stories, Most Popular, Times Newswire, Archive, and Article Search APIs.",
+  "type": "object",
+  "properties": {
+    "uri": {"type": "string", "description": "Stable NYT URI (nyt://article/...)."},
+    "url": {"type": "string", "format": "uri"},
+    "short_url": {"type": "string", "format": "uri"},
+    "section": {"type": "string"},
+    "subsection": {"type": "string"},
+    "title": {"type": "string"},
+    "headline": {"type": "string"},
+    "abstract": {"type": "string"},
+    "byline": {"type": "string"},
+    "item_type": {"type": "string"},
+    "material_type_facet": {"type": "string"},
+    "kicker": {"type": "string"},
+    "source": {"type": "string"},
+    "published_date": {"type": "string"},
+    "created_date": {"type": "string"},
+    "updated_date": {"type": "string"},
+    "des_facet": {"type": "array", "items": {"type": "string"}},
+    "org_facet": {"type": "array", "items": {"type": "string"}},
+    "per_facet": {"type": "array", "items": {"type": "string"}},
+    "geo_facet": {"type": "array", "items": {"type": "string"}},
+    "multimedia": {"type": "array", "items": {"$ref": "media-schema.json"}}
+  },
+  "required": ["url", "title"]
+}

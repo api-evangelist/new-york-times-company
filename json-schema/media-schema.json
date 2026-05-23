@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-schema/media-schema.json",
+  "title": "NYT Media",
+  "description": "Image, video, or other media asset attached to an NYT article.",
+  "type": "object",
+  "properties": {
+    "url": {"type": "string", "format": "uri"},
+    "format": {"type": "string", "description": "NYT image crop name (e.g. superJumbo, mediumThreeByTwo210)."},
+    "height": {"type": "integer"},
+    "width": {"type": "integer"},
+    "type": {"type": "string"},
+    "subtype": {"type": "string"},
+    "caption": {"type": "string"},
+    "copyright": {"type": "string"},
+    "approved_for_syndication": {"type": "boolean"}
+  },
+  "required": ["url"]
+}

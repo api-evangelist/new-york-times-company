@@ -1,0 +1,32 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+  "num_results": 1,
+  "results": [
+    {
+      "section": "Business",
+      "subsection": "Markets",
+      "title": "Markets Open Higher After Earnings Beat",
+      "abstract": "Stocks rose at the open after several large companies reported better-than-expected results.",
+      "url": "https://www.nytimes.com/2026/05/23/business/markets/markets-open.html",
+      "short_url": "https://nyti.ms/4mkts23",
+      "byline": "By Joe Rennison",
+      "thumbnail_standard": "https://static01.nyt.com/images/2026/05/23/business/markets/markets-thumbStandard.jpg",
+      "item_type": "Article",
+      "source": "New York Times",
+      "updated_date": "2026-05-23T09:32:00-04:00",
+      "created_date": "2026-05-23T09:30:00-04:00",
+      "published_date": "2026-05-23T09:30:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "Markets",
+      "headline": "Markets Open Higher After Earnings Beat",
+      "des_facet": ["Stocks and Bonds", "Earnings Reports"],
+      "org_facet": "",
+      "per_facet": [],
+      "geo_facet": ["United States"],
+      "blog_name": null,
+      "related_urls": [],
+      "multimedia": []
+    }
+  ]
+}

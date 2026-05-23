@@ -1,0 +1,29 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+  "num_results": 1,
+  "results": [
+    {
+      "concept_id": 41960,
+      "concept_name": "Obama, Barack",
+      "concept_status": "Active",
+      "concept_type": "nytd_per",
+      "vernacular": "Obama, Barack",
+      "is_times_tag": 1,
+      "concept_created": "2003-01-01 00:00:00",
+      "concept_updated": "2024-01-15 12:00:00",
+      "search_api_query": "https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=persons%3A(%22Obama%2C+Barack%22)",
+      "article_list": {
+        "results": [
+          {
+            "title": "Barack Obama on the State of Democracy",
+            "url": "https://www.nytimes.com/2024/09/12/us/politics/obama-democracy.html",
+            "byline": "By Peter Baker",
+            "date": "2024-09-12T00:00:00Z"
+          }
+        ],
+        "total": 8421
+      }
+    }
+  ]
+}

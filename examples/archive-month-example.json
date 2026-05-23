@@ -1,0 +1,42 @@
+{
+  "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+  "response": {
+    "meta": {
+      "hits": 7842
+    },
+    "docs": [
+      {
+        "web_url": "https://www.nytimes.com/2019/01/02/world/europe/london-heathrow-drone.html",
+        "snippet": "Flights resumed at Heathrow after a drone sighting briefly grounded planes.",
+        "print_page": 4,
+        "source": "The New York Times",
+        "multimedia": [],
+        "headline": {
+          "main": "Heathrow Briefly Suspends Flights After Drone Sighting",
+          "kicker": "Europe",
+          "content_kicker": "",
+          "print_headline": "Drone Halts Heathrow Flights",
+          "name": "",
+          "seo": "",
+          "sub": ""
+        },
+        "keywords": [
+          {"name": "subject", "value": "Drones (Pilotless Planes)", "rank": 1, "major": "N"}
+        ],
+        "pub_date": "2019-01-02T18:00:00+0000",
+        "document_type": "article",
+        "news_desk": "Foreign",
+        "byline": {
+          "original": "By Iliana Magra",
+          "person": [{"firstname": "Iliana", "middlename": null, "lastname": "Magra", "qualifier": null, "title": null, "role": "reported", "organization": "", "rank": 1}],
+          "organization": null
+        },
+        "type_of_material": "News",
+        "_id": "nyt://article/aaaa-bbbb-cccc",
+        "word_count": 412,
+        "score": 1,
+        "uri": "nyt://article/aaaa-bbbb-cccc"
+      }
+    ]
+  }
+}

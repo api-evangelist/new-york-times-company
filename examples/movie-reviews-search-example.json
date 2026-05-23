@@ -1,0 +1,30 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+  "has_more": false,
+  "num_results": 1,
+  "results": [
+    {
+      "display_title": "The Godfather",
+      "mpaa_rating": "R",
+      "critics_pick": 1,
+      "byline": "VINCENT CANBY",
+      "headline": "Moving and Brutal 'Godfather' Bows",
+      "summary_short": "Francis Ford Coppola's epic adaptation of Mario Puzo's novel.",
+      "publication_date": "1972-03-16",
+      "opening_date": "1972-03-15",
+      "date_updated": "2017-11-02 03:14:51",
+      "link": {
+        "type": "article",
+        "url": "https://www.nytimes.com/1972/03/16/archives/the-godfather.html",
+        "suggested_link_text": "Read the New York Times Review of The Godfather"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2018/12/14/arts/godfather-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    }
+  ]
+}

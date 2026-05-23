@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "event_id": 12345,
+      "event_schedule_id": 67890,
+      "last_modified": "2025-12-01T00:00:00Z",
+      "event_name": "Bushwick Open Studios",
+      "event_detail_url": "https://www.nytimes.com/events/12345",
+      "web_description": "Annual open-studio weekend across Bushwick, Brooklyn.",
+      "city": "Brooklyn",
+      "state": "NY",
+      "film_rating": false,
+      "critic_name": null,
+      "times_pick": true,
+      "free": true,
+      "kid_friendly": true,
+      "last_chance": false,
+      "festival": true,
+      "long_running_show": false,
+      "previews_and_openings": false,
+      "recurring_start_date": "2025-09-26",
+      "recur_days": ["Friday", "Saturday", "Sunday"]
+    }
+  ]
+}

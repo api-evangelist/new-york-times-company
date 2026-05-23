@@ -1,0 +1,43 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+  "results": {
+    "totalCommentsFound": 248,
+    "totalCommentsReturned": 25,
+    "totalEditorsSelectionFound": 12,
+    "totalEditorsSelectionReturned": 12,
+    "totalRecommendationsFound": 1834,
+    "comments": [
+      {
+        "commentID": 123456789,
+        "status": "approved",
+        "commentSequence": 1,
+        "userID": 9876543,
+        "userDisplayName": "Reader from Brooklyn",
+        "userLocation": "Brooklyn, NY",
+        "userTitle": null,
+        "userURL": null,
+        "commentTitle": "<br/>",
+        "commentBody": "This is an excellent piece on the topic.",
+        "createDate": "1716480000",
+        "updateDate": "1716480000",
+        "approveDate": "1716483600",
+        "recommendations": 42,
+        "replyCount": 3,
+        "replies": [],
+        "editorsSelection": false,
+        "parentID": 0,
+        "depth": 1,
+        "commentType": "comment",
+        "trusted": 0,
+        "recommendedFlag": null,
+        "reportAbuseFlag": null,
+        "permID": "100000007654321",
+        "picURL": "",
+        "timespeople": 1,
+        "commentTitleLink": "",
+        "articleURL": "https://www.nytimes.com/2026/05/22/opinion/example.html"
+      }
+    ]
+  }
+}

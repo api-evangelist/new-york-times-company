@@ -1,0 +1,96 @@
+name: New York Times Vocabulary
+description: |
+  Operational and capability vocabulary distilled from the 11 public NYT APIs
+  at developer.nytimes.com. Covers content surfaces (articles, books, movies,
+  comments), semantic primitives (concepts, tags, facets), distribution patterns
+  (top, popular, newswire, archive), and the auth surface (api-key in query
+  string).
+modified: 2026-05-23
+
+concepts:
+  - term: Article
+    definition: A New York Times news, opinion, or feature piece. Returned by Article Search, Top Stories, Most Popular, Times Newswire, and Archive APIs.
+    aliases: [doc, story]
+  - term: Section
+    definition: A top-level NYTimes.com content area such as world, business, opinion, sports, tech, or arts.
+    aliases: [news desk, vertical]
+  - term: Subsection
+    definition: A more specific area within a section (e.g. 'markets' inside business).
+  - term: Best Seller List
+    definition: A weekly or monthly ranking of books across categories (hardcover-fiction, paperback-nonfiction, e-book-fiction, etc.).
+  - term: Book Review
+    definition: A New York Times Book Review entry, lookupable by author, ISBN, or title.
+  - term: Movie Review
+    definition: A New York Times film review, optionally flagged as a Critics' Pick.
+  - term: Critic
+    definition: A New York Times reviewer; can be full-time or part-time.
+  - term: Comment
+    definition: A reader-submitted comment on an article. The Community API that exposed these is deprecated.
+  - term: Concept
+    definition: An entry in the NYT controlled vocabulary (person, place, organization, descriptor) used to tag content.
+  - term: Tag
+    definition: A surface presentation of a concept with dictionary suffix (Per, Geo, Org, Des).
+  - term: Facet
+    definition: A faceted field on an article (des_facet, org_facet, per_facet, geo_facet) used for filtering.
+  - term: Filter Query
+    definition: A Lucene-style query passed as fq= to refine an Article Search request.
+  - term: Times Topic
+    definition: A landing page collecting articles about a concept; built from the controlled vocabulary.
+  - term: Newswire
+    definition: A near-real-time firehose of newly published article metadata.
+  - term: Archive
+    definition: The full historical NYT article-metadata corpus going back to 1851.
+  - term: Critics' Pick
+    definition: NYT editorial flag distinguishing movies and other titles judged especially worth attention.
+
+operations:
+  - term: search
+    definition: Free-text plus filter-query lookup against an article index.
+  - term: list
+    definition: Retrieve a curated or ranked collection (top stories by section, best sellers by list).
+  - term: suggest
+    definition: Prefix-match auto-complete against the controlled vocabulary (TimesTags).
+  - term: lookup
+    definition: Direct retrieval of a single concept, review, or list by identifier.
+  - term: snapshot
+    definition: Point-in-time pull of the homepage or a section's top stories.
+  - term: stream
+    definition: Repeatedly poll the Newswire for new items since the last call.
+
+dimensions:
+  - term: Time Period
+    values: [1, 7, 30]
+    appliesTo: most-popular
+  - term: Share Type
+    values: [email, facebook, twitter]
+    appliesTo: most-popular
+  - term: Source
+    values: [all, nyt, iht]
+    appliesTo: timeswire
+  - term: Reviewer Status
+    values: [all, full-time, part-time]
+    appliesTo: movie-reviews
+  - term: Concept Type
+    values: [nytd_per, nytd_geo, nytd_org, nytd_des]
+    appliesTo: semantic
+
+authentication:
+  - term: API Key
+    placement: query parameter
+    name: api-key
+    obtainAt: https://developer.nytimes.com/accounts/create
+
+errors:
+  - code: 401
+    meaning: Unauthorized. Missing or invalid api-key.
+  - code: 429
+    meaning: Too many requests; per-minute or per-day rate limit reached.
+
+products:
+  - The New York Times
+  - The Athletic
+  - Wirecutter
+  - NYT Cooking
+  - NYT Games
+  - Wordle
+  - NYT Audio

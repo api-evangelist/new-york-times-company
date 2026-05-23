@@ -1,0 +1,60 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+  "section": "home",
+  "last_updated": "2026-05-23T08:15:00-04:00",
+  "num_results": 3,
+  "results": [
+    {
+      "section": "world",
+      "subsection": "europe",
+      "title": "European Leaders Meet to Discuss Trade Pact",
+      "abstract": "Heads of state from across the European Union convened in Brussels to negotiate updated trade terms.",
+      "url": "https://www.nytimes.com/2026/05/23/world/europe/eu-trade-pact.html",
+      "byline": "By Steven Erlanger",
+      "item_type": "Article",
+      "updated_date": "2026-05-23T07:45:00-04:00",
+      "created_date": "2026-05-23T05:00:00-04:00",
+      "published_date": "2026-05-23T05:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "Europe",
+      "des_facet": ["Trade Agreements", "Economy"],
+      "org_facet": ["European Union"],
+      "per_facet": [],
+      "geo_facet": ["Belgium", "Europe"],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2026/05/23/world/eu-trade/eu-trade-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1366,
+          "width": 2048,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Negotiators outside the European Council building.",
+          "copyright": "Pool photo by Olivier Hoslet"
+        }
+      ],
+      "short_url": "https://nyti.ms/4abcDeF"
+    },
+    {
+      "section": "business",
+      "subsection": "economy",
+      "title": "Inflation Cools to 2.4% in April",
+      "abstract": "Consumer prices rose at the slowest pace in nearly a year, giving the Fed room to consider rate cuts.",
+      "url": "https://www.nytimes.com/2026/05/23/business/economy/inflation-april.html",
+      "byline": "By Jeanna Smialek",
+      "item_type": "Article",
+      "updated_date": "2026-05-23T08:00:00-04:00",
+      "created_date": "2026-05-23T06:30:00-04:00",
+      "published_date": "2026-05-23T06:30:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "Economy",
+      "des_facet": ["Inflation (Economics)", "Consumer Behavior"],
+      "org_facet": ["Federal Reserve System"],
+      "per_facet": [],
+      "geo_facet": ["United States"],
+      "multimedia": [],
+      "short_url": "https://nyti.ms/4xyz123"
+    }
+  ]
+}

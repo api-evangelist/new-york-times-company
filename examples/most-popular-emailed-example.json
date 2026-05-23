@@ -1,0 +1,49 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+  "num_results": 2,
+  "results": [
+    {
+      "url": "https://www.nytimes.com/2026/05/20/health/sleep-research.html",
+      "adx_keywords": "Sleep;Health;Research",
+      "subsection": "",
+      "email_count": 0,
+      "count_type": "emailed-1",
+      "column": null,
+      "eta_id": 0,
+      "section": "Health",
+      "id": 100000009312345,
+      "asset_id": 100000009312345,
+      "nytdsection": "health",
+      "byline": "By Anahad O'Connor",
+      "type": "Article",
+      "title": "What the Newest Sleep Research Reveals",
+      "abstract": "Recent studies overturn long-held assumptions about how much sleep adults actually need.",
+      "published_date": "2026-05-20",
+      "source": "New York Times",
+      "updated": "2026-05-20 09:00:00",
+      "des_facet": ["Sleep", "Research"],
+      "org_facet": [],
+      "per_facet": [],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Researchers studying sleep patterns.",
+          "copyright": "Getty Images",
+          "approved_for_syndication": true,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2026/05/20/health/sleep/sleep-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            }
+          ]
+        }
+      ],
+      "uri": "nyt://article/abc123"
+    }
+  ]
+}

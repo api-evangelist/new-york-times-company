@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/draft/2024/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-structure/article-structure.json",
+  "title": "NYT Article Structure",
+  "type": "object",
+  "properties": {
+    "uri": {"type": "string"},
+    "url": {"type": "uri"},
+    "section": {"type": "string"},
+    "subsection": {"type": "string"},
+    "title": {"type": "string"},
+    "abstract": {"type": "string"},
+    "byline": {"type": "string"},
+    "published_date": {"type": "datetime"},
+    "updated_date": {"type": "datetime"},
+    "des_facet": {"type": "array", "items": {"type": "string"}},
+    "org_facet": {"type": "array", "items": {"type": "string"}},
+    "per_facet": {"type": "array", "items": {"type": "string"}},
+    "geo_facet": {"type": "array", "items": {"type": "string"}},
+    "multimedia": {"type": "array", "items": {"$ref": "media-structure.json"}}
+  },
+  "required": ["url", "title"]
+}

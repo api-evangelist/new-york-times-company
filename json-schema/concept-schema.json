@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/new-york-times-company/json-schema/concept-schema.json",
+  "title": "NYT Concept",
+  "description": "Entry from the NYT controlled vocabulary used as Times Topics metadata.",
+  "type": "object",
+  "properties": {
+    "concept_id": {"type": "integer"},
+    "concept_name": {"type": "string"},
+    "concept_status": {"type": "string", "enum": ["Active", "Inactive"]},
+    "concept_type": {"type": "string", "enum": ["nytd_per", "nytd_geo", "nytd_org", "nytd_des"]},
+    "vernacular": {"type": "string"},
+    "is_times_tag": {"type": "integer", "enum": [0, 1]},
+    "concept_created": {"type": "string"},
+    "concept_updated": {"type": "string"},
+    "search_api_query": {"type": "string", "format": "uri"},
+    "ticker_symbol": {"type": "string"}
+  },
+  "required": ["concept_name", "concept_type"]
+}
