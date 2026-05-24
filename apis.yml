@@ -89,6 +89,8 @@ common:
     url: capabilities/archive-research.yaml
   - type: CapabilityWorkflow
     url: capabilities/culture-discovery.yaml
+  - type: LLMsTxt
+    url: https://developer.nytimes.com/llms.txt
 apis:
   - name: Article Search API
     description: |
