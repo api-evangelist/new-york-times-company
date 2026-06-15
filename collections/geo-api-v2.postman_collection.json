@@ -1,0 +1,245 @@
+{
+  "item": [
+    {
+      "id": "b7b59463-688e-486b-ad54-70041fdcb9ee",
+      "name": "Events",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "46a1cc9a-3e4e-40b6-9dc1-aad30e76f362",
+          "name": "Geographic API",
+          "request": {
+            "name": "Geographic API",
+            "description": {
+              "content": "Geographic API",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "query.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "A displayable name for the specified place."
+                },
+                {
+                  "disabled": false,
+                  "key": "latitude",
+                  "value": "<string>",
+                  "description": "The latitude of the specified place.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "longitude",
+                  "value": "<string>",
+                  "description": "The longitude of the specified place."
+                },
+                {
+                  "disabled": false,
+                  "key": "elevation",
+                  "value": "<integer>",
+                  "description": "The elevation of the specified place, in meters."
+                },
+                {
+                  "disabled": false,
+                  "key": "sw",
+                  "value": "<string>",
+                  "description": "Along with ne, forms a bounded box using the longitude and latitude coordinates specified as the southwest corner. The search results are limited to the resulting box. Two float values, separated by a comma `latitude,longitude` <br/> The ne parameter is required to use this parameter."
+                },
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "Search keywords to perform a text search on the fields: web_description, event_name and venue_name. 'AND' searches can be performed by wrapping query terms in quotes. If you do not specify a query, all results will be returned.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters search results based on the facets provided.  For more information on the values you can filter on, see Facets.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_range",
+                  "value": "<string>",
+                  "description": "Start date to end date in the following format- YYYY-MM-DD:YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "facets",
+                  "value": "0",
+                  "description": "When facets is set to 1, a count of all facets will be included in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Sorts your results on the fields specified. <br/> `sort_value1+[asc | desc],sort_value2+[asc|desc],[...]`<br/> Appending +asc to a facet or response will sort results on that value in ascending order. Appending +desc to a facet or response  will sort results in descending order. You can sort on multiple fields. You can sort on any facet. For the list of responses you can sort on, see the Sortable Field column in the Response table. <br/><br/>If you are doing a spatial search with the ll parameter, you can also sort by the distance from the center of the search: dist+[asc | desc] <br/> **Note:** either +asc or +desc is required when using the sort parameter.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Limits the number of results returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Sets the starting point of the result set"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4c6a7b9-6472-47ad-b31d-f289d1303d8d",
+              "name": "An array of events",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "query.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "latitude",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "elevation",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sw",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_range",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facets",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"event_id\": 2761,\n      \"event_schedule_id\": 5237,\n      \"last_modified\": \"string\",\n      \"event_name\": \"string\",\n      \"event_detail_url\": \"string\",\n      \"web_description\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"film_rating\": true,\n      \"critic_name\": \"string\",\n      \"times_pick\": false,\n      \"free\": false,\n      \"kid_friendly\": true,\n      \"last_chance\": true,\n      \"festival\": true,\n      \"long_running_show\": true,\n      \"previews_and_openings\": true,\n      \"recurring_start_date\": \"string\",\n      \"recur_days\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"event_id\": 7790,\n      \"event_schedule_id\": 1041,\n      \"last_modified\": \"string\",\n      \"event_name\": \"string\",\n      \"event_detail_url\": \"string\",\n      \"web_description\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"film_rating\": false,\n      \"critic_name\": \"string\",\n      \"times_pick\": true,\n      \"free\": true,\n      \"kid_friendly\": false,\n      \"last_chance\": false,\n      \"festival\": true,\n      \"long_running_show\": false,\n      \"previews_and_openings\": true,\n      \"recurring_start_date\": \"string\",\n      \"recur_days\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.nytimes.com/svc/semantic/v2/geocodes",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a71d5d40-7b08-4783-9ab1-3ae96b2b4f58",
+    "name": "Geographic API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Geographic API extends the Semantic API, using a linked data approach to enhance location concepts used in The New York Times' controlled vocabulary and data resources which combine them with the GeoNames database, an authoritative and free to use database of global geographical places, names and features.\n",
+      "type": "text/plain"
+    }
+  }
+}

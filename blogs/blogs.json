@@ -2,6 +2,13 @@
   "repo": "new-york-times-company",
   "feeds": [
     {
+      "source": "https://open.nytimes.com/",
+      "feed_url": "https://open.nytimes.com/feed",
+      "title": "",
+      "saved": 1,
+      "method": "discovered"
+    },
+    {
       "source": "https://developer.nytimes.com/attribution",
       "feed_url": "https://developer.nytimes.com/attribution",
       "title": "",
@@ -9,6 +16,6 @@
       "method": "none"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-01T23:35:02Z"
+  "post_count": 1,
+  "fetched": "2026-06-14T20:42:17Z"
 }

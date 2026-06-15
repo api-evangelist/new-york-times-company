@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Times Newswire API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GET /content/{source}/{section}.json",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/content/:source/:section.json",
+        "params": [
+          {
+            "name": "source",
+            "value": "",
+            "type": "path",
+            "description": "Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times (FKA International Herald Tribune) items only\n"
+          },
+          {
+            "name": "section",
+            "value": "",
+            "type": "path",
+            "description": "Limits the set of items by one or more sections\nall | One or more section names, separated by semicolons\n\n To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:\n http://api.nytimes.com/svc/news/v3/content/section-list.json\n"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Limits the number of results, between 1 and 20"
+          },
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query",
+            "description": "Sets the starting point of the result set"
+          }
+        ]
+      }
+    },
+    {
+      "info": {
+        "name": "GET /content/{source}/{section}/{time-period}.json",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/content/:source/:section/:time-period.json",
+        "params": [
+          {
+            "name": "source",
+            "value": "",
+            "type": "path",
+            "description": "Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times items only\n"
+          },
+          {
+            "name": "section",
+            "value": "",
+            "type": "path",
+            "description": "Limits the set of items by one or more sections\nall | One or more section names, separated by semicolons\n\n To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:\n http://api.nytimes.com/svc/news/v3/content/section-list.json\n"
+          },
+          {
+            "name": "time-period",
+            "value": "",
+            "type": "path",
+            "description": "Limits the set of items by time published, integer in number of hours"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Limits the number of results, between 1 and 20"
+          },
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query",
+            "description": "Sets the starting point of the result set"
+          }
+        ]
+      }
+    },
+    {
+      "info": {
+        "name": "GET /content.json",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/content.json",
+        "params": [
+          {
+            "name": "url",
+            "value": "",
+            "type": "query",
+            "description": "The complete URL of a specific news item, URL-encoded or backslash-escaped"
+          }
+        ]
+      }
+    }
+  ],
+  "bundled": true
+}

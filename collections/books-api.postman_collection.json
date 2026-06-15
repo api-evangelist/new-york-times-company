@@ -1,0 +1,770 @@
+{
+  "item": [
+    {
+      "id": "98efe751-5e20-4d03-93b2-e5fff823594b",
+      "name": "Best Sellers List",
+      "request": {
+        "name": "Best Sellers List",
+        "description": {
+          "content": "Get Best Sellers list.  If no date is provided returns the latest list.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "lists.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "list",
+              "value": "hardcover-fiction",
+              "description": "(Required) The name of the Times best sellers list (hardcover-fiction, paperback-nonfiction, ...).\nThe /lists/names service returns all the list names.\nThe encoded list names are lower case with hyphens instead of spaces (e.g. e-book-fiction, instead of E-Book Fiction)."
+            },
+            {
+              "disabled": false,
+              "key": "bestsellers-date",
+              "value": "<string>",
+              "description": "YYYY-MM-DD\n\nThe week-ending date for the sales reflected on list-name. Times best sellers lists are compiled using available book sale data. The bestsellers-date may be significantly earlier than published-date. For additional information, see the explanation at the bottom of any best-seller list page on NYTimes.com (example: Hardcover Fiction, published Dec. 5 but reflecting sales to Nov. 29)."
+            },
+            {
+              "disabled": false,
+              "key": "published-date",
+              "value": "<string>",
+              "description": "YYYY-MM-DD\n\nThe date the best sellers list was published on NYTimes.com (different than bestsellers-date).  Use \"current\" for latest list."
+            },
+            {
+              "disabled": false,
+              "key": "offset",
+              "value": "<integer>",
+              "description": "Sets the starting point of the result set (0, 20, ...).  Used to paginate thru books if list has more than 20. Defaults to 0.  The num_results field indicates how many books are in the list."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "api-key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "e8d4f856-6d1b-4844-b71d-c42c1d13d47a",
+          "name": "Best Sellers list books",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "lists.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "list",
+                  "value": "hardcover-fiction"
+                },
+                {
+                  "key": "bestsellers-date",
+                  "value": "<string>"
+                },
+                {
+                  "key": "published-date",
+                  "value": "<string>"
+                },
+                {
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2019 The New York Times Company.  All Rights Reserved.\",\n  \"num_results\": 1,\n  \"last_modified\": \"2016-03-11T13:09:01-05:00\",\n  \"results\": [\n    {\n      \"list_name\": \"Hardcover Fiction\",\n      \"display_name\": \"Hardcover Fiction\",\n      \"bestsellers_date\": \"2016-03-05\",\n      \"published_date\": \"2016-03-20\",\n      \"rank\": 5,\n      \"rank_last_week\": 2,\n      \"weeks_on_list\": 2,\n      \"asterisk\": 0,\n      \"dagger\": 0,\n      \"amazon_product_url\": \"http://www.amazon.com/Girls-Guide-Moving-On-Novel-ebook/dp/B00ZNE17B4?tag=thenewyorktim-20\",\n      \"isbns\": [\n        {\n          \"isbn10\": 553391925,\n          \"isbn13\": \"9780553391923\"\n        }\n      ],\n      \"book_details\": [\n        {\n          \"title\": \"A GIRL'S GUIDE TO MOVING ON\",\n          \"description\": \"A mother and her daughter-in-law both leave unhappy marriages and take up with new men.\",\n          \"contributor\": \"by Debbie Macomber\",\n          \"author\": \"Debbie Macomber\",\n          \"contributor_note\": \"\",\n          \"price\": 0,\n          \"age_group\": \"\",\n          \"publisher\": \"Ballantine\",\n          \"primary_isbn13\": \"9780553391923\",\n          \"primary_isbn10\": 553391925\n        }\n      ],\n      \"reviews\": [\n        {\n          \"book_review_link\": \"\",\n          \"first_chapter_link\": \"\",\n          \"sunday_review_link\": \"\",\n          \"article_chapter_link\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a740023d-8279-4707-898a-1d256a2a7e2a",
+      "name": "Best Sellers List by Date",
+      "request": {
+        "name": "Best Sellers List by Date",
+        "description": {
+          "content": "Get Best Sellers list by date.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "lists",
+            ":date",
+            "{{list}}.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "offset",
+              "value": "<integer>",
+              "description": "Sets the starting point of the result set (0, 20, ...).  Used to paginate thru books if list has more than 20. Defaults to 0.  The num_results field indicates how many books are in the list."
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "date",
+              "description": "(Required) YYYY-MM-DD or \"current\"\n\nThe date the best sellers list was published on NYTimes.com.  Use \"current\" to get latest list."
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "api-key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "b0cf2b10-7137-462b-bed0-62a900cb2e06",
+          "name": "Best Sellers list books.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "lists",
+                ":date",
+                "{{list}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "date",
+                  "description": "(Required) YYYY-MM-DD or \"current\"\n\nThe date the best sellers list was published on NYTimes.com.  Use \"current\" to get latest list."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2019 The New York Times Company.  All Rights Reserved.\",\n  \"num_results\": 15,\n  \"last_modified\": \"2015-12-25T13:05:20-05:00\",\n  \"results\": {\n    \"list_name\": \"Trade Fiction Paperback\",\n    \"bestsellers_date\": \"2015-12-19\",\n    \"published_date\": \"2016-01-03\",\n    \"display_name\": \"Paperback Trade Fiction\",\n    \"normal_list_ends_at\": 10,\n    \"updated\": \"WEEKLY\",\n    \"books\": [\n      {\n        \"rank\": 1,\n        \"rank_last_week\": 0,\n        \"weeks_on_list\": 60,\n        \"asterisk\": 0,\n        \"dagger\": 0,\n        \"primary_isbn10\": 553418025,\n        \"primary_isbn13\": \"9780553418026\",\n        \"publisher\": \"Broadway\",\n        \"description\": \"Separated from his crew, an astronaut embarks on a quest to stay alive on Mars. The basis of the movie.\",\n        \"price\": 0,\n        \"title\": \"THE MARTIAN\",\n        \"author\": \"Andy Weir\",\n        \"contributor\": \"by Andy Weir\",\n        \"contributor_note\": \"\",\n        \"book_image\": \"http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9780804139038.jpg\",\n        \"amazon_product_url\": \"http://www.amazon.com/The-Martian-Novel-Andy-Weir-ebook/dp/B00EMXBDMA?tag=thenewyorktim-20\",\n        \"age_group\": \"\",\n        \"book_review_link\": \"\",\n        \"first_chapter_link\": \"\",\n        \"sunday_review_link\": \"\",\n        \"article_chapter_link\": \"\",\n        \"isbns\": [\n          {\n            \"isbn10\": 804139024,\n            \"isbn13\": \"9780804139021\"\n          }\n        ]\n      }\n    ],\n    \"corrections\": []\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "2a42fb28-2399-4483-873b-ae00194e32c9",
+      "name": "Best Sellers List Overview",
+      "request": {
+        "name": "Best Sellers List Overview",
+        "description": {
+          "content": "Get top 5 books for all the Best Sellers lists for specified date.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "lists",
+            "overview.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "published_date",
+              "value": "<string>",
+              "description": "YYYY-MM-DD\n\nThe best-seller list publication date.\nYou do not have to specify the exact date the list was published. The service will search forward (into the future) for the closest publication date to the date you specify. For example, a request for lists/overview/2013-05-22 will retrieve the list that was published on 05-26.\n\nIf you do not include a published date, the current week's best sellers lists will be returned."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "api-key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "941d400a-2776-4cba-9b1e-4ac0a70933c0",
+          "name": "Overview of Best Sellers lists.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "lists",
+                "overview.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "published_date",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2019 The New York Times Company.  All Rights Reserved.\",\n  \"num_results\": 210,\n  \"results\": {\n    \"bestsellers_date\": \"2016-03-05\",\n    \"published_date\": \"2016-03-20\",\n    \"lists\": [\n      {\n        \"list_id\": 704,\n        \"list_name\": \"Combined Print and E-Book Fiction\",\n        \"display_name\": \"Combined Print & E-Book Fiction\",\n        \"updated\": \"WEEKLY\",\n        \"list_image\": \"http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9780399175954.jpg\",\n        \"books\": [\n          {\n            \"age_group\": \"\",\n            \"author\": \"Clive Cussler and Justin Scott\",\n            \"contributor\": \"by Clive Cussler and Justin Scott\",\n            \"contributor_note\": \"\",\n            \"created_date\": \"2016-03-10 12:00:22\",\n            \"description\": \"In the ninth book in this series, set in 1906, the New York detective Isaac Bell contends with a crime boss passing as a respectable businessman and a tycoon’s plot against President Theodore Roosevelt.\",\n            \"price\": 0,\n            \"primary_isbn13\": \"9780698406421\",\n            \"primary_isbn10\": 698406427,\n            \"publisher\": \"Putnam\",\n            \"rank\": 1,\n            \"title\": \"THE GANGSTER\",\n            \"updated_date\": \"2016-03-10 17:00:21\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9543d738-ec75-4c1a-ac5d-7abca078ee0d",
+      "name": "Best Sellers List Names",
+      "request": {
+        "name": "Best Sellers List Names",
+        "description": {
+          "content": "Get Best Sellers list names.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "lists",
+            "names.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "api-key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "674ea1b9-f61b-46b2-b823-98f27cd03d05",
+          "name": "Get Best Sellers list names.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "lists",
+                "names.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2019 The New York Times Company.  All Rights Reserved.\",\n  \"num_results\": 53,\n  \"results\": [\n    {\n      \"list_name\": \"Combined Print and E-Book Fiction\",\n      \"display_name\": \"Combined Print & E-Book Fiction\",\n      \"list_name_encoded\": \"combined-print-and-e-book-fiction\",\n      \"oldest_published_date\": \"2011-02-13\",\n      \"newest_published_date\": \"2016-03-20\",\n      \"updated\": \"WEEKLY\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "0031ab99-2b4b-488d-95e0-e67300af8a2d",
+      "name": "Best Sellers List History",
+      "request": {
+        "name": "Best Sellers List History",
+        "description": {
+          "content": "Get Best Sellers list history.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "lists",
+            "best-sellers",
+            "history.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "age-group",
+              "value": "<string>",
+              "description": "The target age group for the best seller."
+            },
+            {
+              "disabled": false,
+              "key": "author",
+              "value": "<string>",
+              "description": "The author of the best seller. The author field does not include additional contributors (see Data Structure for more details about the author and contributor fields).\n\nWhen searching the author field, you can specify any combination of first, middle and last names.\n\nWhen sort-by is set to author, the results will be sorted by author's first name."
+            },
+            {
+              "disabled": false,
+              "key": "contributor",
+              "value": "<string>",
+              "description": "The author of the best seller, as well as other contributors such as the illustrator (to search or sort by author name only, use author instead).\n\nWhen searching, you can specify any combination of first, middle and last names of any of the contributors.\n\nWhen sort-by is set to contributor, the results will be sorted by the first name of the first contributor listed."
+            },
+            {
+              "disabled": false,
+              "key": "isbn",
+              "value": "<string>",
+              "description": "International Standard Book Number, 10 or 13 digits\n\nA best seller may have both 10-digit and 13-digit ISBNs, and may have multiple ISBNs of each type. To search on multiple ISBNs, separate the ISBNs with semicolons (example: 9780446579933;0061374229)."
+            },
+            {
+              "disabled": false,
+              "key": "price",
+              "value": "<string>",
+              "description": "The publisher's list price of the best seller, including decimal point."
+            },
+            {
+              "disabled": false,
+              "key": "publisher",
+              "value": "<string>",
+              "description": "The standardized name of the publisher"
+            },
+            {
+              "disabled": false,
+              "key": "title",
+              "value": "<string>",
+              "description": "The title of the best seller\n\nWhen searching, you can specify a portion of a title or a full title."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "api-key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "b6e926a2-3967-4328-aa27-89dfc208aa1c",
+          "name": "Best Sellers list history",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "lists",
+                "best-sellers",
+                "history.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "age-group",
+                  "value": "<string>"
+                },
+                {
+                  "key": "author",
+                  "value": "<string>"
+                },
+                {
+                  "key": "contributor",
+                  "value": "<string>"
+                },
+                {
+                  "key": "isbn",
+                  "value": "<string>"
+                },
+                {
+                  "key": "price",
+                  "value": "<string>"
+                },
+                {
+                  "key": "publisher",
+                  "value": "<string>"
+                },
+                {
+                  "key": "title",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2019 The New York Times Company.  All Rights Reserved.\",\n  \"num_results\": 28970,\n  \"results\": [\n    {\n      \"title\": \"#GIRLBOSS\",\n      \"description\": \"An online fashion retailer traces her path to success.\",\n      \"contributor\": \"by Sophia Amoruso\",\n      \"author\": \"Sophia Amoruso\",\n      \"contributor_note\": \"\",\n      \"price\": 0,\n      \"age_group\": \"\",\n      \"publisher\": \"Portfolio/Penguin/Putnam\",\n      \"isbns\": [\n        {\n          \"isbn10\": \"039916927X\",\n          \"isbn13\": \"9780399169274\"\n        }\n      ],\n      \"ranks_history\": [\n        {\n          \"primary_isbn10\": \"1591847931\",\n          \"primary_isbn13\": \"9781591847939\",\n          \"rank\": 8,\n          \"list_name\": \"Business Books\",\n          \"display_name\": \"Business\",\n          \"published_date\": \"2016-03-13\",\n          \"bestsellers_date\": \"2016-02-27\",\n          \"weeks_on_list\": 0,\n          \"ranks_last_week\": null,\n          \"asterisk\": 0,\n          \"dagger\": 0\n        }\n      ],\n      \"reviews\": [\n        {\n          \"book_review_link\": \"\",\n          \"first_chapter_link\": \"\",\n          \"sunday_review_link\": \"\",\n          \"article_chapter_link\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3de1f417-d8a2-4651-9528-8a85546c41fb",
+      "name": "Reviews",
+      "request": {
+        "name": "Reviews",
+        "description": {
+          "content": "Get book reviews.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "reviews.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "isbn",
+              "value": "<integer>",
+              "description": "Searching by ISBN is the recommended method. You can enter 10- or 13-digit ISBNs."
+            },
+            {
+              "disabled": false,
+              "key": "title",
+              "value": "<string>",
+              "description": "You’ll need to enter the full title of the book. Spaces in the title will be converted into the characters %20."
+            },
+            {
+              "disabled": false,
+              "key": "author",
+              "value": "<string>",
+              "description": "You’ll need to enter the author’s first and last name, separated by a space. This space will be converted into the characters %20."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "api-key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "c5baacef-d543-4cc9-90c7-f2851a69b23c",
+          "name": "Book reviews.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reviews.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "isbn",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "title",
+                  "value": "<string>"
+                },
+                {
+                  "key": "author",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2019 The New York Times Company.  All Rights Reserved.\",\n  \"num_results\": 2,\n  \"results\": [\n    {\n      \"url\": \"http://www.nytimes.com/2011/11/10/books/1q84-by-haruki-murakami-review.html\",\n      \"publication_dt\": \"2011-11-10\",\n      \"byline\": \"JANET MASLIN\",\n      \"book_title\": \"1Q84\",\n      \"book_author\": \"Haruki Murakami\",\n      \"summary\": \"In “1Q84,” the Japanese novelist Haruki Murakami writes about characters in a Tokyo with two moons.\",\n      \"isbn13\": [\n        \"9780307476463\"\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/books/v3",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Name of the Best Sellers List (e.g. hardcover-fiction). You can get the full list of names from the /lists/names.json service.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "list"
+    }
+  ],
+  "info": {
+    "_postman_id": "2749bcf7-b550-4ba3-b87c-31647e8b85eb",
+    "name": "Books API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Books API provides information about book reviews and The New York Times Best Sellers lists.\n\n## Best Sellers Lists Services\n### List Names\nThe lists/names service returns a list of all the NYT Best Sellers Lists.  Some lists are published weekly and others monthly.  The response includes when each list was first published and last published.\n\n```\n/lists/names.json\n```\n\n### List Data\n\nThe lists/{date}/{name} service returns the books on the best sellers list for the specified date and list name.\n\n```\n/lists/2019-01-20/hardcover-fiction.json\n```\n\nUse \"current\" for {date} to get the latest list.\n```\n/lists/current/hardcover-fiction.json\n```\n\n## Book Reviews Services\n\nThe book reviews service lets you get NYT book review by author, ISBN, or title.\n\n```\n/reviews.json?author=Michelle+Obama\n```\n\n```\n/reviews.json?isbn=9781524763138\n```\n\n```\n/reviews.json?title=Becoming\n```\n\n## Example Calls\n\n```\nhttps://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=yourkey\n```\n\n```\nhttps://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

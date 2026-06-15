@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Article Search",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns an array of articles.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/articlesearch.json",
+            "params": [
+              {
+                "name": "begin_date",
+                "value": "",
+                "type": "query",
+                "description": "Begin date (e.g. 20120101)"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "End date (e.g. 20121231)"
+              },
+              {
+                "name": "facet",
+                "value": "",
+                "type": "query",
+                "description": "Whether to show facet counts"
+              },
+              {
+                "name": "facet_fields",
+                "value": "",
+                "type": "query",
+                "description": "Facets"
+              },
+              {
+                "name": "facet_filter",
+                "value": "",
+                "type": "query",
+                "description": "Have facet counts use filters"
+              },
+              {
+                "name": "fl",
+                "value": "",
+                "type": "query",
+                "description": "Field list"
+              },
+              {
+                "name": "fq",
+                "value": "",
+                "type": "query",
+                "description": "Filter query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (0, 1, ...)"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort order"
+              }
+            ]
+          },
+          "docs": "Search for NYT articles by keywords, filters and facets."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

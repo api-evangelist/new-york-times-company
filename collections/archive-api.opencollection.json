@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Archive",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Archive",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns an array of articles for a given month.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:year/:month.json",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "path",
+                "description": "Year: 1851-2019"
+              },
+              {
+                "name": "month",
+                "value": "",
+                "type": "path",
+                "description": "Year: 1-12"
+              }
+            ]
+          },
+          "docs": "Pass in year and month and get back JSON with all articles for that month. The response can be big (~20 megabytes) and contain thousands of articles, depending on the year and month.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

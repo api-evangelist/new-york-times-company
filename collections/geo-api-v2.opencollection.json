@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Geographic API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Geographic API",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/query.json",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "A displayable name for the specified place."
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query",
+                "description": "The latitude of the specified place.\n"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query",
+                "description": "The longitude of the specified place."
+              },
+              {
+                "name": "elevation",
+                "value": "",
+                "type": "query",
+                "description": "The elevation of the specified place, in meters."
+              },
+              {
+                "name": "sw",
+                "value": "",
+                "type": "query",
+                "description": "Along with ne, forms a bounded box using the longitude and latitude coordinates specified as the southwest corner. The search results are limited to the resulting box. Two float values, separated by a comma `latitude,longitude` <br/> The ne parameter is required to use this parameter."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search keywords to perform a text search on the fields: web_description, event_name and venue_name. 'AND' searches can be performed by wrapping query terms in quotes. If you do not specify a query, all results will be returned.\n"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters search results based on the facets provided.  For more information on the values you can filter on, see Facets.\n"
+              },
+              {
+                "name": "date_range",
+                "value": "",
+                "type": "query",
+                "description": "Start date to end date in the following format- YYYY-MM-DD:YYYY-MM-DD"
+              },
+              {
+                "name": "facets",
+                "value": "",
+                "type": "query",
+                "description": "When facets is set to 1, a count of all facets will be included in the response."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sorts your results on the fields specified. <br/> `sort_value1+[asc | desc],sort_value2+[asc|desc],[...]`<br/> Appending +asc to a facet or response will sort results on that value in ascending order. Appending +desc to a facet or response  will sort results in descending order. You can sort on multiple fields. You can sort on any facet. For the list of responses you can sort on, see the Sortable Field column in the Response table. <br/><br/>If you are doing a spatial search with the ll parameter, you can also sort by the distance from the center of the search: dist+[asc | desc] <br/> **Note:** either +asc or +desc is required when using the sort parameter.\n"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limits the number of results returned"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Sets the starting point of the result set"
+              }
+            ]
+          },
+          "docs": "Geographic API"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

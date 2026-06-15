@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Community API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Recent User Comments",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/user-content/recent.json"
+      },
+      "docs": "To retrieve the most recent user comments, use the following URI structure:\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n http://api.nytimes.com/svc/community/v3/user-content/recent.json?api-key={your-API-key}[&optional-param1=value1][...]\n"
+    },
+    {
+      "info": {
+        "name": "Comments by URL",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/user-content/url.json",
+        "params": [
+          {
+            "name": "url",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "The comments associated with a specific NYTimes.com URL, use the\nfollowing URI structure:\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nhttp://api.nytimes.com/svc/community/v3/user-content/url.json?api-key={your-API-key}&url={url}[&offset=int]\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nYou can specify whether to retrieve exact matches or closest stem matches. URL matching is attempted at each segment of the path, as illust"
+    },
+    {
+      "info": {
+        "name": "Comments by Date",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/user-content/by-date.json",
+        "params": [
+          {
+            "name": "date",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "To retrieve comments posted on a specific date, use the following URI structure:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nhttp://api.nytimes.com/svc/community/v3/user-content/by-date.json?api-key={your-API-key}&date={YYYY-MM-DD}[&offset=int]\n"
+    },
+    {
+      "info": {
+        "name": "Comments by User",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/user-content/user.json",
+        "params": [
+          {
+            "name": "userID",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "To retrieve comments by a specific NYTimes.com user, use the following URI\nstructure:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nhttp://api.nytimes.com/svc/community/v3/user-content/user.json?api-key={your-API-key}&userID={<int>}[&offset=<int>][&url={url-to-match}]\n"
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,683 @@
+{
+  "item": [
+    {
+      "id": "16412cdb-344a-4095-a289-dfe659882990",
+      "name": "/content/:source/{{section}}.json",
+      "request": {
+        "name": "/content/:source/{{section}}.json",
+        "description": {},
+        "url": {
+          "path": [
+            "content",
+            ":source",
+            "{{section}}.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "20",
+              "description": "Limits the number of results, between 1 and 20"
+            },
+            {
+              "disabled": false,
+              "key": "offset",
+              "value": "0",
+              "description": "Sets the starting point of the result set"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "source",
+              "description": "(Required) Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times (FKA International Herald Tribune) items only\n"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "76bcc1cc-7b90-4287-91b3-ff1b780c0ac5",
+          "name": "An array of Articles",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content",
+                ":source",
+                "{{section}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source",
+                  "description": "(Required) Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times (FKA International Herald Tribune) items only\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 9350,\n  \"results\": [\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"short_url\": \"string\",\n      \"byline\": \"string\",\n      \"thumbnail_standard\": \"string\",\n      \"item_type\": \"string\",\n      \"source\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"headline\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": \"string\",\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"blog_name\": \"string\",\n      \"related_urls\": [\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 2426,\n          \"width\": 6697,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 7691,\n          \"width\": 2063,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ]\n    },\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"short_url\": \"string\",\n      \"byline\": \"string\",\n      \"thumbnail_standard\": \"string\",\n      \"item_type\": \"string\",\n      \"source\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"headline\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": \"string\",\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"blog_name\": \"string\",\n      \"related_urls\": [\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 7962,\n          \"width\": 1451,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 4014,\n          \"width\": 8392,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a331d8f1-2a6d-4282-805e-688da63b4dd5",
+          "name": "Unauthorized request.  Make sure api-key is set.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content",
+                ":source",
+                "{{section}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source",
+                  "description": "(Required) Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times (FKA International Herald Tribune) items only\n"
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "ee0dec83-fa54-4477-a7aa-376625c4c7eb",
+          "name": "Too many requests.  You reached your per minute or per day rate limit.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content",
+                ":source",
+                "{{section}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source",
+                  "description": "(Required) Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times (FKA International Herald Tribune) items only\n"
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "069eb004-760d-48f1-8cad-91d084240068",
+      "name": "/content/:source/:section/{{time-period}}.json",
+      "request": {
+        "name": "/content/:source/:section/{{time-period}}.json",
+        "description": {},
+        "url": {
+          "path": [
+            "content",
+            ":source",
+            ":section",
+            "{{time-period}}.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "20",
+              "description": "Limits the number of results, between 1 and 20"
+            },
+            {
+              "disabled": false,
+              "key": "offset",
+              "value": "0",
+              "description": "Sets the starting point of the result set"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "all",
+              "key": "source",
+              "description": "(Required) Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times items only\n"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "all",
+              "key": "section",
+              "description": "(Required) Limits the set of items by one or more sections\nall | One or more section names, separated by semicolons\n\n To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:\n http://api.nytimes.com/svc/news/v3/content/section-list.json\n"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "59be3ff6-58e8-4ecb-9116-d35fbedbb323",
+          "name": "An array of Articles",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content",
+                ":source",
+                ":section",
+                "{{time-period}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "all",
+                  "key": "source",
+                  "description": "(Required) Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times items only\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "all",
+                  "key": "section",
+                  "description": "(Required) Limits the set of items by one or more sections\nall | One or more section names, separated by semicolons\n\n To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:\n http://api.nytimes.com/svc/news/v3/content/section-list.json\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 7907,\n  \"results\": [\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"short_url\": \"string\",\n      \"byline\": \"string\",\n      \"thumbnail_standard\": \"string\",\n      \"item_type\": \"string\",\n      \"source\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"headline\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": \"string\",\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"blog_name\": \"string\",\n      \"related_urls\": [\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 5231,\n          \"width\": 1322,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 9444,\n          \"width\": 9522,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ]\n    },\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"short_url\": \"string\",\n      \"byline\": \"string\",\n      \"thumbnail_standard\": \"string\",\n      \"item_type\": \"string\",\n      \"source\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"headline\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": \"string\",\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"blog_name\": \"string\",\n      \"related_urls\": [\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 5131,\n          \"width\": 1106,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 2322,\n          \"width\": 111,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c35c878d-3553-4e0e-99bb-af09cf0a110e",
+          "name": "Unauthorized request.  Make sure api-key is set.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content",
+                ":source",
+                ":section",
+                "{{time-period}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "all",
+                  "key": "source",
+                  "description": "(Required) Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times items only\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "all",
+                  "key": "section",
+                  "description": "(Required) Limits the set of items by one or more sections\nall | One or more section names, separated by semicolons\n\n To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:\n http://api.nytimes.com/svc/news/v3/content/section-list.json\n"
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "be5660b4-7fd7-4abf-a198-219ff05c3199",
+          "name": "Too many requests.  You reached your per minute or per day rate limit.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content",
+                ":source",
+                ":section",
+                "{{time-period}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "all",
+                  "key": "source",
+                  "description": "(Required) Limits the set of items by originating source\n\nall = items from both The New York Times and The International New York Times\nnyt = New York Times items only\niht = International New York Times items only\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "all",
+                  "key": "section",
+                  "description": "(Required) Limits the set of items by one or more sections\nall | One or more section names, separated by semicolons\n\n To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:\n http://api.nytimes.com/svc/news/v3/content/section-list.json\n"
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5e3a5d36-ccf8-4bba-9fd8-1e14f037c885",
+      "name": "/content.json",
+      "request": {
+        "name": "/content.json",
+        "description": {},
+        "url": {
+          "path": [
+            "content.json"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "url",
+              "value": "https%3A%2F%2Fwww.nytimes.com%2F2018%2F09%2F19%2Fworld%2Fasia%2Fnorth-south-korea-nuclear-weapons.html",
+              "description": "(Required) The complete URL of a specific news item, URL-encoded or backslash-escaped"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "44bb0702-95a2-4d45-9432-e14b4bbdd476",
+          "name": "An array of Articles",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "https%3A%2F%2Fwww.nytimes.com%2F2018%2F09%2F19%2Fworld%2Fasia%2Fnorth-south-korea-nuclear-weapons.html"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 7907,\n  \"results\": [\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"short_url\": \"string\",\n      \"byline\": \"string\",\n      \"thumbnail_standard\": \"string\",\n      \"item_type\": \"string\",\n      \"source\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"headline\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": \"string\",\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"blog_name\": \"string\",\n      \"related_urls\": [\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 5231,\n          \"width\": 1322,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 9444,\n          \"width\": 9522,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ]\n    },\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"short_url\": \"string\",\n      \"byline\": \"string\",\n      \"thumbnail_standard\": \"string\",\n      \"item_type\": \"string\",\n      \"source\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"headline\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": \"string\",\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"blog_name\": \"string\",\n      \"related_urls\": [\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 5131,\n          \"width\": 1106,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 2322,\n          \"width\": 111,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "8775fb00-e30a-497e-b727-52ccc58dc2e9",
+          "name": "Unauthorized request.  Make sure api-key is set.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "https%3A%2F%2Fwww.nytimes.com%2F2018%2F09%2F19%2Fworld%2Fasia%2Fnorth-south-korea-nuclear-weapons.html"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "3f23fa30-17e1-4886-9331-c051ed0cbd6b",
+          "name": "Too many requests.  You reached your per minute or per day rate limit.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "content.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "https%3A%2F%2Fwww.nytimes.com%2F2018%2F09%2F19%2Fworld%2Fasia%2Fnorth-south-korea-nuclear-weapons.html"
+                },
+                {
+                  "key": "api-key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/news/v3",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Limits the set of items by one or more sections\nall | One or more section names, separated by semicolons\n\n To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:\n http://api.nytimes.com/svc/news/v3/content/section-list.json\n",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "all",
+      "key": "section"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Limits the set of items by time published, integer in number of hours",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "12",
+      "key": "time-period"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "84cee92f-a43e-477f-864a-1f8bd5a07e0e",
+    "name": "Times Newswire API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "With the Times Newswire API, you can get links and metadata for Times' articles as soon as they are published on NYTimes.com. The Times Newswire API provides an up-to-the-minute stream of published articles.  You can filter results by source (all, nyt, or iht) and section (arts, business, ...).\n```\n/content/{source}/{section}.json\n```\n## Example Call\n```\nhttps://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

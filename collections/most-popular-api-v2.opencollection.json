@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Most Popular",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Most Popular",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Most emailed articles on NYTimes.com.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/emailed/:period.json",
+            "params": [
+              {
+                "name": "period",
+                "value": "",
+                "type": "path",
+                "description": "Time period: 1, 7, or 30 days."
+              }
+            ]
+          },
+          "docs": "Returns an array of the most emailed articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).\n"
+        },
+        {
+          "info": {
+            "name": "Most shared articles on NYTimes.com.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/shared/:period.json",
+            "params": [
+              {
+                "name": "period",
+                "value": "",
+                "type": "path",
+                "description": "Time period: 1, 7, or 30 days."
+              }
+            ]
+          },
+          "docs": "Returns an array of the most shared articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).\n"
+        },
+        {
+          "info": {
+            "name": "Most shared articles on NYTimes.com of specified share type.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/shared/:period/:share_type.json",
+            "params": [
+              {
+                "name": "period",
+                "value": "",
+                "type": "path",
+                "description": "Time period: 1, 7, or 30 days."
+              },
+              {
+                "name": "share_type",
+                "value": "",
+                "type": "path",
+                "description": "Share type: email, facebook, or twitter."
+              }
+            ]
+          },
+          "docs": "Returns an array of the most shared articles by share type on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).\n"
+        },
+        {
+          "info": {
+            "name": "Most viewed articles on NYTimes.com.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/viewed/:period.json",
+            "params": [
+              {
+                "name": "period",
+                "value": "",
+                "type": "path",
+                "description": "Time period: 1, 7, or 30 days."
+              }
+            ]
+          },
+          "docs": "Returns an array of the most viewed articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

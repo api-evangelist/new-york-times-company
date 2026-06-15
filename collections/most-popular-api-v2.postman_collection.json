@@ -1,0 +1,693 @@
+{
+  "item": [
+    {
+      "id": "c2e26728-c72b-4cf2-b91b-2605b58c5e9f",
+      "name": "Most Popular",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3947f523-b056-464c-a086-9300a6ea4fa4",
+          "name": "Most emailed articles on NYTimes.com.",
+          "request": {
+            "name": "Most emailed articles on NYTimes.com.",
+            "description": {
+              "content": "Returns an array of the most emailed articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "emailed",
+                "{{period}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dde59c71-79c0-458f-b31d-48bd487b661a",
+              "name": "An array of articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "emailed",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 4709,\n  \"results\": [\n    {\n      \"url\": \"string\",\n      \"adx_keywords\": \"string\",\n      \"subsection\": \"string\",\n      \"email_count\": 9263,\n      \"count_type\": \"string\",\n      \"column\": \"string\",\n      \"eta_id\": 8115,\n      \"section\": \"string\",\n      \"id\": 9077,\n      \"asset_id\": 5525,\n      \"nytdsection\": \"string\",\n      \"byline\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"published_date\": \"string\",\n      \"source\": \"string\",\n      \"updated\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"media\": [\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": false,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": true,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"uri\": \"string\"\n    },\n    {\n      \"url\": \"string\",\n      \"adx_keywords\": \"string\",\n      \"subsection\": \"string\",\n      \"email_count\": 1493,\n      \"count_type\": \"string\",\n      \"column\": \"string\",\n      \"eta_id\": 4876,\n      \"section\": \"string\",\n      \"id\": 2032,\n      \"asset_id\": 9807,\n      \"nytdsection\": \"string\",\n      \"byline\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"published_date\": \"string\",\n      \"source\": \"string\",\n      \"updated\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"media\": [\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": true,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": false,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"uri\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ddad7ed-2545-4771-88a7-46a0f028a2e3",
+              "name": "Unauthorized request.  Make sure api-key is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "emailed",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3f539e6c-2533-474e-954c-1d90b221edde",
+              "name": "Too many requests.  You reached your per minute or per day rate limit.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "emailed",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bdb260fb-c022-4014-bbba-1538ce414c7d",
+          "name": "Most shared articles on NYTimes.com.",
+          "request": {
+            "name": "Most shared articles on NYTimes.com.",
+            "description": {
+              "content": "Returns an array of the most shared articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shared",
+                "{{period}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdfdd91e-71a4-457b-acc1-dce9aba8c362",
+              "name": "An array of articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shared",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 5115,\n  \"results\": [\n    {\n      \"url\": \"string\",\n      \"adx_keywords\": \"string\",\n      \"subsection\": \"string\",\n      \"share_count\": 184,\n      \"count_type\": \"string\",\n      \"column\": \"string\",\n      \"eta_id\": 5539,\n      \"section\": \"string\",\n      \"id\": 1175,\n      \"asset_id\": 7121,\n      \"nytdsection\": \"string\",\n      \"byline\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"published_date\": \"string\",\n      \"source\": \"string\",\n      \"updated\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"media\": [\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": true,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": true,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"uri\": \"string\"\n    },\n    {\n      \"url\": \"string\",\n      \"adx_keywords\": \"string\",\n      \"subsection\": \"string\",\n      \"share_count\": 8398,\n      \"count_type\": \"string\",\n      \"column\": \"string\",\n      \"eta_id\": 7296,\n      \"section\": \"string\",\n      \"id\": 2705,\n      \"asset_id\": 7738,\n      \"nytdsection\": \"string\",\n      \"byline\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"published_date\": \"string\",\n      \"source\": \"string\",\n      \"updated\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"media\": [\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": true,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": false,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"uri\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "890ef2e3-9001-4367-9577-e0ddeb1d8237",
+              "name": "Unauthorized request.  Make sure api-key is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shared",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8f5fe910-a4a9-4f42-a35a-019d15489a80",
+              "name": "Too many requests.  You reached your per minute or per day rate limit.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shared",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0ac9d09-79cb-4fbb-8dba-59eb098c2aa4",
+          "name": "Most shared articles on NYTimes.com of specified share type.",
+          "request": {
+            "name": "Most shared articles on NYTimes.com of specified share type.",
+            "description": {
+              "content": "Returns an array of the most shared articles by share type on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shared",
+                ":period",
+                "{{share_type}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "1",
+                  "key": "period",
+                  "description": "(Required) Time period: 1, 7, or 30 days."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "158ec3ef-944f-45c4-a06a-93713ab67eda",
+              "name": "An array of articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shared",
+                    ":period",
+                    "{{share_type}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "1",
+                      "key": "period",
+                      "description": "(Required) Time period: 1, 7, or 30 days."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 8080,\n  \"results\": [\n    {\n      \"url\": \"string\",\n      \"adx_keywords\": \"string\",\n      \"subsection\": \"string\",\n      \"share_count\": 8358,\n      \"count_type\": \"string\",\n      \"column\": \"string\",\n      \"eta_id\": 9782,\n      \"section\": \"string\",\n      \"id\": 7167,\n      \"asset_id\": 6053,\n      \"nytdsection\": \"string\",\n      \"byline\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"published_date\": \"string\",\n      \"source\": \"string\",\n      \"updated\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"media\": [\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": false,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": true,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"uri\": \"string\"\n    },\n    {\n      \"url\": \"string\",\n      \"adx_keywords\": \"string\",\n      \"subsection\": \"string\",\n      \"share_count\": 1215,\n      \"count_type\": \"string\",\n      \"column\": \"string\",\n      \"eta_id\": 4206,\n      \"section\": \"string\",\n      \"id\": 4213,\n      \"asset_id\": 2048,\n      \"nytdsection\": \"string\",\n      \"byline\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"published_date\": \"string\",\n      \"source\": \"string\",\n      \"updated\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"media\": [\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": true,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": false,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"uri\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f64431f-1050-487a-8883-ad3c793ed59d",
+              "name": "Unauthorized request.  Make sure api-key is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shared",
+                    ":period",
+                    "{{share_type}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "1",
+                      "key": "period",
+                      "description": "(Required) Time period: 1, 7, or 30 days."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "71f29c9b-5304-4ab2-b20d-3b792c4642fe",
+              "name": "Too many requests.  You reached your per minute or per day rate limit.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shared",
+                    ":period",
+                    "{{share_type}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "1",
+                      "key": "period",
+                      "description": "(Required) Time period: 1, 7, or 30 days."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93cd4cff-766c-4356-ab10-7949ef9b1fbe",
+          "name": "Most viewed articles on NYTimes.com.",
+          "request": {
+            "name": "Most viewed articles on NYTimes.com.",
+            "description": {
+              "content": "Returns an array of the most viewed articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "viewed",
+                "{{period}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74e29b0b-fd60-43e2-aca6-033a34a731ca",
+              "name": "An array of articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "viewed",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 9298,\n  \"results\": [\n    {\n      \"url\": \"string\",\n      \"adx_keywords\": \"string\",\n      \"column\": \"string\",\n      \"section\": \"string\",\n      \"byline\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"published_date\": \"string\",\n      \"source\": \"string\",\n      \"id\": 6475,\n      \"asset_id\": 1812,\n      \"views\": 7601,\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"media\": [\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": false,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": false,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"uri\": \"string\"\n    },\n    {\n      \"url\": \"string\",\n      \"adx_keywords\": \"string\",\n      \"column\": \"string\",\n      \"section\": \"string\",\n      \"byline\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"published_date\": \"string\",\n      \"source\": \"string\",\n      \"id\": 9148,\n      \"asset_id\": 6113,\n      \"views\": 3027,\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"media\": [\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": false,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\",\n          \"approved_for_syndication\": true,\n          \"media-metadata\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"format\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"height\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"width\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"uri\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "538debb0-dc87-49bb-8891-9fec32334b94",
+              "name": "Unauthorized request.  Make sure api-key is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "viewed",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61bd8121-fa01-43cd-a65c-e169fda5de6d",
+              "name": "Too many requests.  You reached your per minute or per day rate limit.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "viewed",
+                    "{{period}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/mostpopular/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Time period: 1, 7, or 30 days.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "1",
+      "key": "period"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Share type: email, facebook, or twitter.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "facebook",
+      "key": "share_type"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "053499f9-dfe0-4231-a0e0-4a9138726ae6",
+    "name": "Most Popular",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Provides services for getting the most popular articles on NYTimes.com based on emails, shares, or views.\n\nGet most emailed articles for the last day:\n```\n/emailed/1.json\n```\n\nGet most shared articles on Facebook for the last day:\n```\n/shared/1/facebook.json\n```\n\nGet most viewed articles for the last seven days:\n```\n/viewed/7.json\n```\n\n## Example Calls\n```\nhttps://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=yourkey\n```\n\n```\nhttps://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key=yourkey\n```\n\n```\nhttps://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

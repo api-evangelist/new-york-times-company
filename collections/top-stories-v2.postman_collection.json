@@ -1,0 +1,202 @@
+{
+  "item": [
+    {
+      "id": "7c552619-1ad7-45d6-83de-bcdf6d88faab",
+      "name": "Stories",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9e04b7a2-5d03-49a9-b134-81f39643a11f",
+          "name": "Top Stories",
+          "request": {
+            "name": "Top Stories",
+            "description": {
+              "content": "The Top Stories API returns an array of articles currently on the specified section.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "{{section}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67bd0853-a845-47f7-83f3-8ad5ef25d2a6",
+              "name": "An array of articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "{{section}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"section\": \"string\",\n  \"last_updated\": \"string\",\n  \"num_results\": 377,\n  \"results\": [\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"byline\": \"string\",\n      \"item_type\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 4769,\n          \"width\": 9166,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 5894,\n          \"width\": 5491,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ],\n      \"short_url\": \"string\"\n    },\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"byline\": \"string\",\n      \"item_type\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 6332,\n          \"width\": 3906,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 3606,\n          \"width\": 8666,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ],\n      \"short_url\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8cf5a2af-1831-4751-a7a9-c3a14172e2ca",
+              "name": "Unauthorized request.  Make sure api-key is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "{{section}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c9928f55-e2f1-4a11-8264-331c5f472b8a",
+              "name": "Too many requests.  You reached your per minute or per day rate limit.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "{{section}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/topstories/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The section the story appears in.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "home",
+      "key": "section"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a330930d-f78b-434d-b509-704c55a27562",
+    "name": "Top Stories",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Top Stories API returns an array of articles currently on the specified section (arts, business, ...).\n\n```\n/{section}.json\n```\n\nUse home to get articles currently on the homepage.\n\n```\n/home.json\n```\n\nThe possible section value are: _arts, automobiles, books, business, fashion, food, health, home, insider, magazine, movies, national, nyregion, obituaries, opinion, politics, realestate, science, sports, sundayreview, technology, theater, tmagazine, travel, upshot, and world_.\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/topstories/v2/science.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

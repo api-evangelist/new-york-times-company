@@ -10,9 +10,9 @@ description: |
   api-key for authentication, and respond as JSON.
 image: https://avatars.githubusercontent.com/u/221409?v=4
 url: https://nytimes.com
-created: 2010-03-12
-modified: 2026-05-23
-specificationVersion: "0.20"
+created: 2010-03-12T00:00:00.000Z
+modified: 2026-05-23T00:00:00.000Z
+specificationVersion: '0.20'
 tags:
   - News
   - Media
@@ -110,15 +110,12 @@ apis:
         url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
       - type: OpenAPI
         url: openapi/article-search-v2-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/article-search.yaml
       - type: JSONSchema
         url: json-schema/article-schema.json
       - type: Example
         url: examples/article-search-example.json
       - type: SignUp
         url: https://developer.nytimes.com/accounts/create
-
   - name: Top Stories API
     description: |
       Returns an array of articles currently on a specified NYTimes.com section (or the homepage). 26
@@ -137,13 +134,10 @@ apis:
         url: https://developer.nytimes.com/docs/top-stories-product/1/overview
       - type: OpenAPI
         url: openapi/top-stories-v2-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/top-stories.yaml
       - type: JSONSchema
         url: json-schema/article-schema.json
       - type: Example
         url: examples/top-stories-home-example.json
-
   - name: Most Popular API
     description: |
       Returns the most emailed, most shared (Facebook), and most viewed articles on NYTimes.com for the
@@ -161,13 +155,10 @@ apis:
         url: https://developer.nytimes.com/docs/most-popular-product/1/overview
       - type: OpenAPI
         url: openapi/most-popular-api-v2-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/most-popular.yaml
       - type: JSONSchema
         url: json-schema/article-schema.json
       - type: Example
         url: examples/most-popular-emailed-example.json
-
   - name: Times Newswire API
     description: |
       An up-to-the-minute stream of metadata and links for articles as soon as they are published on
@@ -185,13 +176,10 @@ apis:
         url: https://developer.nytimes.com/docs/timeswire-product/1/overview
       - type: OpenAPI
         url: openapi/timeswire-v3-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/timeswire.yaml
       - type: JSONSchema
         url: json-schema/article-schema.json
       - type: Example
         url: examples/timeswire-content-example.json
-
   - name: Archive API
     description: |
       Returns an array of NYT articles for a given month, going back to 1851. Response fields mirror the
@@ -210,13 +198,10 @@ apis:
         url: https://developer.nytimes.com/docs/archive-product/1/overview
       - type: OpenAPI
         url: openapi/archive-api-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/archive.yaml
       - type: JSONSchema
         url: json-schema/article-schema.json
       - type: Example
         url: examples/archive-month-example.json
-
   - name: Books API
     description: |
       Provides information about NYT book reviews and The New York Times Best Sellers lists. Some lists
@@ -235,13 +220,10 @@ apis:
         url: https://developer.nytimes.com/docs/books-product/1/overview
       - type: OpenAPI
         url: openapi/books-api-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/books.yaml
       - type: JSONSchema
         url: json-schema/best-seller-book-schema.json
       - type: Example
         url: examples/books-best-sellers-list-example.json
-
   - name: Movie Reviews API
     description: |
       Search NYT movie reviews by keyword, filter by Critics' Picks, and retrieve metadata about Times
@@ -259,13 +241,10 @@ apis:
         url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
       - type: OpenAPI
         url: openapi/movie-reviews-v2-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/movie-reviews.yaml
       - type: JSONSchema
         url: json-schema/movie-review-schema.json
       - type: Example
         url: examples/movie-reviews-search-example.json
-
   - name: TimesTags API
     description: |
       Auto-suggest service over the New York Times controlled vocabulary used to build Times Topics pages
@@ -285,13 +264,10 @@ apis:
         url: https://developer.nytimes.com/docs/timestags-product/1/overview
       - type: OpenAPI
         url: openapi/times-tags-v3-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/times-tags.yaml
       - type: JSONSchema
         url: json-schema/tag-schema.json
       - type: Example
         url: examples/times-tags-example.json
-
   - name: Semantic API
     description: |
       Complements Article Search by exposing the full controlled vocabulary of over 100,000 people,
@@ -312,13 +288,10 @@ apis:
         url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
       - type: OpenAPI
         url: openapi/semantic-api-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/semantic.yaml
       - type: JSONSchema
         url: json-schema/concept-schema.json
       - type: Example
         url: examples/semantic-concept-example.json
-
   - name: Geographic API
     description: |
       Linked-data extension of the Semantic API that pairs the location concepts in the Times controlled
@@ -338,11 +311,8 @@ apis:
         url: https://developer.nytimes.com/docs/geo-product/1/overview
       - type: OpenAPI
         url: openapi/geo-api-v2-openapi.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/geo.yaml
       - type: Example
         url: examples/geo-query-example.json
-
   - name: Community API (Deprecated)
     description: |
       Get access to comments from registered users on New York Times articles. Marked deprecated by NYT;
