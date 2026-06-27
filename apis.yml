@@ -45,11 +45,11 @@ common:
     url: https://developer.nytimes.com/
   - type: APIs
     url: https://developer.nytimes.com/apis
-  - type: SignUp
+  - type: Signup
     url: https://developer.nytimes.com/accounts/create
   - type: FAQ
     url: https://developer.nytimes.com/faq
-  - type: TermsOfUse
+  - type: TermsOfService
     url: https://developer.nytimes.com/terms
   - type: AttributionGuidelines
     url: https://developer.nytimes.com/attribution
@@ -89,7 +89,7 @@ common:
     url: capabilities/archive-research.yaml
   - type: CapabilityWorkflow
     url: capabilities/culture-discovery.yaml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developer.nytimes.com/llms.txt
 apis:
   - name: Article Search API
@@ -112,9 +112,9 @@ apis:
         url: openapi/article-search-v2-openapi.yml
       - type: JSONSchema
         url: json-schema/article-schema.json
-      - type: Example
+      - type: Examples
         url: examples/article-search-example.json
-      - type: SignUp
+      - type: Signup
         url: https://developer.nytimes.com/accounts/create
   - name: Top Stories API
     description: |
@@ -136,7 +136,7 @@ apis:
         url: openapi/top-stories-v2-openapi.yml
       - type: JSONSchema
         url: json-schema/article-schema.json
-      - type: Example
+      - type: Examples
         url: examples/top-stories-home-example.json
   - name: Most Popular API
     description: |
@@ -157,7 +157,7 @@ apis:
         url: openapi/most-popular-api-v2-openapi.yml
       - type: JSONSchema
         url: json-schema/article-schema.json
-      - type: Example
+      - type: Examples
         url: examples/most-popular-emailed-example.json
   - name: Times Newswire API
     description: |
@@ -178,7 +178,7 @@ apis:
         url: openapi/timeswire-v3-openapi.yml
       - type: JSONSchema
         url: json-schema/article-schema.json
-      - type: Example
+      - type: Examples
         url: examples/timeswire-content-example.json
   - name: Archive API
     description: |
@@ -200,7 +200,7 @@ apis:
         url: openapi/archive-api-openapi.yml
       - type: JSONSchema
         url: json-schema/article-schema.json
-      - type: Example
+      - type: Examples
         url: examples/archive-month-example.json
   - name: Books API
     description: |
@@ -222,7 +222,7 @@ apis:
         url: openapi/books-api-openapi.yml
       - type: JSONSchema
         url: json-schema/best-seller-book-schema.json
-      - type: Example
+      - type: Examples
         url: examples/books-best-sellers-list-example.json
   - name: Movie Reviews API
     description: |
@@ -243,7 +243,7 @@ apis:
         url: openapi/movie-reviews-v2-openapi.yml
       - type: JSONSchema
         url: json-schema/movie-review-schema.json
-      - type: Example
+      - type: Examples
         url: examples/movie-reviews-search-example.json
   - name: TimesTags API
     description: |
@@ -266,7 +266,7 @@ apis:
         url: openapi/times-tags-v3-openapi.yml
       - type: JSONSchema
         url: json-schema/tag-schema.json
-      - type: Example
+      - type: Examples
         url: examples/times-tags-example.json
   - name: Semantic API
     description: |
@@ -290,7 +290,7 @@ apis:
         url: openapi/semantic-api-openapi.yml
       - type: JSONSchema
         url: json-schema/concept-schema.json
-      - type: Example
+      - type: Examples
         url: examples/semantic-concept-example.json
   - name: Geographic API
     description: |
@@ -311,7 +311,7 @@ apis:
         url: https://developer.nytimes.com/docs/geo-product/1/overview
       - type: OpenAPI
         url: openapi/geo-api-v2-openapi.yml
-      - type: Example
+      - type: Examples
         url: examples/geo-query-example.json
   - name: Community API (Deprecated)
     description: |
@@ -331,7 +331,7 @@ apis:
         url: https://developer.nytimes.com/docs/community-api-product/1/overview
       - type: OpenAPI
         url: openapi/community-api-v3-openapi.yml
-      - type: Example
+      - type: Examples
         url: examples/community-comments-example.json
       - type: Status
         url: https://developer.nytimes.com/docs/community-api-product/1/overview
