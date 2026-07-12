@@ -39,6 +39,12 @@ specifications:
   - name: API Commons Rate Limits 0.1
     url: https://github.com/apis-json/api-commons-rate-limits
 common:
+  - type: VulnerabilityDisclosure
+    url: security/new-york-times-company-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/new-york-times-company-domain-security.yml
+  - type: Authentication
+    url: authentication/new-york-times-company-authentication.yml
   - type: AboutCompany
     url: https://www.nytco.com/
   - type: DeveloperPortal

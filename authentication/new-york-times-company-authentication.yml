@@ -1,0 +1,28 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/archive-api-openapi.yml, openapi/article-search-v2-openapi.yml, openapi/books-api-openapi.yml,
+  openapi/community-api-v3-openapi.yml, openapi/geo-api-v2-openapi.yml, openapi/most-popular-api-v2-openapi.yml,
+  openapi/movie-reviews-v2-openapi.yml, openapi/semantic-api-openapi.yml, openapi/times-tags-v3-openapi.yml,
+  openapi/timeswire-v3-openapi.yml, openapi/top-stories-v2-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apikey
+  type: apiKey
+  in: query
+  parameter: api-key
+  sources:
+  - openapi/archive-api-openapi.yml
+  - openapi/article-search-v2-openapi.yml
+  - openapi/books-api-openapi.yml
+  - openapi/community-api-v3-openapi.yml
+  - openapi/geo-api-v2-openapi.yml
+  - openapi/most-popular-api-v2-openapi.yml
+  - openapi/movie-reviews-v2-openapi.yml
+  - openapi/semantic-api-openapi.yml
+  - openapi/times-tags-v3-openapi.yml
+  - openapi/timeswire-v3-openapi.yml
+  - openapi/top-stories-v2-openapi.yml
