@@ -2,11 +2,13 @@
   "repo": "new-york-times-company",
   "feeds": [
     {
-      "source": "https://open.nytimes.com/",
+      "source": "https://developer.nytimes.com/attribution",
+      "feed_url": "https://developer.nytimes.com/attribution",
+      "title": "",
       "saved": 0,
-      "error": "host open.nytimes.com blocked/unfetchable"
+      "method": "none"
     }
   ],
   "post_count": 1,
-  "fetched": "2026-06-27T12:55:56Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
