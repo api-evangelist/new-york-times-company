@@ -39,6 +39,8 @@ specifications:
   - name: API Commons Rate Limits 0.1
     url: https://github.com/apis-json/api-commons-rate-limits
 common:
+  - type: AgenticAccess
+    url: agentic-access/new-york-times-company-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/new-york-times-company-vulnerability-disclosure.yml
   - type: DomainSecurity
