@@ -1,0 +1,112 @@
+swagger: '2.0'
+info:
+  version: 2.0.0
+  title: Archive Reviews.json API
+  description: 'The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
+
+
+    ```
+
+    /{year}/{month}.json
+
+    ```
+
+
+    ## Example Call
+
+    ```
+
+    https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey
+
+    ```
+
+    '
+host: api.nytimes.com
+basePath: /svc/archive/v1
+schemes:
+- https
+produces:
+- application/json
+security:
+- apikey: []
+tags:
+- name: Reviews.json
+paths:
+  /reviews.json:
+    get:
+      summary: Reviews
+      description: Get book reviews.
+      operationId: GET_reviews-format
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: isbn
+        in: query
+        description: Searching by ISBN is the recommended method. You can enter 10- or 13-digit ISBNs.
+        type: integer
+      - name: title
+        in: query
+        description: You’ll need to enter the full title of the book. Spaces in the title will be converted into the characters %20.
+        type: string
+      - name: author
+        in: query
+        description: You’ll need to enter the author’s first and last name, separated by a space. This space will be converted into the characters %20.
+        type: string
+      responses:
+        '200':
+          description: Book reviews.
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              copyright:
+                type: string
+              num_results:
+                type: integer
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                    publication_dt:
+                      type: string
+                    byline:
+                      type: string
+                    book_title:
+                      type: string
+                    book_author:
+                      type: string
+                    summary:
+                      type: string
+                    isbn13:
+                      type: array
+                      items:
+                        type: string
+          examples:
+            application/json:
+              status: OK
+              copyright: Copyright (c) 2019 The New York Times Company.  All Rights Reserved.
+              num_results: 2
+              results:
+              - url: http://www.nytimes.com/2011/11/10/books/1q84-by-haruki-murakami-review.html
+                publication_dt: '2011-11-10'
+                byline: JANET MASLIN
+                book_title: 1Q84
+                book_author: Haruki Murakami
+                summary: In “1Q84,” the Japanese novelist Haruki Murakami writes about characters in a Tokyo with two moons.
+                isbn13:
+                - '9780307476463'
+      security:
+      - api-key: []
+      tags:
+      - Reviews.json
+securityDefinitions:
+  apikey:
+    type: apiKey
+    name: api-key
+    in: query

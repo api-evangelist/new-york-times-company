@@ -1,0 +1,76 @@
+swagger: '2.0'
+info:
+  version: 2.0.0
+  title: Archive Timestags API
+  description: 'The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
+
+
+    ```
+
+    /{year}/{month}.json
+
+    ```
+
+
+    ## Example Call
+
+    ```
+
+    https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey
+
+    ```
+
+    '
+host: api.nytimes.com
+basePath: /svc/archive/v1
+schemes:
+- https
+produces:
+- application/json
+security:
+- apikey: []
+tags:
+- name: Timestags
+paths:
+  /timestags:
+    get:
+      parameters:
+      - name: query
+        in: query
+        description: Your search query
+        type: string
+        required: true
+      - name: filter
+        in: query
+        description: 'If you do not specify a value for filter (see the Optional Parameters), your query will be matched to tags in all four Times dictionaries: subject, geographic location, organization and person. To use more than one, separate with commas.
+
+          '
+        required: false
+        type: string
+        enum:
+        - Des
+        - Geo
+        - Org
+        - Per
+      - name: max
+        in: query
+        description: Sets the maximum number of results
+        default: 10
+        required: false
+        type: integer
+      responses:
+        '200':
+          description: An array of tags
+          schema:
+            type: array
+            items:
+              type: array
+              items:
+                type: string
+      tags:
+      - Timestags
+securityDefinitions:
+  apikey:
+    type: apiKey
+    name: api-key
+    in: query

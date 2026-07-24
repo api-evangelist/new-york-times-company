@@ -1,64 +1,56 @@
 swagger: '2.0'
-basePath: /svc/mostpopular/v2
-host: api.nytimes.com
-schemes:
-  - https
 info:
   version: 2.0.0
-  title: Most Popular
-  description: |
-    Provides services for getting the most popular articles on NYTimes.com based on emails, shares, or views.
+  title: Archive Most Popular API
+  description: 'The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
 
-    Get most emailed articles for the last day:
-    ```
-    /emailed/1.json
-    ```
-
-    Get most shared articles on Facebook for the last day:
-    ```
-    /shared/1/facebook.json
-    ```
-
-    Get most viewed articles for the last seven days:
-    ```
-    /viewed/7.json
-    ```
-
-    ## Example Calls
-    ```
-    https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=yourkey
-    ```
 
     ```
-    https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key=yourkey
-    ```
+
+    /{year}/{month}.json
 
     ```
-    https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=yourkey
+
+
+    ## Example Call
+
     ```
+
+    https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey
+
+    ```
+
+    '
+host: api.nytimes.com
+basePath: /svc/archive/v1
+schemes:
+- https
 produces:
-  - application/json
+- application/json
 security:
-  - apikey: []
+- apikey: []
+tags:
+- name: Most Popular
 paths:
-  '/emailed/{period}.json':
+  /emailed/{period}.json:
     get:
       summary: Most emailed articles on NYTimes.com.
-      description: |
-        Returns an array of the most emailed articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).
+      description: 'Returns an array of the most emailed articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).
+
+        '
       parameters:
-        - name: period
-          in: path
-          description: 'Time period: 1, 7, or 30 days.'
-          required: true
-          type: integer
-          enum:
-            - 1
-            - 7
-            - 30
-          default: 1
+      - name: period
+        in: path
+        description: 'Time period: 1, 7, or 30 days.'
+        required: true
+        type: integer
+        enum:
+        - 1
+        - 7
+        - 30
+        default: 1
       tags:
-        - Most Popular
+      - Most Popular
       responses:
         '200':
           description: An array of articles.
@@ -79,24 +71,25 @@ paths:
           description: Unauthorized request.  Make sure api-key is set.
         '429':
           description: Too many requests.  You reached your per minute or per day rate limit.
-  '/shared/{period}.json':
+  /shared/{period}.json:
     get:
       summary: Most shared articles on NYTimes.com.
-      description: |
-        Returns an array of the most shared articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).
+      description: 'Returns an array of the most shared articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).
+
+        '
       parameters:
-        - name: period
-          in: path
-          description: 'Time period: 1, 7, or 30 days.'
-          required: true
-          type: integer
-          enum:
-            - 1
-            - 7
-            - 30
-          default: 1
+      - name: period
+        in: path
+        description: 'Time period: 1, 7, or 30 days.'
+        required: true
+        type: integer
+        enum:
+        - 1
+        - 7
+        - 30
+        default: 1
       tags:
-        - Most Popular
+      - Most Popular
       responses:
         '200':
           description: An array of articles.
@@ -117,34 +110,35 @@ paths:
           description: Unauthorized request.  Make sure api-key is set.
         '429':
           description: Too many requests.  You reached your per minute or per day rate limit.
-  '/shared/{period}/{share_type}.json':
+  /shared/{period}/{share_type}.json:
     get:
       summary: Most shared articles on NYTimes.com of specified share type.
-      description: |
-        Returns an array of the most shared articles by share type on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).
+      description: 'Returns an array of the most shared articles by share type on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).
+
+        '
       parameters:
-        - name: period
-          in: path
-          description: 'Time period: 1, 7, or 30 days.'
-          required: true
-          type: integer
-          enum:
-            - 1
-            - 7
-            - 30
-          default: 1
-        - name: share_type
-          in: path
-          description: 'Share type: email, facebook, or twitter.'
-          required: true
-          type: string
-          enum:
-            - email
-            - facebook
-            - twitter
-          default: facebook
+      - name: period
+        in: path
+        description: 'Time period: 1, 7, or 30 days.'
+        required: true
+        type: integer
+        enum:
+        - 1
+        - 7
+        - 30
+        default: 1
+      - name: share_type
+        in: path
+        description: 'Share type: email, facebook, or twitter.'
+        required: true
+        type: string
+        enum:
+        - email
+        - facebook
+        - twitter
+        default: facebook
       tags:
-        - Most Popular
+      - Most Popular
       responses:
         '200':
           description: An array of articles.
@@ -165,24 +159,25 @@ paths:
           description: Unauthorized request.  Make sure api-key is set.
         '429':
           description: Too many requests.  You reached your per minute or per day rate limit.
-  '/viewed/{period}.json':
+  /viewed/{period}.json:
     get:
       summary: Most viewed articles on NYTimes.com.
-      description: |
-        Returns an array of the most viewed articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).
+      description: 'Returns an array of the most viewed articles on NYTimes.com for specified period of time (1 day, 7 days, or 30 days).
+
+        '
       parameters:
-        - name: period
-          in: path
-          description: 'Time period: 1, 7, or 30 days.'
-          required: true
-          type: integer
-          enum:
-            - 1
-            - 7
-            - 30
-          default: 1
+      - name: period
+        in: path
+        description: 'Time period: 1, 7, or 30 days.'
+        required: true
+        type: integer
+        enum:
+        - 1
+        - 7
+        - 30
+        default: 1
       tags:
-        - Most Popular
+      - Most Popular
       responses:
         '200':
           description: An array of articles.
@@ -265,34 +260,6 @@ definitions:
           $ref: '#/definitions/Media'
       uri:
         type: string
-  Media:
-    type: object
-    properties:
-      type:
-        type: string
-      subtype:
-        type: string
-      caption:
-        type: string
-      copyright:
-        type: string
-      approved_for_syndication:
-        type: boolean
-      media-metadata:
-        type: array
-        items:
-          $ref: '#/definitions/MediaMetadata'
-  MediaMetadata:
-    type: object
-    properties:
-      url:
-        type: string
-      format:
-        type: string
-      height:
-        type: integer
-      width:
-        type: integer
   SharedArticle:
     type: object
     properties:
@@ -405,6 +372,34 @@ definitions:
           $ref: '#/definitions/Media'
       uri:
         type: string
+  MediaMetadata:
+    type: object
+    properties:
+      url:
+        type: string
+      format:
+        type: string
+      height:
+        type: integer
+      width:
+        type: integer
+  Media:
+    type: object
+    properties:
+      type:
+        type: string
+      subtype:
+        type: string
+      caption:
+        type: string
+      copyright:
+        type: string
+      approved_for_syndication:
+        type: boolean
+      media-metadata:
+        type: array
+        items:
+          $ref: '#/definitions/MediaMetadata'
 securityDefinitions:
   apikey:
     type: apiKey

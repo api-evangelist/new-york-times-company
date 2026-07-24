@@ -1,77 +1,79 @@
 swagger: '2.0'
-basePath: /svc/topstories/v2
-host: api.nytimes.com
-schemes:
-  - https
 info:
   version: 2.0.0
-  title: Top Stories
-  description: |
-    The Top Stories API returns an array of articles currently on the specified section (arts, business, ...).
+  title: Archive Stories API
+  description: 'The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
+
 
     ```
-    /{section}.json
-    ```
 
-    Use home to get articles currently on the homepage.
+    /{year}/{month}.json
 
     ```
-    /home.json
-    ```
 
-    The possible section value are: _arts, automobiles, books, business, fashion, food, health, home, insider, magazine, movies, national, nyregion, obituaries, opinion, politics, realestate, science, sports, sundayreview, technology, theater, tmagazine, travel, upshot, and world_.
 
     ## Example Call
-    ```
-    https://api.nytimes.com/svc/topstories/v2/science.json?api-key=yourkey
+
     ```
 
+    https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey
+
+    ```
+
+    '
+host: api.nytimes.com
+basePath: /svc/archive/v1
+schemes:
+- https
 produces:
-  - application/json
+- application/json
 security:
-  - apikey: []
+- apikey: []
+tags:
+- name: Stories
 paths:
-  '/{section}.json':
+  /{section}.json:
     get:
       summary: Top Stories
-      description: |
-        The Top Stories API returns an array of articles currently on the specified section.
+      description: 'The Top Stories API returns an array of articles currently on the specified section.
+
+        '
       parameters:
-        - name: section
-          in: path
-          description: The section the story appears in.
-          required: true
-          type: string
-          default: home
-          enum:
-            - arts
-            - automobiles
-            - books
-            - business
-            - fashion
-            - food
-            - health
-            - home
-            - insider
-            - magazine
-            - movies
-            - national
-            - nyregion
-            - obituaries
-            - opinion
-            - politics
-            - realestate
-            - science
-            - sports
-            - sundayreview
-            - technology
-            - theater
-            - tmagazine
-            - travel
-            - upshot
-            - world
+      - name: section
+        in: path
+        description: The section the story appears in.
+        required: true
+        type: string
+        default: home
+        enum:
+        - arts
+        - automobiles
+        - books
+        - business
+        - fashion
+        - food
+        - health
+        - home
+        - insider
+        - magazine
+        - movies
+        - national
+        - nyregion
+        - obituaries
+        - opinion
+        - politics
+        - realestate
+        - science
+        - sports
+        - sundayreview
+        - technology
+        - theater
+        - tmagazine
+        - travel
+        - upshot
+        - world
       tags:
-        - Stories
+      - Stories
       responses:
         '200':
           description: An array of articles.

@@ -1,47 +1,58 @@
 swagger: '2.0'
-basePath: /svc/archive/v1
-host: api.nytimes.com
 info:
   version: 2.0.0
-  title: Archive
-  description: |
-    The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
+  title: Archive API
+  description: 'The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
+
 
     ```
+
     /{year}/{month}.json
+
     ```
+
 
     ## Example Call
+
     ```
+
     https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey
+
     ```
+
+    '
+host: api.nytimes.com
+basePath: /svc/archive/v1
 schemes:
-  - https
+- https
 produces:
-  - application/json
+- application/json
 security:
-  - apikey: []
+- apikey: []
+tags:
+- name: Archive
 paths:
-  '/{year}/{month}.json':
+  /{year}/{month}.json:
     get:
       summary: Returns an array of articles for a given month.
-      description: |
-        Pass in year and month and get back JSON with all articles for that month. The response can be big (~20 megabytes) and contain thousands of articles, depending on the year and month.
+      description: 'Pass in year and month and get back JSON with all articles for that month. The response can be big (~20 megabytes) and contain thousands of articles, depending on the year and month.
+
+        '
       parameters:
-        - name: year
-          in: path
-          description: 'Year: 1851-2019'
-          required: true
-          type: integer
-          default: 2018
-        - name: month
-          in: path
-          description: 'Year: 1-12'
-          required: true
-          type: integer
-          default: 9
+      - name: year
+        in: path
+        description: 'Year: 1851-2019'
+        required: true
+        type: integer
+        default: 2018
+      - name: month
+        in: path
+        description: 'Year: 1-12'
+        required: true
+        type: integer
+        default: 9
       tags:
-        - Archive
+      - Archive
       responses:
         '200':
           description: An array of articles.
@@ -80,6 +91,53 @@ paths:
         '429':
           description: Too many requests.  You reached your per minute or per day rate limit.
 definitions:
+  Headline:
+    type: object
+    properties:
+      main:
+        type: string
+      kicker:
+        type: string
+      content_kicker:
+        type: string
+      print_headline:
+        type: string
+      name:
+        type: string
+      seo:
+        type: string
+      sub:
+        type: string
+  Person:
+    type: object
+    properties:
+      firstname:
+        type: string
+      middlename:
+        type: string
+      lastname:
+        type: string
+      qualifier:
+        type: string
+      title:
+        type: string
+      role:
+        type: string
+      organization:
+        type: string
+      rank:
+        type: integer
+  Byline:
+    type: object
+    properties:
+      original:
+        type: string
+      person:
+        type: array
+        items:
+          $ref: '#/definitions/Person'
+      organization:
+        type: string
   Article:
     type: object
     properties:
@@ -119,45 +177,6 @@ definitions:
         type: integer
       uri:
         type: string
-  Byline:
-    type: object
-    properties:
-      original:
-        type: string
-      person:
-        type: array
-        items:
-          $ref: '#/definitions/Person'
-      organization:
-        type: string
-  Headline:
-    type: object
-    properties:
-      main:
-        type: string
-      kicker:
-        type: string
-      content_kicker:
-        type: string
-      print_headline:
-        type: string
-      name:
-        type: string
-      seo:
-        type: string
-      sub:
-        type: string
-  Keyword:
-    type: object
-    properties:
-      name:
-        type: string
-      value:
-        type: string
-      rank:
-        type: integer
-      major:
-        type: string
   Multimedia:
     type: object
     properties:
@@ -188,25 +207,17 @@ definitions:
             type: integer
       crop_name:
         type: string
-  Person:
+  Keyword:
     type: object
     properties:
-      firstname:
+      name:
         type: string
-      middlename:
-        type: string
-      lastname:
-        type: string
-      qualifier:
-        type: string
-      title:
-        type: string
-      role:
-        type: string
-      organization:
+      value:
         type: string
       rank:
         type: integer
+      major:
+        type: string
 securityDefinitions:
   apikey:
     type: apiKey

@@ -1,0 +1,279 @@
+swagger: '2.0'
+info:
+  version: 2.0.0
+  title: Archive Search API
+  description: 'The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
+
+
+    ```
+
+    /{year}/{month}.json
+
+    ```
+
+
+    ## Example Call
+
+    ```
+
+    https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey
+
+    ```
+
+    '
+host: api.nytimes.com
+basePath: /svc/archive/v1
+schemes:
+- https
+produces:
+- application/json
+security:
+- apikey: []
+tags:
+- name: Search
+paths:
+  /articlesearch.json:
+    get:
+      summary: Returns an array of articles.
+      description: Search for NYT articles by keywords, filters and facets.
+      parameters:
+      - name: begin_date
+        in: query
+        description: Begin date (e.g. 20120101)
+        required: false
+        type: string
+        pattern: ^\d{8}$
+      - name: end_date
+        in: query
+        description: End date (e.g. 20121231)
+        required: false
+        type: string
+        pattern: ^\d{8}$
+      - name: facet
+        in: query
+        description: Whether to show facet counts
+        required: false
+        type: string
+        enum:
+        - false
+        - true
+      - name: facet_fields
+        in: query
+        description: Facets
+        required: false
+        type: string
+        enum:
+        - day_of_week
+        - document_type
+        - ingredients
+        - news_desk
+        - pub_month
+        - pub_year
+        - section_name
+        - source
+        - subsection_name
+        - type_of_material
+      - name: facet_filter
+        in: query
+        description: Have facet counts use filters
+        required: false
+        type: string
+        enum:
+        - false
+        - true
+      - name: fl
+        in: query
+        description: Field list
+        required: false
+        type: string
+      - name: fq
+        in: query
+        description: Filter query
+        required: false
+        type: string
+      - name: page
+        in: query
+        description: Page number (0, 1, ...)
+        required: false
+        minimum: 0
+        maximum: 100
+        type: integer
+      - name: q
+        in: query
+        description: Query
+        required: false
+        type: string
+      - name: sort
+        in: query
+        description: Sort order
+        required: false
+        type: string
+        enum:
+        - newest
+        - oldest
+        - relevance
+      tags:
+      - Search
+      responses:
+        '200':
+          description: An array of articles.
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              copyright:
+                type: string
+              response:
+                type: object
+                properties:
+                  docs:
+                    type: array
+                    items:
+                      $ref: '#/definitions/Article'
+                  meta:
+                    type: object
+                    properties:
+                      hits:
+                        type: integer
+                      offset:
+                        type: integer
+                      time:
+                        type: integer
+        '401':
+          description: Unauthorized request.  Make sure api-key is set.
+        '429':
+          description: Too many requests.  You reached your per minute or per day rate limit.
+definitions:
+  Headline:
+    type: object
+    properties:
+      main:
+        type: string
+      kicker:
+        type: string
+      content_kicker:
+        type: string
+      print_headline:
+        type: string
+      name:
+        type: string
+      seo:
+        type: string
+      sub:
+        type: string
+  Person:
+    type: object
+    properties:
+      firstname:
+        type: string
+      middlename:
+        type: string
+      lastname:
+        type: string
+      qualifier:
+        type: string
+      title:
+        type: string
+      role:
+        type: string
+      organization:
+        type: string
+      rank:
+        type: integer
+  Byline:
+    type: object
+    properties:
+      original:
+        type: string
+      person:
+        type: array
+        items:
+          $ref: '#/definitions/Person'
+      organization:
+        type: string
+  Article:
+    type: object
+    properties:
+      web_url:
+        type: string
+      snippet:
+        type: string
+      print_page:
+        type: integer
+      source:
+        type: string
+      multimedia:
+        type: array
+        items:
+          $ref: '#/definitions/Multimedia'
+      headline:
+        $ref: '#/definitions/Headline'
+      keywords:
+        type: array
+        items:
+          $ref: '#/definitions/Keyword'
+      pub_date:
+        type: string
+      document_type:
+        type: string
+      news_desk:
+        type: string
+      byline:
+        $ref: '#/definitions/Byline'
+      type_of_material:
+        type: string
+      _id:
+        type: string
+      word_count:
+        type: integer
+      score:
+        type: integer
+      uri:
+        type: string
+  Multimedia:
+    type: object
+    properties:
+      rank:
+        type: integer
+      subtype:
+        type: string
+      caption:
+        type: string
+      credit:
+        type: string
+      type:
+        type: string
+      url:
+        type: string
+      height:
+        type: integer
+      width:
+        type: integer
+      legacy:
+        type: object
+        properties:
+          xlarge:
+            type: string
+          xlargewidth:
+            type: integer
+          xlargeheight:
+            type: integer
+      crop_name:
+        type: string
+  Keyword:
+    type: object
+    properties:
+      name:
+        type: string
+      value:
+        type: string
+      rank:
+        type: integer
+      major:
+        type: string
+securityDefinitions:
+  apikey:
+    type: apiKey
+    name: api-key
+    in: query
