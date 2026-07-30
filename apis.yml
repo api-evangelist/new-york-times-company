@@ -8,6 +8,19 @@ description: |
   vocabulary that powers Times Topics (TimesTags), the Semantic API, and a Geographic API that pairs Times
   geo-tagged content with the GeoNames database. All APIs share api.nytimes.com as the host, use a query-string
   api-key for authentication, and respond as JSON.
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://avatars.githubusercontent.com/u/221409?v=4
 url: https://nytimes.com
 created: 2010-03-12T00:00:00.000Z
@@ -100,249 +113,1026 @@ common:
   - type: LlmsText
     url: https://developer.nytimes.com/llms.txt
 apis:
-  - name: Article Search API
-    description: |
-      Look up New York Times articles by keyword. Supports filtering with Lucene-style filter queries (fq=...)
-      against an Elasticsearch-backed index, facets, date range filters, and pagination up to 100 pages of
-      10 results each (1,000 results max). Coverage runs from 1851 to today.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
-    baseURL: https://api.nytimes.com/svc/search/v2
-    tags:
-      - Articles
-      - Search
-      - Elasticsearch
-      - News
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
-      - type: OpenAPI
-        url: openapi/article-search-v2-openapi.yml
-      - type: JSONSchema
-        url: json-schema/article-schema.json
-      - type: Examples
-        url: examples/article-search-example.json
-      - type: Signup
-        url: https://developer.nytimes.com/accounts/create
-  - name: Top Stories API
-    description: |
-      Returns an array of articles currently on a specified NYTimes.com section (or the homepage). 26
-      sections are supported including arts, business, opinion, politics, science, sports, technology,
-      upshot, and world.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/top-stories-product/1/overview
-    baseURL: https://api.nytimes.com/svc/topstories/v2
-    tags:
-      - Articles
-      - Top Stories
-      - Sections
-      - News
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/top-stories-product/1/overview
-      - type: OpenAPI
-        url: openapi/top-stories-v2-openapi.yml
-      - type: JSONSchema
-        url: json-schema/article-schema.json
-      - type: Examples
-        url: examples/top-stories-home-example.json
-  - name: Most Popular API
-    description: |
-      Returns the most emailed, most shared (Facebook), and most viewed articles on NYTimes.com for the
-      last 1, 7, or 30 days.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/most-popular-product/1/overview
-    baseURL: https://api.nytimes.com/svc/mostpopular/v2
-    tags:
-      - Articles
-      - Most Popular
-      - Analytics
-      - Sharing
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/most-popular-product/1/overview
-      - type: OpenAPI
-        url: openapi/most-popular-api-v2-openapi.yml
-      - type: JSONSchema
-        url: json-schema/article-schema.json
-      - type: Examples
-        url: examples/most-popular-emailed-example.json
-  - name: Times Newswire API
-    description: |
-      An up-to-the-minute stream of metadata and links for articles as soon as they are published on
-      NYTimes.com. Can be filtered by source (all, nyt, iht) and one or more sections.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/timeswire-product/1/overview
-    baseURL: https://api.nytimes.com/svc/news/v3
-    tags:
-      - Articles
-      - Firehose
-      - Newswire
-      - Real Time
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/timeswire-product/1/overview
-      - type: OpenAPI
-        url: openapi/timeswire-v3-openapi.yml
-      - type: JSONSchema
-        url: json-schema/article-schema.json
-      - type: Examples
-        url: examples/timeswire-content-example.json
-  - name: Archive API
-    description: |
-      Returns an array of NYT articles for a given month, going back to 1851. Response fields mirror the
-      Article Search API. Useful for bulk-loading article metadata locally. Responses can be ~20MB and
-      contain thousands of articles per month.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/archive-product/1/overview
-    baseURL: https://api.nytimes.com/svc/archive/v1
-    tags:
-      - Articles
-      - Archive
-      - History
-      - Bulk Data
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/archive-product/1/overview
-      - type: OpenAPI
-        url: openapi/archive-api-openapi.yml
-      - type: JSONSchema
-        url: json-schema/article-schema.json
-      - type: Examples
-        url: examples/archive-month-example.json
-  - name: Books API
-    description: |
-      Provides information about NYT book reviews and The New York Times Best Sellers lists. Some lists
-      are weekly and some monthly. Supports current and historical date lookups, list metadata, and
-      review lookup by author, ISBN, or title.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/books-product/1/overview
-    baseURL: https://api.nytimes.com/svc/books/v3
-    tags:
-      - Books
-      - Best Sellers
-      - Reviews
-      - Lists
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/books-product/1/overview
-      - type: OpenAPI
-        url: openapi/books-api-openapi.yml
-      - type: JSONSchema
-        url: json-schema/best-seller-book-schema.json
-      - type: Examples
-        url: examples/books-best-sellers-list-example.json
-  - name: Movie Reviews API
-    description: |
-      Search NYT movie reviews by keyword, filter by Critics' Picks, and retrieve metadata about Times
-      movie critics.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
-    baseURL: https://api.nytimes.com/svc/movies/v2
-    tags:
-      - Movies
-      - Reviews
-      - Critics
-      - Culture
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
-      - type: OpenAPI
-        url: openapi/movie-reviews-v2-openapi.yml
-      - type: JSONSchema
-        url: json-schema/movie-review-schema.json
-      - type: Examples
-        url: examples/movie-reviews-search-example.json
-  - name: TimesTags API
-    description: |
-      Auto-suggest service over the New York Times controlled vocabulary used to build Times Topics pages
-      (approximately 27,000 tags: 3,000 Descriptors, 1,500 Geographic, 7,500 Organizations, 15,000 People).
-      Useful for building tag pickers, normalizing entity names, or feeding the Article Search fq=
-      parameter.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/timestags-product/1/overview
-    baseURL: https://api.nytimes.com/svc/suggest/v1
-    tags:
-      - Tags
-      - Controlled Vocabulary
-      - Semantic
-      - Auto Suggest
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/timestags-product/1/overview
-      - type: OpenAPI
-        url: openapi/times-tags-v3-openapi.yml
-      - type: JSONSchema
-        url: json-schema/tag-schema.json
-      - type: Examples
-        url: examples/times-tags-example.json
-  - name: Semantic API
-    description: |
-      Complements Article Search by exposing the full controlled vocabulary of over 100,000 people,
-      places, organizations, and descriptors used as metadata by The New York Times since 1981. Returns
-      the full Times Topics record for a concept, including ticker symbols, related URLs, taxonomic
-      relations, and combinations of search criteria.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/semantic-api-product/1/overview
-    baseURL: https://api.nytimes.com/svc/semantic/v2/concept
-    tags:
-      - Semantic
-      - Concepts
-      - Linked Data
-      - Controlled Vocabulary
-      - Entities
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
-      - type: OpenAPI
-        url: openapi/semantic-api-openapi.yml
-      - type: JSONSchema
-        url: json-schema/concept-schema.json
-      - type: Examples
-        url: examples/semantic-concept-example.json
-  - name: Geographic API
-    description: |
-      Linked-data extension of the Semantic API that pairs the location concepts in the Times controlled
-      vocabulary with the GeoNames database, returning a normalized record for places (events, venues,
-      film ratings, etc.) with lat/long, bounding-box, and date-range filtering.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/geo-product/1/overview
-    baseURL: https://api.nytimes.com/svc/semantic/v2/geocodes
-    tags:
-      - Geographic
-      - Places
-      - Linked Data
-      - GeoNames
-      - Events
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/geo-product/1/overview
-      - type: OpenAPI
-        url: openapi/geo-api-v2-openapi.yml
-      - type: Examples
-        url: examples/geo-query-example.json
-  - name: Community API (Deprecated)
-    description: |
-      Get access to comments from registered users on New York Times articles. Marked deprecated by NYT;
-      a replacement was in progress at the time the spec was published. Documented here for completeness
-      and historical use only. Documented daily limit was 5,000 requests per day.
-    image: https://avatars.githubusercontent.com/u/221409?v=4
-    humanURL: https://developer.nytimes.com/docs/community-api-product/1/overview
-    baseURL: http://api.nytimes.com/svc/community/v3
-    tags:
-      - Community
-      - Comments
-      - User Generated Content
-      - Deprecated
-    properties:
-      - type: Documentation
-        url: https://developer.nytimes.com/docs/community-api-product/1/overview
-      - type: OpenAPI
-        url: openapi/community-api-v3-openapi.yml
-      - type: Examples
-        url: examples/community-comments-example.json
-      - type: Status
-        url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-archive-api
+  name: The New York Times Company Archive API
+  description: The Archive API from The New York Times Company — 1 operation(s) for archive.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Archive
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-archive-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-content-api
+  name: The New York Times Company Content API
+  description: The Content API from The New York Times Company — 2 operation(s) for content.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-content-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-content-json-api
+  name: The New York Times Company Content.json API
+  description: The Content.json API from The New York Times Company — 1 operation(s) for content.json.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Content.json
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-content-json-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-events-api
+  name: The New York Times Company Events API
+  description: The Events API from The New York Times Company — 1 operation(s) for events.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-events-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-lists-api
+  name: The New York Times Company Lists API
+  description: The Lists API from The New York Times Company — 4 operation(s) for lists.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-lists-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-lists-json-api
+  name: The New York Times Company Lists.json API
+  description: The Lists.json API from The New York Times Company — 1 operation(s) for lists.json.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Lists.json
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-lists-json-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-most-popular-api
+  name: The New York Times Company Most Popular API
+  description: The Most Popular API from The New York Times Company — 4 operation(s) for most popular.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Most Popular
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-most-popular-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-movies-api
+  name: The New York Times Company Movies API
+  description: The Movies API from The New York Times Company — 3 operation(s) for movies.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Movies
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-movies-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-name-api
+  name: The New York Times Company Name API
+  description: The Name API from The New York Times Company — 1 operation(s) for name.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Name
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-name-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-reviews-json-api
+  name: The New York Times Company Reviews.json API
+  description: The Reviews.json API from The New York Times Company — 1 operation(s) for reviews.json.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Reviews.json
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-reviews-json-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-search-api
+  name: The New York Times Company Search API
+  description: The Search API from The New York Times Company — 1 operation(s) for search.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-search-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-search-json-api
+  name: The New York Times Company Search.json API
+  description: The Search.json API from The New York Times Company — 1 operation(s) for search.json.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Search.json
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-search-json-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-stories-api
+  name: The New York Times Company Stories API
+  description: The Stories API from The New York Times Company — 1 operation(s) for stories.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Stories
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-stories-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-timestags-api
+  name: The New York Times Company Timestags API
+  description: The Timestags API from The New York Times Company — 1 operation(s) for timestags.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - Timestags
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-timestags-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+- aid: new-york-times-company:new-york-times-company-user-content-api
+  name: The New York Times Company User Content API
+  description: The User Content API from The New York Times Company — 4 operation(s) for user content.
+  humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  baseURL: https://api.nytimes.com/svc/search/v2
+  tags:
+  - User Content
+  properties:
+  - type: OpenAPI
+    url: openapi/new-york-times-company-user-content-api-openapi.yml
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/articlesearch-product/1/overview
+  - type: JSONSchema
+    url: json-schema/article-schema.json
+  - type: Examples
+    url: examples/article-search-example.json
+  - type: Signup
+    url: https://developer.nytimes.com/accounts/create
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/top-stories-product/1/overview
+  - type: Examples
+    url: examples/top-stories-home-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/most-popular-product/1/overview
+  - type: Examples
+    url: examples/most-popular-emailed-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timeswire-product/1/overview
+  - type: Examples
+    url: examples/timeswire-content-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/archive-product/1/overview
+  - type: Examples
+    url: examples/archive-month-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/books-product/1/overview
+  - type: JSONSchema
+    url: json-schema/best-seller-book-schema.json
+  - type: Examples
+    url: examples/books-best-sellers-list-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/movie-reviews-api/1/overview
+  - type: JSONSchema
+    url: json-schema/movie-review-schema.json
+  - type: Examples
+    url: examples/movie-reviews-search-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/timestags-product/1/overview
+  - type: JSONSchema
+    url: json-schema/tag-schema.json
+  - type: Examples
+    url: examples/times-tags-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/semantic-api-product/1/overview
+  - type: JSONSchema
+    url: json-schema/concept-schema.json
+  - type: Examples
+    url: examples/semantic-concept-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/geo-product/1/overview
+  - type: Examples
+    url: examples/geo-query-example.json
+  - type: Documentation
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
+  - type: Examples
+    url: examples/community-comments-example.json
+  - type: Status
+    url: https://developer.nytimes.com/docs/community-api-product/1/overview
 maintainers:
   - FN: API Evangelist
     url: https://apievangelist.com
