@@ -1,0 +1,42 @@
+{
+  "provider": "new-york-times-company",
+  "sources": [
+    "new-york-times-company-archive-api-openapi.yml",
+    "new-york-times-company-content-api-openapi.yml",
+    "new-york-times-company-content-json-api-openapi.yml",
+    "new-york-times-company-events-api-openapi.yml",
+    "new-york-times-company-lists-api-openapi.yml",
+    "new-york-times-company-lists-json-api-openapi.yml",
+    "new-york-times-company-most-popular-api-openapi.yml",
+    "new-york-times-company-movies-api-openapi.yml",
+    "new-york-times-company-name-api-openapi.yml",
+    "new-york-times-company-reviews-json-api-openapi.yml",
+    "new-york-times-company-search-api-openapi.yml",
+    "new-york-times-company-search-json-api-openapi.yml",
+    "new-york-times-company-stories-api-openapi.yml",
+    "new-york-times-company-timestags-api-openapi.yml",
+    "new-york-times-company-user-content-api-openapi.yml"
+  ],
+  "outputs": [
+    "new-york-times-company-archive-api-openapi.yml",
+    "new-york-times-company-content-api-openapi.yml",
+    "new-york-times-company-content-json-api-openapi.yml",
+    "new-york-times-company-events-api-openapi.yml",
+    "new-york-times-company-lists-api-openapi.yml",
+    "new-york-times-company-lists-json-api-openapi.yml",
+    "new-york-times-company-most-popular-api-openapi.yml",
+    "new-york-times-company-movies-api-openapi.yml",
+    "new-york-times-company-name-api-openapi.yml",
+    "new-york-times-company-reviews-json-api-openapi.yml",
+    "new-york-times-company-search-api-openapi.yml",
+    "new-york-times-company-search-json-api-openapi.yml",
+    "new-york-times-company-stories-api-openapi.yml",
+    "new-york-times-company-timestags-api-openapi.yml",
+    "new-york-times-company-user-content-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
