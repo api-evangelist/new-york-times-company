@@ -104,12 +104,6 @@ common:
     url: rate-limits/new-york-times-company-rate-limits.yml
   - type: FinOps
     url: finops/new-york-times-company-finops.yml
-  - type: CapabilityWorkflow
-    url: capabilities/newsroom-monitoring.yaml
-  - type: CapabilityWorkflow
-    url: capabilities/archive-research.yaml
-  - type: CapabilityWorkflow
-    url: capabilities/culture-discovery.yaml
   - type: LlmsText
     url: https://developer.nytimes.com/llms.txt
 apis:
