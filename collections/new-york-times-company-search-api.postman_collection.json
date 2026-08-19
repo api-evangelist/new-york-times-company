@@ -1,0 +1,373 @@
+{
+  "item": [
+    {
+      "id": "c9a220c7-6182-4496-8fa4-d1474d071dee",
+      "name": "Search",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e39dd877-7e48-49bb-a4ae-fe748c6e8cb8",
+          "name": "Returns an array of articles.",
+          "request": {
+            "name": "Returns an array of articles.",
+            "description": {
+              "content": "Search for NYT articles by keywords, filters and facets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articlesearch.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "begin_date",
+                  "value": "<string>",
+                  "description": "Begin date (e.g. 20120101)"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>",
+                  "description": "End date (e.g. 20121231)"
+                },
+                {
+                  "disabled": false,
+                  "key": "facet",
+                  "value": "<string>",
+                  "description": "Whether to show facet counts"
+                },
+                {
+                  "disabled": false,
+                  "key": "facet_fields",
+                  "value": "<string>",
+                  "description": "Facets"
+                },
+                {
+                  "disabled": false,
+                  "key": "facet_filter",
+                  "value": "<string>",
+                  "description": "Have facet counts use filters"
+                },
+                {
+                  "disabled": false,
+                  "key": "fl",
+                  "value": "<string>",
+                  "description": "Field list"
+                },
+                {
+                  "disabled": false,
+                  "key": "fq",
+                  "value": "<string>",
+                  "description": "Filter query"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Page number (0, 1, ...)"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Query"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Sort order"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73def0d3-e95f-4a4c-8a33-4f4bf775403a",
+              "name": "An array of articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articlesearch.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "begin_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet_filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fq",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"response\": {\n    \"docs\": [\n      {\n        \"web_url\": \"string\",\n        \"snippet\": \"string\",\n        \"print_page\": 8522,\n        \"source\": \"string\",\n        \"multimedia\": [\n          {\n            \"rank\": 2090,\n            \"subtype\": \"string\",\n            \"caption\": \"string\",\n            \"credit\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\",\n            \"height\": 7356,\n            \"width\": 274,\n            \"legacy\": {\n              \"xlarge\": \"string\",\n              \"xlargewidth\": 9763,\n              \"xlargeheight\": 7268\n            },\n            \"crop_name\": \"string\"\n          },\n          {\n            \"rank\": 2518,\n            \"subtype\": \"string\",\n            \"caption\": \"string\",\n            \"credit\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\",\n            \"height\": 6101,\n            \"width\": 8910,\n            \"legacy\": {\n              \"xlarge\": \"string\",\n              \"xlargewidth\": 4008,\n              \"xlargeheight\": 1992\n            },\n            \"crop_name\": \"string\"\n          }\n        ],\n        \"headline\": {\n          \"main\": \"string\",\n          \"kicker\": \"string\",\n          \"content_kicker\": \"string\",\n          \"print_headline\": \"string\",\n          \"name\": \"string\",\n          \"seo\": \"string\",\n          \"sub\": \"string\"\n        },\n        \"keywords\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\",\n            \"rank\": 9460,\n            \"major\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\",\n            \"rank\": 2800,\n            \"major\": \"string\"\n          }\n        ],\n        \"pub_date\": \"string\",\n        \"document_type\": \"string\",\n        \"news_desk\": \"string\",\n        \"byline\": {\n          \"original\": \"string\",\n          \"person\": [\n            {\n              \"firstname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"middlename\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"lastname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualifier\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"title\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"role\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"organization\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rank\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"firstname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"middlename\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"lastname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualifier\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"title\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"role\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"organization\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rank\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"organization\": \"string\"\n        },\n        \"type_of_material\": \"string\",\n        \"_id\": \"string\",\n        \"word_count\": 3265,\n        \"score\": 1336,\n        \"uri\": \"string\"\n      },\n      {\n        \"web_url\": \"string\",\n        \"snippet\": \"string\",\n        \"print_page\": 5506,\n        \"source\": \"string\",\n        \"multimedia\": [\n          {\n            \"rank\": 9456,\n            \"subtype\": \"string\",\n            \"caption\": \"string\",\n            \"credit\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\",\n            \"height\": 3030,\n            \"width\": 1743,\n            \"legacy\": {\n              \"xlarge\": \"string\",\n              \"xlargewidth\": 7456,\n              \"xlargeheight\": 1641\n            },\n            \"crop_name\": \"string\"\n          },\n          {\n            \"rank\": 1898,\n            \"subtype\": \"string\",\n            \"caption\": \"string\",\n            \"credit\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\",\n            \"height\": 7081,\n            \"width\": 3127,\n            \"legacy\": {\n              \"xlarge\": \"string\",\n              \"xlargewidth\": 5463,\n              \"xlargeheight\": 1844\n            },\n            \"crop_name\": \"string\"\n          }\n        ],\n        \"headline\": {\n          \"main\": \"string\",\n          \"kicker\": \"string\",\n          \"content_kicker\": \"string\",\n          \"print_headline\": \"string\",\n          \"name\": \"string\",\n          \"seo\": \"string\",\n          \"sub\": \"string\"\n        },\n        \"keywords\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\",\n            \"rank\": 7564,\n            \"major\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\",\n            \"rank\": 4993,\n            \"major\": \"string\"\n          }\n        ],\n        \"pub_date\": \"string\",\n        \"document_type\": \"string\",\n        \"news_desk\": \"string\",\n        \"byline\": {\n          \"original\": \"string\",\n          \"person\": [\n            {\n              \"firstname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"middlename\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"lastname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualifier\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"title\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"role\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"organization\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rank\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"firstname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"middlename\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"lastname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualifier\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"title\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"role\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"organization\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rank\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"organization\": \"string\"\n        },\n        \"type_of_material\": \"string\",\n        \"_id\": \"string\",\n        \"word_count\": 8805,\n        \"score\": 7353,\n        \"uri\": \"string\"\n      }\n    ],\n    \"meta\": {\n      \"hits\": 731,\n      \"offset\": 4061,\n      \"time\": 6761\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13cf0d6a-ed7b-4745-935b-f176240a4f0f",
+              "name": "Unauthorized request.  Make sure api-key is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articlesearch.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "begin_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet_filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fq",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3035b3ec-db93-406e-a49d-7802f728a991",
+              "name": "Too many requests.  You reached your per minute or per day rate limit.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articlesearch.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "begin_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "facet_filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fq",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/archive/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "74dabc15-1e1d-4a0a-92a1-9e4a814b4a07",
+    "name": "Archive Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).\n\n```\n/{year}/{month}.json\n```\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

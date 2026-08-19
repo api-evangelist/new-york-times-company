@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "2299325f-1373-4878-a8a7-b23b0d39da01",
+      "name": "Search.json",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5839f9ee-a167-4523-8a59-5747953afd20",
+          "name": "/search.json",
+          "request": {
+            "name": "/search.json",
+            "description": {},
+            "url": {
+              "path": [
+                "search.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) Precedes the search term string. Used in a Search Query. Except for &lt;specific_concept_name&gt;, Search Query will take the required parameters listed above (&lt;concept_type&gt;, &lt;concept_uri&gt;, &lt;article_uri&gt;) as an optional_parameter in addition to the query=&lt;query_term&gt;."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "10",
+                  "description": "Integer value for the index count from the first concept to the last concept, sorted alphabetically. Used in a Search Query. A Search Query will return up to 10 concepts in its results."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "\"all\" or comma-separated list of specific optional fields: pages, ticker_symbol, links, taxonomy, combinations, geocodes, article_list, scope_notes, search_api_query\n\nOptional fields are returned in result_set. They are briefly explained here:\n\npages: A list of topic pages associated with a specific concept.\nticker_symbol: If this concept is a publicly traded company, this field contains the ticker symbol.\nlinks: A list of links from this concept to external data resources.\ntaxonomy: For descriptor concepts, this field returns a list of taxonomic relations to other concepts.\ncombinations: For descriptor concepts, this field returns a list of the specific meanings tis concept takes on when combined with other concepts.\ngeocodes: For geographic concepts, the full GIS record from geonames.\narticle_list: A list of up to 10 articles associated with this concept.\nscope_notes: Scope notes contains clarifications and meaning definitions that explicate the relationship between the concept and an article.\nsearch_api_query: Returns the request one would need to submit to the Article Search API to obtain a list of articles annotated with this concept.\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fba01776-33c7-42ae-8f97-da8bbfd06220",
+              "name": "An array of Concepts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "10"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 5707,\n  \"results\": [\n    {\n      \"concept_id\": 4681,\n      \"concept_name\": \"string\",\n      \"is_times_tag\": 4679,\n      \"concept_status\": \"string\",\n      \"vernacular\": \"string\",\n      \"concept_type\": \"string\",\n      \"concept_created\": \"string\",\n      \"concept_updated\": \"string\"\n    },\n    {\n      \"concept_id\": 9860,\n      \"concept_name\": \"string\",\n      \"is_times_tag\": 1057,\n      \"concept_status\": \"string\",\n      \"vernacular\": \"string\",\n      \"concept_type\": \"string\",\n      \"concept_created\": \"string\",\n      \"concept_updated\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/archive/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "837b6739-6577-41ce-ae22-60f819217173",
+    "name": "Archive Search.json API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).\n\n```\n/{year}/{month}.json\n```\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

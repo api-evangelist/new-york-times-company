@@ -1,0 +1,172 @@
+{
+  "item": [
+    {
+      "id": "7c8ee0c3-270b-40ca-b085-947fb3d2a885",
+      "name": "Name",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "55c84079-4d1f-4d25-8e67-cd58f2070080",
+          "name": "/name/:concept-type/{{specific-concept}}.json",
+          "request": {
+            "name": "/name/:concept-type/{{specific-concept}}.json",
+            "description": {},
+            "url": {
+              "path": [
+                "name",
+                ":concept-type",
+                "{{specific-concept}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "\"all\" or comma-separated list of specific optional fields: pages, ticker_symbol, links, taxonomy, combinations, geocodes, article_list, scope_notes, search_api_query\n\nOptional fields are returned in result_set. They are briefly explained here:\n\npages: A list of topic pages associated with a specific concept.\nticker_symbol: If this concept is a publicly traded company, this field contains the ticker symbol.\nlinks: A list of links from this concept to external data resources.\ntaxonomy: For descriptor concepts, this field returns a list of taxonomic relations to other concepts.\ncombinations: For descriptor concepts, this field returns a list of the specific meanings tis concept takes on when combined with other concepts.\ngeocodes: For geographic concepts, the full GIS record from geonames.\narticle_list: A list of up to 10 articles associated with this concept.\nscope_notes: Scope notes contains clarifications and meaning definitions that explicate the relationship between the concept and an article.\nsearch_api_query: Returns the request one would need to submit to the Article Search API to obtain a list of articles annotated with this concept.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) Precedes the search term string. Used in a Search Query. Except for &lt;specific_concept_name&gt;, Search Query will take the required parameters listed above (&lt;concept_type&gt;, &lt;concept_uri&gt;, &lt;article_uri&gt;) as an optional_parameter in addition to the query=&lt;query_term&gt;."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "concept-type",
+                  "description": "(Required) The type of the concept, used for Constructing a Semantic API Request by Concept Type and Specific Concept Name. The parameter is defined as a name-value pair, as in \"concept_type=[nytd_geo|nytd_per|nytd_org|nytd_des]\".\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffee4d50-cc1d-4f05-bc05-03169079fba3",
+              "name": "An array of Concepts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "name",
+                    ":concept-type",
+                    "{{specific-concept}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "concept-type",
+                      "description": "(Required) The type of the concept, used for Constructing a Semantic API Request by Concept Type and Specific Concept Name. The parameter is defined as a name-value pair, as in \"concept_type=[nytd_geo|nytd_per|nytd_org|nytd_des]\".\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 7053,\n  \"results\": [\n    {\n      \"concept_id\": 2703,\n      \"concept_name\": \"string\",\n      \"is_times_tag\": 3275,\n      \"concept_status\": \"string\",\n      \"vernacular\": \"string\",\n      \"concept_type\": \"string\",\n      \"concept_created\": \"string\",\n      \"concept_updated\": \"string\",\n      \"taxonomy\": [\n        {\n          \"source_concept_id\": 300,\n          \"target_concept_id\": 8281,\n          \"source_concept_name\": \"string\",\n          \"target_concept_name\": \"string\",\n          \"source_concept_type\": \"string\",\n          \"target_concept_type\": \"string\",\n          \"source_concept_vernacular\": \"string\",\n          \"target_concept_vernacular\": \"string\",\n          \"taxonomic_relation\": \"string\",\n          \"taxonomic_verification_status\": \"string\"\n        },\n        {\n          \"source_concept_id\": 7222,\n          \"target_concept_id\": 4589,\n          \"source_concept_name\": \"string\",\n          \"target_concept_name\": \"string\",\n          \"source_concept_type\": \"string\",\n          \"target_concept_type\": \"string\",\n          \"source_concept_vernacular\": \"string\",\n          \"target_concept_vernacular\": \"string\",\n          \"taxonomic_relation\": \"string\",\n          \"taxonomic_verification_status\": \"string\"\n        }\n      ],\n      \"links\": [\n        {\n          \"concept_id\": 7643,\n          \"concept_name\": \"string\",\n          \"concept_status\": \"string\",\n          \"is_times_tag\": 3225,\n          \"concept_type\": \"string\",\n          \"link_id\": 2233,\n          \"relation\": \"string\",\n          \"link\": \"string\",\n          \"link_type\": \"string\",\n          \"mapping_type\": \"string\"\n        },\n        {\n          \"concept_id\": 9539,\n          \"concept_name\": \"string\",\n          \"concept_status\": \"string\",\n          \"is_times_tag\": 6906,\n          \"concept_type\": \"string\",\n          \"link_id\": 5247,\n          \"relation\": \"string\",\n          \"link\": \"string\",\n          \"link_type\": \"string\",\n          \"mapping_type\": \"string\"\n        }\n      ],\n      \"search_api_query\": \"string\",\n      \"article_list\": {\n        \"results\": [\n          {\n            \"body\": \"string\",\n            \"byline\": \"string\",\n            \"concepts\": {\n              \"nytd_des\": [\n                \"string\",\n                \"string\"\n              ],\n              \"nytd_org\": [\n                \"string\",\n                \"string\"\n              ],\n              \"nytd_per\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"date\": \"string\",\n            \"document_type\": \"string\",\n            \"title\": \"string\",\n            \"type_of_material\": \"string\",\n            \"url\": \"string\"\n          },\n          {\n            \"body\": \"string\",\n            \"byline\": \"string\",\n            \"concepts\": {\n              \"nytd_des\": [\n                \"string\",\n                \"string\"\n              ],\n              \"nytd_org\": [\n                \"string\",\n                \"string\"\n              ],\n              \"nytd_per\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"date\": \"string\",\n            \"document_type\": \"string\",\n            \"title\": \"string\",\n            \"type_of_material\": \"string\",\n            \"url\": \"string\"\n          }\n        ],\n        \"total\": 5795\n      },\n      \"scope_notes\": [\n        {\n          \"scope_note\": \"string\",\n          \"scope_note_name\": \"string\",\n          \"scope_note_type\": \"string\"\n        },\n        {\n          \"scope_note\": \"string\",\n          \"scope_note_name\": \"string\",\n          \"scope_note_type\": \"string\"\n        }\n      ],\n      \"combinations\": [\n        {\n          \"combination_source_concept_id\": 8395,\n          \"combination_source_concept_name\": \"string\",\n          \"combination_source_concept_type\": \"string\",\n          \"combination_target_concept_id\": 6995,\n          \"combination_target_concept_name\": \"string\",\n          \"combination_target_concept_type\": \"string\",\n          \"combination_note\": \"string\"\n        },\n        {\n          \"combination_source_concept_id\": 9921,\n          \"combination_source_concept_name\": \"string\",\n          \"combination_source_concept_type\": \"string\",\n          \"combination_target_concept_id\": 3798,\n          \"combination_target_concept_name\": \"string\",\n          \"combination_target_concept_type\": \"string\",\n          \"combination_note\": \"string\"\n        }\n      ],\n      \"ancestors\": [\n        {\n          \"concept_id\": 7841,\n          \"concept_name\": \"string\",\n          \"is_times_tag\": 2869,\n          \"concept_status\": \"string\",\n          \"vernacular\": \"string\",\n          \"concept_type\": \"string\",\n          \"concept_created\": \"string\",\n          \"concept_updated\": \"string\"\n        },\n        {\n          \"concept_id\": 8503,\n          \"concept_name\": \"string\",\n          \"is_times_tag\": 1409,\n          \"concept_status\": \"string\",\n          \"vernacular\": \"string\",\n          \"concept_type\": \"string\",\n          \"concept_created\": \"string\",\n          \"concept_updated\": \"string\"\n        }\n      ],\n      \"descendants\": [\n        {\n          \"concept_id\": 5001,\n          \"concept_name\": \"string\",\n          \"is_times_tag\": 3277,\n          \"concept_status\": \"string\",\n          \"vernacular\": \"string\",\n          \"concept_type\": \"string\",\n          \"concept_created\": \"string\",\n          \"concept_updated\": \"string\"\n        },\n        {\n          \"concept_id\": 6909,\n          \"concept_name\": \"string\",\n          \"is_times_tag\": 2660,\n          \"concept_status\": \"string\",\n          \"vernacular\": \"string\",\n          \"concept_type\": \"string\",\n          \"concept_created\": \"string\",\n          \"concept_updated\": \"string\"\n        }\n      ]\n    },\n    {\n      \"concept_id\": 2125,\n      \"concept_name\": \"string\",\n      \"is_times_tag\": 5387,\n      \"concept_status\": \"string\",\n      \"vernacular\": \"string\",\n      \"concept_type\": \"string\",\n      \"concept_created\": \"string\",\n      \"concept_updated\": \"string\",\n      \"taxonomy\": [\n        {\n          \"source_concept_id\": 8413,\n          \"target_concept_id\": 9060,\n          \"source_concept_name\": \"string\",\n          \"target_concept_name\": \"string\",\n          \"source_concept_type\": \"string\",\n          \"target_concept_type\": \"string\",\n          \"source_concept_vernacular\": \"string\",\n          \"target_concept_vernacular\": \"string\",\n          \"taxonomic_relation\": \"string\",\n          \"taxonomic_verification_status\": \"string\"\n        },\n        {\n          \"source_concept_id\": 5992,\n          \"target_concept_id\": 1573,\n          \"source_concept_name\": \"string\",\n          \"target_concept_name\": \"string\",\n          \"source_concept_type\": \"string\",\n          \"target_concept_type\": \"string\",\n          \"source_concept_vernacular\": \"string\",\n          \"target_concept_vernacular\": \"string\",\n          \"taxonomic_relation\": \"string\",\n          \"taxonomic_verification_status\": \"string\"\n        }\n      ],\n      \"links\": [\n        {\n          \"concept_id\": 7627,\n          \"concept_name\": \"string\",\n          \"concept_status\": \"string\",\n          \"is_times_tag\": 9766,\n          \"concept_type\": \"string\",\n          \"link_id\": 8037,\n          \"relation\": \"string\",\n          \"link\": \"string\",\n          \"link_type\": \"string\",\n          \"mapping_type\": \"string\"\n        },\n        {\n          \"concept_id\": 8855,\n          \"concept_name\": \"string\",\n          \"concept_status\": \"string\",\n          \"is_times_tag\": 2224,\n          \"concept_type\": \"string\",\n          \"link_id\": 2298,\n          \"relation\": \"string\",\n          \"link\": \"string\",\n          \"link_type\": \"string\",\n          \"mapping_type\": \"string\"\n        }\n      ],\n      \"search_api_query\": \"string\",\n      \"article_list\": {\n        \"results\": [\n          {\n            \"body\": \"string\",\n            \"byline\": \"string\",\n            \"concepts\": {\n              \"nytd_des\": [\n                \"string\",\n                \"string\"\n              ],\n              \"nytd_org\": [\n                \"string\",\n                \"string\"\n              ],\n              \"nytd_per\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"date\": \"string\",\n            \"document_type\": \"string\",\n            \"title\": \"string\",\n            \"type_of_material\": \"string\",\n            \"url\": \"string\"\n          },\n          {\n            \"body\": \"string\",\n            \"byline\": \"string\",\n            \"concepts\": {\n              \"nytd_des\": [\n                \"string\",\n                \"string\"\n              ],\n              \"nytd_org\": [\n                \"string\",\n                \"string\"\n              ],\n              \"nytd_per\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"date\": \"string\",\n            \"document_type\": \"string\",\n            \"title\": \"string\",\n            \"type_of_material\": \"string\",\n            \"url\": \"string\"\n          }\n        ],\n        \"total\": 6586\n      },\n      \"scope_notes\": [\n        {\n          \"scope_note\": \"string\",\n          \"scope_note_name\": \"string\",\n          \"scope_note_type\": \"string\"\n        },\n        {\n          \"scope_note\": \"string\",\n          \"scope_note_name\": \"string\",\n          \"scope_note_type\": \"string\"\n        }\n      ],\n      \"combinations\": [\n        {\n          \"combination_source_concept_id\": 7457,\n          \"combination_source_concept_name\": \"string\",\n          \"combination_source_concept_type\": \"string\",\n          \"combination_target_concept_id\": 8358,\n          \"combination_target_concept_name\": \"string\",\n          \"combination_target_concept_type\": \"string\",\n          \"combination_note\": \"string\"\n        },\n        {\n          \"combination_source_concept_id\": 3955,\n          \"combination_source_concept_name\": \"string\",\n          \"combination_source_concept_type\": \"string\",\n          \"combination_target_concept_id\": 3551,\n          \"combination_target_concept_name\": \"string\",\n          \"combination_target_concept_type\": \"string\",\n          \"combination_note\": \"string\"\n        }\n      ],\n      \"ancestors\": [\n        {\n          \"concept_id\": 8366,\n          \"concept_name\": \"string\",\n          \"is_times_tag\": 2385,\n          \"concept_status\": \"string\",\n          \"vernacular\": \"string\",\n          \"concept_type\": \"string\",\n          \"concept_created\": \"string\",\n          \"concept_updated\": \"string\"\n        },\n        {\n          \"concept_id\": 6766,\n          \"concept_name\": \"string\",\n          \"is_times_tag\": 8468,\n          \"concept_status\": \"string\",\n          \"vernacular\": \"string\",\n          \"concept_type\": \"string\",\n          \"concept_created\": \"string\",\n          \"concept_updated\": \"string\"\n        }\n      ],\n      \"descendants\": [\n        {\n          \"concept_id\": 6490,\n          \"concept_name\": \"string\",\n          \"is_times_tag\": 2957,\n          \"concept_status\": \"string\",\n          \"vernacular\": \"string\",\n          \"concept_type\": \"string\",\n          \"concept_created\": \"string\",\n          \"concept_updated\": \"string\"\n        },\n        {\n          \"concept_id\": 3350,\n          \"concept_name\": \"string\",\n          \"is_times_tag\": 7958,\n          \"concept_status\": \"string\",\n          \"vernacular\": \"string\",\n          \"concept_type\": \"string\",\n          \"concept_created\": \"string\",\n          \"concept_updated\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/archive/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The name of the concept, used for Constructing a Semantic API Request by Concept Type and Specific Concept Name. The parameter is defined in the URI path, as the element immediately preceding \".json\" like with \"Baseball.json\".\n",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "specific-concept"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "383ddf01-9996-4890-8065-99e52afd3f6e",
+    "name": "Archive Name API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).\n\n```\n/{year}/{month}.json\n```\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

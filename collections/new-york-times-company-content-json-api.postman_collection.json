@@ -1,0 +1,208 @@
+{
+  "item": [
+    {
+      "id": "6437278d-85d0-4e54-b9d0-640a8e200555",
+      "name": "Content.json",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "266a3846-b799-4513-82b1-4c937260fef1",
+          "name": "/content.json",
+          "request": {
+            "name": "/content.json",
+            "description": {},
+            "url": {
+              "path": [
+                "content.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "https%3A%2F%2Fwww.nytimes.com%2F2018%2F09%2F19%2Fworld%2Fasia%2Fnorth-south-korea-nuclear-weapons.html",
+                  "description": "(Required) The complete URL of a specific news item, URL-encoded or backslash-escaped"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10cb1915-a96f-454c-818a-1d6bb7232bf6",
+              "name": "An array of Articles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "content.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "https%3A%2F%2Fwww.nytimes.com%2F2018%2F09%2F19%2Fworld%2Fasia%2Fnorth-south-korea-nuclear-weapons.html"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"copyright\": \"string\",\n  \"num_results\": 6646,\n  \"results\": [\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"short_url\": \"string\",\n      \"byline\": \"string\",\n      \"thumbnail_standard\": \"string\",\n      \"item_type\": \"string\",\n      \"source\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"headline\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": \"string\",\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"blog_name\": \"string\",\n      \"related_urls\": [\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 198,\n          \"width\": 8637,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 7066,\n          \"width\": 9940,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ]\n    },\n    {\n      \"section\": \"string\",\n      \"subsection\": \"string\",\n      \"title\": \"string\",\n      \"abstract\": \"string\",\n      \"url\": \"string\",\n      \"short_url\": \"string\",\n      \"byline\": \"string\",\n      \"thumbnail_standard\": \"string\",\n      \"item_type\": \"string\",\n      \"source\": \"string\",\n      \"updated_date\": \"string\",\n      \"created_date\": \"string\",\n      \"published_date\": \"string\",\n      \"material_type_facet\": \"string\",\n      \"kicker\": \"string\",\n      \"headline\": \"string\",\n      \"des_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"org_facet\": \"string\",\n      \"per_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"geo_facet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"blog_name\": \"string\",\n      \"related_urls\": [\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"suggested_link_text\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"multimedia\": [\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 8549,\n          \"width\": 9687,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"format\": \"string\",\n          \"height\": 9388,\n          \"width\": 8014,\n          \"type\": \"string\",\n          \"subtype\": \"string\",\n          \"caption\": \"string\",\n          \"copyright\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d45d75d6-555f-4756-a9f9-a4a64fad2001",
+              "name": "Unauthorized request.  Make sure api-key is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "content.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "https%3A%2F%2Fwww.nytimes.com%2F2018%2F09%2F19%2Fworld%2Fasia%2Fnorth-south-korea-nuclear-weapons.html"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e8fd49a7-825e-429d-b06d-37769c144624",
+              "name": "Too many requests.  You reached your per minute or per day rate limit.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "content.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "https%3A%2F%2Fwww.nytimes.com%2F2018%2F09%2F19%2Fworld%2Fasia%2Fnorth-south-korea-nuclear-weapons.html"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/archive/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "666acaf6-ee3a-422d-aa6f-ef0687482c78",
+    "name": "Archive Content.json API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).\n\n```\n/{year}/{month}.json\n```\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

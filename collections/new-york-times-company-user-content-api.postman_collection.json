@@ -1,0 +1,406 @@
+{
+  "item": [
+    {
+      "id": "f09cb806-7034-4159-b165-ed4f1a2fa802",
+      "name": "User Content",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6c5d92ce-9d66-4b20-8e0e-a3a810b966e7",
+          "name": "Recent User Comments",
+          "request": {
+            "name": "Recent User Comments",
+            "description": {
+              "content": "To retrieve the most recent user comments, use the following URI structure:\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n http://api.nytimes.com/svc/community/v3/user-content/recent.json?api-key={your-API-key}[&optional-param1=value1][...]\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "user-content",
+                "recent.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "b24963a0-0871-4c0a-aa51-fed22d7f971d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user-content",
+                    "recent.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"debug\": {\n    \"version\": 3.1\n  },\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2016 The New York Times Company.  All Rights Reserved.\",\n  \"results\": {\n    \"comments\": [\n      {\n        \"assetID\": 3449092,\n        \"commentID\": 17912830,\n        \"parentID\": null,\n        \"statusID\": 2,\n        \"commentSequence\": 17912830,\n        \"commentBody\": \"Two things to know about our Governor Kasich. First, he was one of the few Republican governors to accept Obamacare and Medicaid expansion in Ohio, despite the efforts of legislators from his party. Second, as Gail Collins pointed out, he has done everything in his power to eliminate access to safe abortion in Ohio. This will soon include a bill he is expected to sign that will make it illegal for women to have an abortion after learning their fetus has Down's syndrome. Like most candidates these days, we have to take the good with the bad.\",\n        \"commentTitle\": \"<br/>\",\n        \"createDate\": \"1458149421\",\n        \"updateDate\": \"1458149469\",\n        \"approveDate\": \"1458149469\",\n        \"userID\": 64507566,\n        \"userDisplayName\": \"DD\",\n        \"userTitle\": \"NULL\",\n        \"userURL\": \"NULL\",\n        \"userLocation\": \"Cincinnati, OH\",\n        \"editorsSelection\": 0,\n        \"recommendationCount\": 0,\n        \"commentType\": \"comment\",\n        \"status\": \"approved\",\n        \"asset\": {\n          \"assetURL\": \"http://www.nytimes.com/2016/03/16/opinion/campaign-stops/kasich-the-boulder-between-the-gop.html\",\n          \"vendorID\": \"MQdKLYFNCfZ7XvixkGz2rw==\",\n          \"source\": \"url\",\n          \"assetID\": 3449092,\n          \"createDate\": \"1458096538\",\n          \"updateDate\": \"1458149477\",\n          \"taxonomies\": [\n            [\n              {\n                \"taxonomyID\": 9188,\n                \"name\": \"opinion\"\n              }\n            ]\n          ],\n          \"taxonomy\": \"opinion/Kasich, the Boulder Between the G.O.P. and Trump (16collins)\",\n          \"labels\": [],\n          \"text\": [],\n          \"properties\": {\n            \"comment-list-sort-editors\": {\n              \"groupID\": 1,\n              \"taxonomyID\": 364114\n            },\n            \"automoderation-on\": {\n              \"groupID\": 2,\n              \"taxonomyID\": 364114\n            },\n            \"reached-max-com-off\": {\n              \"groupID\": 3,\n              \"taxonomyID\": 9188\n            }\n          },\n          \"all-properties\": [\n            {\n              \"name\": \"no-group\",\n              \"description\": \"Not in a group\",\n              \"properties\": []\n            }\n          ],\n          \"assetTitle\": \"Kasich, the Boulder Between the G.O.P. and Trump (16collins)\"\n        },\n        \"replies\": [],\n        \"display_name\": \"DD\",\n        \"location\": \"Cincinnati, OH\"\n      }\n    ],\n    \"totalCommentsReturned\": 25,\n    \"api_timestamp\": \"1458149501\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "feba70bf-0f4d-40bf-974e-0480af9d1b97",
+          "name": "Comments by URL",
+          "request": {
+            "name": "Comments by URL",
+            "description": {
+              "content": "The comments associated with a specific NYTimes.com URL, use the\nfollowing URI structure:\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nhttp://api.nytimes.com/svc/community/v3/user-content/url.json?api-key={your-API-key}&url={url}[&offset=int]\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nYou can specify whether to retrieve exact matches or closest stem matches. URL matching is attempted at each segment of the path, as illustrated by the following example:\n\nFirst match attempt: \n  http://www.nytimes.com/2008/10/23/section/article* \nSecond match attempt: \n  http://www.nytimes.com/2008/10/23/section/* \nThird match attempt: \n  http://www.nytimes.com/2008/10/23/*\n\nIn result sets, matching URLs are sorted alphabetically.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "user-content",
+                "url.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "986c96c4-bddd-4f05-8fff-a6e618ca70e6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user-content",
+                    "url.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"debug\": {\n    \"version\": 3.1\n  },\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2016 The New York Times Company.  All Rights Reserved.\",\n  \"results\": {\n    \"comments\": [\n      {\n        \"commentID\": 20831,\n        \"status\": \"approved\",\n        \"commentSequence\": 138,\n        \"userID\": 44150303,\n        \"userDisplayName\": \"byakushi\",\n        \"userLocation\": \"US\",\n        \"userTitle\": null,\n        \"userURL\": null,\n        \"commentTitle\": \"\",\n        \"commentBody\": \"I have always wondered how much energy US would save if it shut down Vegas? Can you imagine the amount of electricity consumed on the strip, the ice melted for its water supply - all in the name of gambling? That's the kind of consumerism I would like to see halted. Same goes for all the downtown skylines which cause so much light pollution. Even a simple thing like having an \\\"off\\\" switch in the homes rather than just power outlets would save a lot of energy and hopefully make a huge difference in the \\\"consumption footprint.\\\" Can American live with that?<br/><br/>As for the growing economies of China & India: the increased industrialization has also increased environmental pollution in those countries. West has conveniently handed down it's dirty work to them. And at the same time we have Americans screaming about lost jobs. When will they realize that they can't have it both ways?<br/><br/>All in all they are acting like spoilt brats who have realized that they are no longer the teacher's favorite. Is it surprising that other folks hate you for your spoilt ways, at the same time envying how you have it so easy?<br/><br/>\",\n        \"createDate\": \"1199309173\",\n        \"updateDate\": \"1199322293\",\n        \"approveDate\": \"1199322293\",\n        \"recommendations\": 5,\n        \"replyCount\": 0,\n        \"replies\": [],\n        \"editorsSelection\": false,\n        \"parentID\": null,\n        \"parentUserDisplayName\": null,\n        \"depth\": 1,\n        \"commentType\": \"comment\",\n        \"trusted\": 0,\n        \"recommendedFlag\": null,\n        \"reportAbuseFlag\": null,\n        \"permID\": \"138\",\n        \"picURL\": \"http://graphics8.nytimes.com/images/apps/timespeople/none.png\",\n        \"timespeople\": 1,\n        \"sharing\": 0\n      }\n    ],\n    \"page\": 1,\n    \"totalCommentsReturned\": 25,\n    \"totalCommentsFound\": 138,\n    \"totalParentCommentsFound\": 138,\n    \"totalParentCommentsReturned\": 25,\n    \"totalReplyCommentsFound\": 0,\n    \"totalReplyCommentsReturned\": 0,\n    \"totalReporterReplyCommentsFound\": 0,\n    \"totalReporterReplyCommentsReturned\": 0,\n    \"totalEditorsSelectionFound\": 13,\n    \"totalEditorsSelectionReturned\": 1,\n    \"totalRecommendationsFound\": 118,\n    \"totalRecommendationsReturned\": 23,\n    \"replyLimit\": 3,\n    \"depthLimit\": 0,\n    \"sort\": \"oldest\",\n    \"filter\": \"\",\n    \"callerID\": null,\n    \"api_timestamp\": \"1455718117\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ff6217a-2db7-4b2e-8286-a1483da8462c",
+          "name": "Comments by Date",
+          "request": {
+            "name": "Comments by Date",
+            "description": {
+              "content": "To retrieve comments posted on a specific date, use the following URI structure:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nhttp://api.nytimes.com/svc/community/v3/user-content/by-date.json?api-key={your-API-key}&date={YYYY-MM-DD}[&offset=int]\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "user-content",
+                "by-date.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "879833fe-844d-48fd-a4bc-c5579e4d997d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user-content",
+                    "by-date.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"debug\": {\n    \"version\": 3.1\n  },\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2016 The New York Times Company.  All Rights Reserved.\",\n  \"results\": {\n    \"comments\": [\n      {\n        \"commentID\": 17096625,\n        \"parentID\": null,\n        \"statusID\": 2,\n        \"lft\": 42,\n        \"rgt\": 43,\n        \"commentSequence\": 17096625,\n        \"commentBody\": \"We used black eyed peas and kale (couldn&#x27;t find mustard greens), and this recipe is fantastic! With cornbread it was perfect!\",\n        \"commentTitle\": \"<br/>\",\n        \"createDate\": \"1451710797\",\n        \"updateDate\": \"1451710808\",\n        \"approveDate\": \"1451710808\",\n        \"userID\": 72856041,\n        \"userDisplayName\": \"Sharon\",\n        \"userTitle\": \"NULL\",\n        \"userURL\": 72856041,\n        \"userLocation\": \"<br/>\",\n        \"editorsSelection\": 0,\n        \"recommendationCount\": 0,\n        \"replyCount\": 0,\n        \"assetID\": 3444599,\n        \"assetURL\": \"http://cooking.nytimes.com/recipes/1017904\",\n        \"status\": \"approved\",\n        \"commentType\": \"comment\",\n        \"replies\": []\n      }\n    ],\n    \"totalCommentsReturned\": 25,\n    \"totalCommentsFound\": 4121,\n    \"api_timestamp\": \"1458149967\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6b6b944-a60b-4cb6-a164-dbbedcf534e2",
+          "name": "Comments by User",
+          "request": {
+            "name": "Comments by User",
+            "description": {
+              "content": "To retrieve comments by a specific NYTimes.com user, use the following URI\nstructure:\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nhttp://api.nytimes.com/svc/community/v3/user-content/user.json?api-key={your-API-key}&userID={<int>}[&offset=<int>][&url={url-to-match}]\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "user-content",
+                "user.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "userID",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "03ac9fc7-4751-49bc-b5e0-41738f1079d8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user-content",
+                    "user.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "userID",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"debug\": {\n    \"version\": 3.1\n  },\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2016 The New York Times Company.  All Rights Reserved.\",\n  \"results\": {\n    \"comments\": [\n      {\n        \"commentID\": 4570862,\n        \"status\": \"approved\",\n        \"commentSequence\": 10,\n        \"userID\": 2364811,\n        \"userSubmittedDisplayName\": \"Jim\",\n        \"userSubmittedTitle\": null,\n        \"userSubmittedURL\": null,\n        \"userSubmittedLocation\": \"NYC\",\n        \"commentTitle\": \"hardcoded comment title\",\n        \"commentBody\": \"time to Google for \\\"cell phone signal blocker\\\"...\",\n        \"createDate\": \"1316723787\",\n        \"updateDate\": \"1316728099\",\n        \"approveDate\": \"1316728099\",\n        \"recommendations\": 11,\n        \"replyCount\": 0,\n        \"replies\": [],\n        \"editorsSelection\": false,\n        \"parentID\": null,\n        \"commentType\": \"comment\",\n        \"asset\": {\n          \"assetURL\": \"http://cityroom.blogs.nytimes.com/2011/09/22/cell-phone-service-on-some-subway-platforms-starts-next-week/\",\n          \"vendorID\": \"P12Rq7kT2AvJyomlFgcylQ==\",\n          \"source\": \"url\",\n          \"assetID\": 3267087,\n          \"createDate\": \"1316722025\",\n          \"updateDate\": \"1319743568\",\n          \"taxonomies\": [\n            [\n              {\n                \"taxonomyID\": 70457,\n                \"name\": \"blogs\"\n              }\n            ]\n          ],\n          \"taxonomy\": \"blogs/cityroom/Cellphone Service Coming to the Subway\",\n          \"labels\": [\n            {\n              \"labelName\": \"NYT_Blogs\",\n              \"labelID\": 54906\n            }\n          ],\n          \"text\": [],\n          \"properties\": {\n            \"comment-list-sort-approvedate-desc\": {\n              \"groupID\": 1,\n              \"taxonomyID\": 199832\n            },\n            \"automoderation-off\": {\n              \"groupID\": 2,\n              \"taxonomyID\": 199832\n            },\n            \"reached-max-com-on\": {\n              \"groupID\": 3,\n              \"taxonomyID\": 199832\n            }\n          },\n          \"all-properties\": [\n            {\n              \"name\": \"no-group\",\n              \"description\": \"Not in a group\",\n              \"properties\": []\n            }\n          ],\n          \"assetTitle\": \"Cellphone Service Coming to the Subway\"\n        },\n        \"labels\": [],\n        \"permid\": 10,\n        \"userDisplayName\": null,\n        \"userTitle\": null,\n        \"userURL\": null,\n        \"userLocation\": null,\n        \"picURL\": \"http://pimage.timespeople.nytimes.com/2364/811/cropped-2364811.jpg?0.8428952772024576\"\n      }\n    ],\n    \"totalCommentsReturned\": 2,\n    \"totalCommentsFound\": 2,\n    \"api_timestamp\": \"1458150045\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/archive/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e55a8a0e-c8b7-4e03-a063-3b24a6609421",
+    "name": "Archive User Content API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).\n\n```\n/{year}/{month}.json\n```\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

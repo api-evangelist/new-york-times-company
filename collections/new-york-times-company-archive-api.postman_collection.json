@@ -1,0 +1,244 @@
+{
+  "item": [
+    {
+      "id": "b6b3b2cd-5993-4226-9d54-2ab3e68a77ff",
+      "name": "Archive",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "924ff650-2ad7-4998-a87d-dc7c1647d929",
+          "name": "Returns an array of articles for a given month.",
+          "request": {
+            "name": "Returns an array of articles for a given month.",
+            "description": {
+              "content": "Pass in year and month and get back JSON with all articles for that month. The response can be big (~20 megabytes) and contain thousands of articles, depending on the year and month.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":year",
+                "{{month}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "2018",
+                  "key": "year",
+                  "description": "(Required) Year: 1851-2019"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b19811a-a237-40fc-8582-4a5c95be163d",
+              "name": "An array of articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":year",
+                    "{{month}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "2018",
+                      "key": "year",
+                      "description": "(Required) Year: 1851-2019"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"copyright\": \"string\",\n  \"response\": {\n    \"meta\": {\n      \"hits\": 6118\n    },\n    \"docs\": [\n      {\n        \"web_url\": \"string\",\n        \"snippet\": \"string\",\n        \"print_page\": 3760,\n        \"source\": \"string\",\n        \"multimedia\": [\n          {\n            \"rank\": 729,\n            \"subtype\": \"string\",\n            \"caption\": \"string\",\n            \"credit\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\",\n            \"height\": 7837,\n            \"width\": 7621,\n            \"legacy\": {\n              \"xlarge\": \"string\",\n              \"xlargewidth\": 3579,\n              \"xlargeheight\": 2861\n            },\n            \"crop_name\": \"string\"\n          },\n          {\n            \"rank\": 1335,\n            \"subtype\": \"string\",\n            \"caption\": \"string\",\n            \"credit\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\",\n            \"height\": 3263,\n            \"width\": 177,\n            \"legacy\": {\n              \"xlarge\": \"string\",\n              \"xlargewidth\": 9737,\n              \"xlargeheight\": 3338\n            },\n            \"crop_name\": \"string\"\n          }\n        ],\n        \"headline\": {\n          \"main\": \"string\",\n          \"kicker\": \"string\",\n          \"content_kicker\": \"string\",\n          \"print_headline\": \"string\",\n          \"name\": \"string\",\n          \"seo\": \"string\",\n          \"sub\": \"string\"\n        },\n        \"keywords\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\",\n            \"rank\": 8540,\n            \"major\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\",\n            \"rank\": 4513,\n            \"major\": \"string\"\n          }\n        ],\n        \"pub_date\": \"string\",\n        \"document_type\": \"string\",\n        \"news_desk\": \"string\",\n        \"byline\": {\n          \"original\": \"string\",\n          \"person\": [\n            {\n              \"firstname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"middlename\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"lastname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualifier\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"title\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"role\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"organization\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rank\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"firstname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"middlename\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"lastname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualifier\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"title\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"role\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"organization\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rank\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"organization\": \"string\"\n        },\n        \"type_of_material\": \"string\",\n        \"_id\": \"string\",\n        \"word_count\": 636,\n        \"score\": 2707,\n        \"uri\": \"string\"\n      },\n      {\n        \"web_url\": \"string\",\n        \"snippet\": \"string\",\n        \"print_page\": 2210,\n        \"source\": \"string\",\n        \"multimedia\": [\n          {\n            \"rank\": 4884,\n            \"subtype\": \"string\",\n            \"caption\": \"string\",\n            \"credit\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\",\n            \"height\": 7467,\n            \"width\": 533,\n            \"legacy\": {\n              \"xlarge\": \"string\",\n              \"xlargewidth\": 84,\n              \"xlargeheight\": 7835\n            },\n            \"crop_name\": \"string\"\n          },\n          {\n            \"rank\": 1706,\n            \"subtype\": \"string\",\n            \"caption\": \"string\",\n            \"credit\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\",\n            \"height\": 2396,\n            \"width\": 6676,\n            \"legacy\": {\n              \"xlarge\": \"string\",\n              \"xlargewidth\": 4748,\n              \"xlargeheight\": 3418\n            },\n            \"crop_name\": \"string\"\n          }\n        ],\n        \"headline\": {\n          \"main\": \"string\",\n          \"kicker\": \"string\",\n          \"content_kicker\": \"string\",\n          \"print_headline\": \"string\",\n          \"name\": \"string\",\n          \"seo\": \"string\",\n          \"sub\": \"string\"\n        },\n        \"keywords\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\",\n            \"rank\": 6832,\n            \"major\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\",\n            \"rank\": 9452,\n            \"major\": \"string\"\n          }\n        ],\n        \"pub_date\": \"string\",\n        \"document_type\": \"string\",\n        \"news_desk\": \"string\",\n        \"byline\": {\n          \"original\": \"string\",\n          \"person\": [\n            {\n              \"firstname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"middlename\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"lastname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualifier\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"title\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"role\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"organization\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rank\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"firstname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"middlename\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"lastname\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualifier\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"title\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"role\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"organization\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rank\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"organization\": \"string\"\n        },\n        \"type_of_material\": \"string\",\n        \"_id\": \"string\",\n        \"word_count\": 1368,\n        \"score\": 7233,\n        \"uri\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63b0a53d-ae53-42d1-9bec-dd69e40dbabc",
+              "name": "Unauthorized request, check api-key is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":year",
+                    "{{month}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "2018",
+                      "key": "year",
+                      "description": "(Required) Year: 1851-2019"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fault\": {\n    \"faultstring\": \"string\",\n    \"detail\": {\n      \"errorcode\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eaf53219-8d9f-434f-a36d-25accc7c5b8d",
+              "name": "Too many requests.  You reached your per minute or per day rate limit.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":year",
+                    "{{month}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "2018",
+                      "key": "year",
+                      "description": "(Required) Year: 1851-2019"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/archive/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Year: 1-12",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "9",
+      "key": "month"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5103d970-789e-4fe1-806f-ffbc39bcf40f",
+    "name": "Archive API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).\n\n```\n/{year}/{month}.json\n```\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

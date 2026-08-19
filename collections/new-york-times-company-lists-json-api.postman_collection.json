@@ -1,0 +1,164 @@
+{
+  "item": [
+    {
+      "id": "14dce165-0a8a-4109-8712-b7a4cce03151",
+      "name": "Lists.json",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "66e62e9f-f468-4d74-ab59-31c7724e62bd",
+          "name": "Best Sellers List",
+          "request": {
+            "name": "Best Sellers List",
+            "description": {
+              "content": "Get Best Sellers list.  If no date is provided returns the latest list.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lists.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "list",
+                  "value": "hardcover-fiction",
+                  "description": "(Required) The name of the Times best sellers list (hardcover-fiction, paperback-nonfiction, ...).\nThe /lists/names service returns all the list names.\nThe encoded list names are lower case with hyphens instead of spaces (e.g. e-book-fiction, instead of E-Book Fiction)."
+                },
+                {
+                  "disabled": false,
+                  "key": "bestsellers-date",
+                  "value": "<string>",
+                  "description": "YYYY-MM-DD\n\nThe week-ending date for the sales reflected on list-name. Times best sellers lists are compiled using available book sale data. The bestsellers-date may be significantly earlier than published-date. For additional information, see the explanation at the bottom of any best-seller list page on NYTimes.com (example: Hardcover Fiction, published Dec. 5 but reflecting sales to Nov. 29)."
+                },
+                {
+                  "disabled": false,
+                  "key": "published-date",
+                  "value": "<string>",
+                  "description": "YYYY-MM-DD\n\nThe date the best sellers list was published on NYTimes.com (different than bestsellers-date).  Use \"current\" for latest list."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Sets the starting point of the result set (0, 20, ...).  Used to paginate thru books if list has more than 20. Defaults to 0.  The num_results field indicates how many books are in the list."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "fa651e54-4028-4b67-9f93-de6a7706b428",
+              "name": "Best Sellers list books",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lists.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "list",
+                      "value": "hardcover-fiction"
+                    },
+                    {
+                      "key": "bestsellers-date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published-date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api-key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"OK\",\n  \"copyright\": \"Copyright (c) 2019 The New York Times Company.  All Rights Reserved.\",\n  \"num_results\": 1,\n  \"last_modified\": \"2016-03-11T13:09:01-05:00\",\n  \"results\": [\n    {\n      \"list_name\": \"Hardcover Fiction\",\n      \"display_name\": \"Hardcover Fiction\",\n      \"bestsellers_date\": \"2016-03-05\",\n      \"published_date\": \"2016-03-20\",\n      \"rank\": 5,\n      \"rank_last_week\": 2,\n      \"weeks_on_list\": 2,\n      \"asterisk\": 0,\n      \"dagger\": 0,\n      \"amazon_product_url\": \"http://www.amazon.com/Girls-Guide-Moving-On-Novel-ebook/dp/B00ZNE17B4?tag=thenewyorktim-20\",\n      \"isbns\": [\n        {\n          \"isbn10\": 553391925,\n          \"isbn13\": \"9780553391923\"\n        }\n      ],\n      \"book_details\": [\n        {\n          \"title\": \"A GIRL'S GUIDE TO MOVING ON\",\n          \"description\": \"A mother and her daughter-in-law both leave unhappy marriages and take up with new men.\",\n          \"contributor\": \"by Debbie Macomber\",\n          \"author\": \"Debbie Macomber\",\n          \"contributor_note\": \"\",\n          \"price\": 0,\n          \"age_group\": \"\",\n          \"publisher\": \"Ballantine\",\n          \"primary_isbn13\": \"9780553391923\",\n          \"primary_isbn10\": 553391925\n        }\n      ],\n      \"reviews\": [\n        {\n          \"book_review_link\": \"\",\n          \"first_chapter_link\": \"\",\n          \"sunday_review_link\": \"\",\n          \"article_chapter_link\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nytimes.com/svc/archive/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "69f63570-af84-4c28-bd6e-fd16861d8d89",
+    "name": "Archive Lists.json API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).\n\n```\n/{year}/{month}.json\n```\n\n## Example Call\n```\nhttps://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey\n```\n",
+      "type": "text/plain"
+    }
+  }
+}

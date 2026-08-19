@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Archive Movies API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Movies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get movie critics name, bio and image.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/critics/:reviewer.json",
+            "params": [
+              {
+                "name": "reviewer",
+                "value": "",
+                "type": "path",
+                "description": "Reviewer name or \"all\" for all reviewers, \"full-time\" for full-time reviewers, or \"part-time\" for part-time reviewers."
+              }
+            ]
+          },
+          "docs": "Get movie critics. You can either specify the reviewer name or use \"all\", \"full-time\", or \"part-time\".\n"
+        },
+        {
+          "info": {
+            "name": "Get movie reviews.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/reviews/:type.json",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "Filter by critics' pick or not."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Sets the starting point of the result set.  Needs to be multiple of 20."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "How to order the results."
+              }
+            ]
+          },
+          "docs": "Get movie reviews.  Can filter to only return Critics' Picks.\nSupports ordering results by-title, by-publication-date, or by-opening-date.\nUse offset to paginate thru results, 20 at a time.\n"
+        },
+        {
+          "info": {
+            "name": "Search for movie reviews.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/reviews/search.json"
+          },
+          "docs": "Search for movie reviews.  Supports filtering by Critics' Pick.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

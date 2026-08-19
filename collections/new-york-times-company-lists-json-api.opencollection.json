@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Archive Lists.json API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lists.json",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Best Sellers List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/lists.json",
+            "params": [
+              {
+                "name": "list",
+                "value": "",
+                "type": "query",
+                "description": "The name of the Times best sellers list (hardcover-fiction, paperback-nonfiction, ...).\nThe /lists/names service returns all the list names.\nThe encoded list names are lower case with hyphens instead of spaces (e.g. e-book-fiction, instead of E-Book Fiction)."
+              },
+              {
+                "name": "bestsellers-date",
+                "value": "",
+                "type": "query",
+                "description": "YYYY-MM-DD\n\nThe week-ending date for the sales reflected on list-name. Times best sellers lists are compiled using available book sale data. The bestsellers-date may be significantly earlier than published-date. For additional information, see the explanation at the bottom of any best-seller list page on NYTimes.com (example: Hardcover Fiction, published Dec. 5 but reflecting sales to Nov. 29)."
+              },
+              {
+                "name": "published-date",
+                "value": "",
+                "type": "query",
+                "description": "YYYY-MM-DD\n\nThe date the best sellers list was published on NYTimes.com (different than bestsellers-date).  Use \"current\" for latest list."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Sets the starting point of the result set (0, 20, ...).  Used to paginate thru books if list has more than 20. Defaults to 0.  The num_results field indicates how many books are in the list."
+              }
+            ]
+          },
+          "docs": "Get Best Sellers list.  If no date is provided returns the latest list."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
