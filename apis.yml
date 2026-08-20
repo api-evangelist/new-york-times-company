@@ -317,6 +317,8 @@ apis:
   humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
   baseURL: https://api.nytimes.com/svc/search/v2
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -385,6 +387,8 @@ apis:
   humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
   baseURL: https://api.nytimes.com/svc/search/v2
   tags:
+  - List
+  tags_raw:
   - Lists
   properties:
   - type: OpenAPI
