@@ -1,0 +1,26 @@
+slug: new-york-times-company
+provider: The New York Times Company
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Most Popular
+  spec_file: new-york-times-company-most-popular-api-openapi.yml
+  capability_id: BC-3770.30
+  capability_id_l1: BC-3770
+  capability_name: Content Performance Analytics
+  confidence: 0.7
+  evidence: '"Most emailed articles on NYTimes.com.", "Most shared articles on NYTimes.com.", "Most viewed
+    articles on NYTimes.com." with schemas EmailedArticle, SharedArticle, ViewedArticle'
+  reason: Operations expose ranked content-performance signals (views, shares, emails) for editorial titles
+    over a period, which is analytics of how content performs by title and over time. Confidence held
+    at 0.7 because the API only reads pre-computed rankings rather than managing the analytics programme.

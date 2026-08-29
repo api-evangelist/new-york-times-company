@@ -64,6 +64,9 @@ specifications:
   - name: API Commons Rate Limits 0.1
     url: https://github.com/apis-json/api-commons-rate-limits
 common:
+  - type: CapabilityMap
+    url: capabilities/new-york-times-company-capability-edges.yml
+    name: The New York Times Company Business Capability Map
   - type: AgenticAccess
     url: agentic-access/new-york-times-company-agentic-access.yml
   - type: VulnerabilityDisclosure
