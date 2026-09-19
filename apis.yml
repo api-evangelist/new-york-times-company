@@ -56,6 +56,24 @@ tags:
   - Tagging
   - Controlled Vocabulary
   - Geographic
+  - Archives
+tags_raw:
+  - News
+  - Media
+  - Publishing
+  - Newspapers
+  - Articles
+  - Books
+  - Movies
+  - Sports
+  - Games
+  - Cooking
+  - Reviews
+  - Search
+  - Semantic
+  - Tagging
+  - Controlled Vocabulary
+  - Geographic
   - Archive
 specifications:
   - name: OpenAPI 2.0
@@ -129,6 +147,8 @@ apis:
   humanURL: https://developer.nytimes.com/docs/articlesearch-product/1/overview
   baseURL: https://api.nytimes.com/svc/search/v2
   tags:
+  - Archives
+  tags_raw:
   - Archive
   properties:
   - type: OpenAPI
