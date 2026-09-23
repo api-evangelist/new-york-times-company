@@ -1,32 +1,10 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   version: 2.0.0
-  title: Archive Stories API
-  description: 'The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
-
-
-    ```
-
-    /{year}/{month}.json
-
-    ```
-
-
-    ## Example Call
-
-    ```
-
-    https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey
-
-    ```
-
-    '
-host: api.nytimes.com
-basePath: /svc/archive/v1
-schemes:
-- https
-produces:
-- application/json
+  title: Top Stories API
+  description: The Top Stories API returns an array of articles currently on the specified section (arts, business, ...).
+servers:
+- url: https://api.nytimes.com/svc/topstories/v2
 security:
 - apikey: []
 tags:
@@ -35,138 +13,142 @@ paths:
   /{section}.json:
     get:
       summary: Top Stories
-      description: 'The Top Stories API returns an array of articles currently on the specified section.
-
-        '
+      description: The Top Stories API returns an array of articles currently on the specified section.
       parameters:
       - name: section
         in: path
         description: The section the story appears in.
         required: true
-        type: string
-        default: home
-        enum:
-        - arts
-        - automobiles
-        - books
-        - business
-        - fashion
-        - food
-        - health
-        - home
-        - insider
-        - magazine
-        - movies
-        - national
-        - nyregion
-        - obituaries
-        - opinion
-        - politics
-        - realestate
-        - science
-        - sports
-        - sundayreview
-        - technology
-        - theater
-        - tmagazine
-        - travel
-        - upshot
-        - world
+        schema:
+          type: string
+          enum:
+          - arts
+          - automobiles
+          - books
+          - business
+          - fashion
+          - food
+          - health
+          - home
+          - insider
+          - magazine
+          - movies
+          - national
+          - nyregion
+          - obituaries
+          - opinion
+          - politics
+          - realestate
+          - science
+          - sports
+          - sundayreview
+          - technology
+          - theater
+          - tmagazine
+          - travel
+          - upshot
+          - world
+          default: home
       tags:
       - Stories
       responses:
         '200':
           description: An array of articles.
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-              copyright:
-                type: string
-              section:
-                type: string
-              last_updated:
-                type: string
-              num_results:
-                type: integer
-              results:
-                type: array
-                items:
-                  $ref: '#/definitions/Article'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  copyright:
+                    type: string
+                  section:
+                    type: string
+                  last_updated:
+                    type: string
+                  num_results:
+                    type: integer
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Article'
         '401':
           description: Unauthorized request.  Make sure api-key is set.
         '429':
           description: Too many requests.  You reached your per minute or per day rate limit.
-definitions:
-  Article:
-    type: object
-    properties:
-      section:
-        type: string
-      subsection:
-        type: string
-      title:
-        type: string
-      abstract:
-        type: string
-      url:
-        type: string
-      byline:
-        type: string
-      item_type:
-        type: string
-      updated_date:
-        type: string
-      created_date:
-        type: string
-      published_date:
-        type: string
-      material_type_facet:
-        type: string
-      kicker:
-        type: string
-      des_facet:
-        type: array
-        items:
+      operationId: get{section}Json
+      x-operation-id-source: derived
+components:
+  schemas:
+    Article:
+      type: object
+      properties:
+        section:
           type: string
-      org_facet:
-        type: array
-        items:
+        subsection:
           type: string
-      per_facet:
-        type: array
-        items:
+        title:
           type: string
-      geo_facet:
-        type: array
-        items:
+        abstract:
           type: string
-      multimedia:
-        type: array
-        items:
-          type: object
-          properties:
-            url:
-              type: string
-            format:
-              type: string
-            height:
-              type: integer
-            width:
-              type: integer
-            type:
-              type: string
-            subtype:
-              type: string
-            caption:
-              type: string
-            copyright:
-              type: string
-      short_url:
-        type: string
-securityDefinitions:
-  apikey:
-    type: apiKey
-    name: api-key
-    in: query
+        url:
+          type: string
+        byline:
+          type: string
+        item_type:
+          type: string
+        updated_date:
+          type: string
+        created_date:
+          type: string
+        published_date:
+          type: string
+        material_type_facet:
+          type: string
+        kicker:
+          type: string
+        des_facet:
+          type: array
+          items:
+            type: string
+        org_facet:
+          type: array
+          items:
+            type: string
+        per_facet:
+          type: array
+          items:
+            type: string
+        geo_facet:
+          type: array
+          items:
+            type: string
+        multimedia:
+          type: array
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+              format:
+                type: string
+              height:
+                type: integer
+              width:
+                type: integer
+              type:
+                type: string
+              subtype:
+                type: string
+              caption:
+                type: string
+              copyright:
+                type: string
+        short_url:
+          type: string
+  securitySchemes:
+    apikey:
+      type: apiKey
+      name: api-key
+      in: query

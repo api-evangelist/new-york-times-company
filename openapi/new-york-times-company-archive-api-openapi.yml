@@ -1,32 +1,10 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   version: 2.0.0
   title: Archive API
-  description: 'The Archive API returns an array of NYT articles for a given month, going back to 1851.  Its response fields are the same as the Article Search API. The Archive API is very useful if you want to build your own database of NYT article metadata. You simply pass the API the year and month and it returns a JSON object with all articles for that month.  The response size can be large (~20mb).
-
-
-    ```
-
-    /{year}/{month}.json
-
-    ```
-
-
-    ## Example Call
-
-    ```
-
-    https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yourkey
-
-    ```
-
-    '
-host: api.nytimes.com
-basePath: /svc/archive/v1
-schemes:
-- https
-produces:
-- application/json
+  description: The Archive API returns an array of NYT articles for a given month, going back to 1851.
+servers:
+- url: https://api.nytimes.com/svc/archive/v1
 security:
 - apikey: []
 tags:
@@ -34,192 +12,199 @@ tags:
 paths:
   /{year}/{month}.json:
     get:
-      summary: Returns an array of articles for a given month.
-      description: 'Pass in year and month and get back JSON with all articles for that month. The response can be big (~20 megabytes) and contain thousands of articles, depending on the year and month.
-
-        '
+      summary: Returns an array of articles for a given month
+      description: Pass in year and month and get back JSON with all articles for that month. The response can be big (~20 megabytes) and contain thousands of articles, depending on the year and month.
       parameters:
       - name: year
         in: path
         description: 'Year: 1851-2019'
         required: true
-        type: integer
-        default: 2018
+        schema:
+          type: integer
+          default: 2018
       - name: month
         in: path
         description: 'Year: 1-12'
         required: true
-        type: integer
-        default: 9
+        schema:
+          type: integer
+          default: 9
       tags:
       - Archive
       responses:
         '200':
           description: An array of articles.
-          schema:
-            type: object
-            properties:
-              copyright:
-                type: string
-              response:
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  meta:
+                  copyright:
+                    type: string
+                  response:
                     type: object
                     properties:
-                      hits:
-                        type: integer
-                  docs:
-                    type: array
-                    items:
-                      $ref: '#/definitions/Article'
+                      meta:
+                        type: object
+                        properties:
+                          hits:
+                            type: integer
+                      docs:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Article'
         '401':
           description: Unauthorized request, check api-key is set.
-          schema:
-            type: object
-            properties:
-              fault:
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  faultstring:
-                    type: string
-                  detail:
+                  fault:
                     type: object
                     properties:
-                      errorcode:
+                      faultstring:
                         type: string
+                      detail:
+                        type: object
+                        properties:
+                          errorcode:
+                            type: string
         '429':
           description: Too many requests.  You reached your per minute or per day rate limit.
-definitions:
-  Headline:
-    type: object
-    properties:
-      main:
-        type: string
-      kicker:
-        type: string
-      content_kicker:
-        type: string
-      print_headline:
-        type: string
-      name:
-        type: string
-      seo:
-        type: string
-      sub:
-        type: string
-  Person:
-    type: object
-    properties:
-      firstname:
-        type: string
-      middlename:
-        type: string
-      lastname:
-        type: string
-      qualifier:
-        type: string
-      title:
-        type: string
-      role:
-        type: string
-      organization:
-        type: string
-      rank:
-        type: integer
-  Byline:
-    type: object
-    properties:
-      original:
-        type: string
-      person:
-        type: array
-        items:
-          $ref: '#/definitions/Person'
-      organization:
-        type: string
-  Article:
-    type: object
-    properties:
-      web_url:
-        type: string
-      snippet:
-        type: string
-      print_page:
-        type: integer
-      source:
-        type: string
-      multimedia:
-        type: array
-        items:
-          $ref: '#/definitions/Multimedia'
-      headline:
-        $ref: '#/definitions/Headline'
-      keywords:
-        type: array
-        items:
-          $ref: '#/definitions/Keyword'
-      pub_date:
-        type: string
-      document_type:
-        type: string
-      news_desk:
-        type: string
-      byline:
-        $ref: '#/definitions/Byline'
-      type_of_material:
-        type: string
-      _id:
-        type: string
-      word_count:
-        type: integer
-      score:
-        type: integer
-      uri:
-        type: string
-  Multimedia:
-    type: object
-    properties:
-      rank:
-        type: integer
-      subtype:
-        type: string
-      caption:
-        type: string
-      credit:
-        type: string
-      type:
-        type: string
-      url:
-        type: string
-      height:
-        type: integer
-      width:
-        type: integer
-      legacy:
-        type: object
-        properties:
-          xlarge:
-            type: string
-          xlargewidth:
-            type: integer
-          xlargeheight:
-            type: integer
-      crop_name:
-        type: string
-  Keyword:
-    type: object
-    properties:
-      name:
-        type: string
-      value:
-        type: string
-      rank:
-        type: integer
-      major:
-        type: string
-securityDefinitions:
-  apikey:
-    type: apiKey
-    name: api-key
-    in: query
+      operationId: getByYear{month}Json
+      x-operation-id-source: derived
+components:
+  schemas:
+    Person:
+      type: object
+      properties:
+        firstname:
+          type: string
+        middlename:
+          type: string
+        lastname:
+          type: string
+        qualifier:
+          type: string
+        title:
+          type: string
+        role:
+          type: string
+        organization:
+          type: string
+        rank:
+          type: integer
+    Byline:
+      type: object
+      properties:
+        original:
+          type: string
+        person:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        organization:
+          type: string
+    Keyword:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+        rank:
+          type: integer
+        major:
+          type: string
+    Headline:
+      type: object
+      properties:
+        main:
+          type: string
+        kicker:
+          type: string
+        content_kicker:
+          type: string
+        print_headline:
+          type: string
+        name:
+          type: string
+        seo:
+          type: string
+        sub:
+          type: string
+    Multimedia:
+      type: object
+      properties:
+        rank:
+          type: integer
+        subtype:
+          type: string
+        caption:
+          type: string
+        credit:
+          type: string
+        type:
+          type: string
+        url:
+          type: string
+        height:
+          type: integer
+        width:
+          type: integer
+        legacy:
+          type: object
+          properties:
+            xlarge:
+              type: string
+            xlargewidth:
+              type: integer
+            xlargeheight:
+              type: integer
+        crop_name:
+          type: string
+    Article:
+      type: object
+      properties:
+        web_url:
+          type: string
+        snippet:
+          type: string
+        print_page:
+          type: integer
+        source:
+          type: string
+        multimedia:
+          type: array
+          items:
+            $ref: '#/components/schemas/Multimedia'
+        headline:
+          $ref: '#/components/schemas/Headline'
+        keywords:
+          type: array
+          items:
+            $ref: '#/components/schemas/Keyword'
+        pub_date:
+          type: string
+        document_type:
+          type: string
+        news_desk:
+          type: string
+        byline:
+          $ref: '#/components/schemas/Byline'
+        type_of_material:
+          type: string
+        _id:
+          type: string
+        word_count:
+          type: integer
+        score:
+          type: integer
+        uri:
+          type: string
+  securitySchemes:
+    apikey:
+      type: apiKey
+      name: api-key
+      in: query
