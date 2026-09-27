@@ -57,6 +57,7 @@ tags:
   - Controlled Vocabulary
   - Geographic
   - Archives
+  - Journalism
 tags_raw:
   - News
   - Media
@@ -75,6 +76,7 @@ tags_raw:
   - Controlled Vocabulary
   - Geographic
   - Archive
+  - Journalism
 specifications:
   - name: OpenAPI 2.0
     url: https://swagger.io/specification/v2/
@@ -140,6 +142,8 @@ common:
     url: finops/new-york-times-company-finops.yml
   - type: LlmsText
     url: https://developer.nytimes.com/llms.txt
+  - url: https://nytimes.com
+    type: Website
 apis:
 - aid: new-york-times-company:new-york-times-company-archive-api
   name: The New York Times Company Archive API

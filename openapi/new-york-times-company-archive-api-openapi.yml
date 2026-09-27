@@ -76,47 +76,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Person:
-      type: object
-      properties:
-        firstname:
-          type: string
-        middlename:
-          type: string
-        lastname:
-          type: string
-        qualifier:
-          type: string
-        title:
-          type: string
-        role:
-          type: string
-        organization:
-          type: string
-        rank:
-          type: integer
-    Byline:
-      type: object
-      properties:
-        original:
-          type: string
-        person:
-          type: array
-          items:
-            $ref: '#/components/schemas/Person'
-        organization:
-          type: string
-    Keyword:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-        rank:
-          type: integer
-        major:
-          type: string
     Headline:
       type: object
       properties:
@@ -164,6 +123,17 @@ components:
               type: integer
         crop_name:
           type: string
+    Keyword:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+        rank:
+          type: integer
+        major:
+          type: string
     Article:
       type: object
       properties:
@@ -202,6 +172,36 @@ components:
         score:
           type: integer
         uri:
+          type: string
+    Person:
+      type: object
+      properties:
+        firstname:
+          type: string
+        middlename:
+          type: string
+        lastname:
+          type: string
+        qualifier:
+          type: string
+        title:
+          type: string
+        role:
+          type: string
+        organization:
+          type: string
+        rank:
+          type: integer
+    Byline:
+      type: object
+      properties:
+        original:
+          type: string
+        person:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        organization:
           type: string
   securitySchemes:
     apikey:

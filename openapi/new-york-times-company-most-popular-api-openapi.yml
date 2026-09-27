@@ -191,41 +191,16 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    MediaMetadata:
-      type: object
-      properties:
-        url:
-          type: string
-        format:
-          type: string
-        height:
-          type: integer
-        width:
-          type: integer
-    EmailedArticle:
+    ViewedArticle:
       type: object
       properties:
         url:
           type: string
         adx_keywords:
           type: string
-        subsection:
-          type: string
-        email_count:
-          type: integer
-        count_type:
-          type: string
         column:
           type: string
-        eta_id:
-          type: integer
         section:
-          type: string
-        id:
-          type: integer
-        asset_id:
-          type: integer
-        nytdsection:
           type: string
         byline:
           type: string
@@ -239,8 +214,12 @@ components:
           type: string
         source:
           type: string
-        updated:
-          type: string
+        id:
+          type: integer
+        asset_id:
+          type: integer
+        views:
+          type: integer
         des_facet:
           type: array
           items:
@@ -341,16 +320,41 @@ components:
             $ref: '#/components/schemas/Media'
         uri:
           type: string
-    ViewedArticle:
+    MediaMetadata:
+      type: object
+      properties:
+        url:
+          type: string
+        format:
+          type: string
+        height:
+          type: integer
+        width:
+          type: integer
+    EmailedArticle:
       type: object
       properties:
         url:
           type: string
         adx_keywords:
           type: string
+        subsection:
+          type: string
+        email_count:
+          type: integer
+        count_type:
+          type: string
         column:
           type: string
+        eta_id:
+          type: integer
         section:
+          type: string
+        id:
+          type: integer
+        asset_id:
+          type: integer
+        nytdsection:
           type: string
         byline:
           type: string
@@ -364,12 +368,8 @@ components:
           type: string
         source:
           type: string
-        id:
-          type: integer
-        asset_id:
-          type: integer
-        views:
-          type: integer
+        updated:
+          type: string
         des_facet:
           type: array
           items:

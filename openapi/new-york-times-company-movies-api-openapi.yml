@@ -183,15 +183,31 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Link:
+    Review:
       type: object
       properties:
-        type:
+        display_title:
           type: string
-        url:
+        mpaa_rating:
           type: string
-        suggested_link_text:
+        critics_pick:
+          type: integer
+        byline:
           type: string
+        headline:
+          type: string
+        summary_short:
+          type: string
+        publication_date:
+          type: string
+        opening_date:
+          type: string
+        date_updated:
+          type: string
+        link:
+          $ref: '#/components/schemas/Link'
+        multimedia:
+          $ref: '#/components/schemas/MultiMedia'
     MultiMedia:
       type: object
       properties:
@@ -232,31 +248,15 @@ components:
                   type: integer
                 credit:
                   type: string
-    Review:
+    Link:
       type: object
       properties:
-        display_title:
+        type:
           type: string
-        mpaa_rating:
+        url:
           type: string
-        critics_pick:
-          type: integer
-        byline:
+        suggested_link_text:
           type: string
-        headline:
-          type: string
-        summary_short:
-          type: string
-        publication_date:
-          type: string
-        opening_date:
-          type: string
-        date_updated:
-          type: string
-        link:
-          $ref: '#/components/schemas/Link'
-        multimedia:
-          $ref: '#/components/schemas/MultiMedia'
   securitySchemes:
     apikey:
       type: apiKey
