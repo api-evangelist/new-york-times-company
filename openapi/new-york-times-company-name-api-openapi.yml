@@ -108,6 +108,25 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ConceptRelation:
+      type: object
+      properties:
+        concept_id:
+          type: integer
+        concept_name:
+          type: string
+        is_times_tag:
+          type: integer
+        concept_status:
+          type: string
+        vernacular:
+          type: string
+        concept_type:
+          type: string
+        concept_created:
+          type: string
+        concept_updated:
+          type: string
     Concept:
       type: object
       properties:
@@ -256,25 +275,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ConceptRelation'
-    ConceptRelation:
-      type: object
-      properties:
-        concept_id:
-          type: integer
-        concept_name:
-          type: string
-        is_times_tag:
-          type: integer
-        concept_status:
-          type: string
-        vernacular:
-          type: string
-        concept_type:
-          type: string
-        concept_created:
-          type: string
-        concept_updated:
-          type: string
   securitySchemes:
     apikey:
       type: apiKey

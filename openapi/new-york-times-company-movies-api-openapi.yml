@@ -183,6 +183,17 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    MultiMedia:
+      type: object
+      properties:
+        type:
+          type: string
+        src:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
     Review:
       type: object
       properties:
@@ -208,17 +219,15 @@ components:
           $ref: '#/components/schemas/Link'
         multimedia:
           $ref: '#/components/schemas/MultiMedia'
-    MultiMedia:
+    Link:
       type: object
       properties:
         type:
           type: string
-        src:
+        url:
           type: string
-        width:
-          type: integer
-        height:
-          type: integer
+        suggested_link_text:
+          type: string
     Critic:
       type: object
       properties:
@@ -248,15 +257,6 @@ components:
                   type: integer
                 credit:
                   type: string
-    Link:
-      type: object
-      properties:
-        type:
-          type: string
-        url:
-          type: string
-        suggested_link_text:
-          type: string
   securitySchemes:
     apikey:
       type: apiKey

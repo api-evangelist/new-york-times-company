@@ -191,6 +191,67 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    EmailedArticle:
+      type: object
+      properties:
+        url:
+          type: string
+        adx_keywords:
+          type: string
+        subsection:
+          type: string
+        email_count:
+          type: integer
+        count_type:
+          type: string
+        column:
+          type: string
+        eta_id:
+          type: integer
+        section:
+          type: string
+        id:
+          type: integer
+        asset_id:
+          type: integer
+        nytdsection:
+          type: string
+        byline:
+          type: string
+        type:
+          type: string
+        title:
+          type: string
+        abstract:
+          type: string
+        published_date:
+          type: string
+        source:
+          type: string
+        updated:
+          type: string
+        des_facet:
+          type: array
+          items:
+            type: string
+        org_facet:
+          type: array
+          items:
+            type: string
+        per_facet:
+          type: array
+          items:
+            type: string
+        geo_facet:
+          type: array
+          items:
+            type: string
+        media:
+          type: array
+          items:
+            $ref: '#/components/schemas/Media'
+        uri:
+          type: string
     ViewedArticle:
       type: object
       properties:
@@ -259,67 +320,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MediaMetadata'
-    SharedArticle:
-      type: object
-      properties:
-        url:
-          type: string
-        adx_keywords:
-          type: string
-        subsection:
-          type: string
-        share_count:
-          type: integer
-        count_type:
-          type: string
-        column:
-          type: string
-        eta_id:
-          type: integer
-        section:
-          type: string
-        id:
-          type: integer
-        asset_id:
-          type: integer
-        nytdsection:
-          type: string
-        byline:
-          type: string
-        type:
-          type: string
-        title:
-          type: string
-        abstract:
-          type: string
-        published_date:
-          type: string
-        source:
-          type: string
-        updated:
-          type: string
-        des_facet:
-          type: array
-          items:
-            type: string
-        org_facet:
-          type: array
-          items:
-            type: string
-        per_facet:
-          type: array
-          items:
-            type: string
-        geo_facet:
-          type: array
-          items:
-            type: string
-        media:
-          type: array
-          items:
-            $ref: '#/components/schemas/Media'
-        uri:
-          type: string
     MediaMetadata:
       type: object
       properties:
@@ -331,7 +331,7 @@ components:
           type: integer
         width:
           type: integer
-    EmailedArticle:
+    SharedArticle:
       type: object
       properties:
         url:
@@ -340,7 +340,7 @@ components:
           type: string
         subsection:
           type: string
-        email_count:
+        share_count:
           type: integer
         count_type:
           type: string
