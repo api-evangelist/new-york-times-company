@@ -191,6 +191,34 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Media:
+      type: object
+      properties:
+        type:
+          type: string
+        subtype:
+          type: string
+        caption:
+          type: string
+        copyright:
+          type: string
+        approved_for_syndication:
+          type: boolean
+        media-metadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/MediaMetadata'
+    MediaMetadata:
+      type: object
+      properties:
+        url:
+          type: string
+        format:
+          type: string
+        height:
+          type: integer
+        width:
+          type: integer
     EmailedArticle:
       type: object
       properties:
@@ -303,34 +331,6 @@ components:
             $ref: '#/components/schemas/Media'
         uri:
           type: string
-    Media:
-      type: object
-      properties:
-        type:
-          type: string
-        subtype:
-          type: string
-        caption:
-          type: string
-        copyright:
-          type: string
-        approved_for_syndication:
-          type: boolean
-        media-metadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/MediaMetadata'
-    MediaMetadata:
-      type: object
-      properties:
-        url:
-          type: string
-        format:
-          type: string
-        height:
-          type: integer
-        width:
-          type: integer
     SharedArticle:
       type: object
       properties:

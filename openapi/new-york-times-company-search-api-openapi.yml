@@ -138,6 +138,67 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Article:
+      type: object
+      properties:
+        web_url:
+          type: string
+        snippet:
+          type: string
+        print_page:
+          type: integer
+        source:
+          type: string
+        multimedia:
+          type: array
+          items:
+            $ref: '#/components/schemas/Multimedia'
+        headline:
+          $ref: '#/components/schemas/Headline'
+        keywords:
+          type: array
+          items:
+            $ref: '#/components/schemas/Keyword'
+        pub_date:
+          type: string
+        document_type:
+          type: string
+        news_desk:
+          type: string
+        byline:
+          $ref: '#/components/schemas/Byline'
+        type_of_material:
+          type: string
+        _id:
+          type: string
+        word_count:
+          type: integer
+        score:
+          type: integer
+        uri:
+          type: string
+    Keyword:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+        rank:
+          type: integer
+        major:
+          type: string
+    Byline:
+      type: object
+      properties:
+        original:
+          type: string
+        person:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        organization:
+          type: string
     Person:
       type: object
       properties:
@@ -186,67 +247,6 @@ components:
             xlargeheight:
               type: integer
         crop_name:
-          type: string
-    Article:
-      type: object
-      properties:
-        web_url:
-          type: string
-        snippet:
-          type: string
-        print_page:
-          type: integer
-        source:
-          type: string
-        multimedia:
-          type: array
-          items:
-            $ref: '#/components/schemas/Multimedia'
-        headline:
-          $ref: '#/components/schemas/Headline'
-        keywords:
-          type: array
-          items:
-            $ref: '#/components/schemas/Keyword'
-        pub_date:
-          type: string
-        document_type:
-          type: string
-        news_desk:
-          type: string
-        byline:
-          $ref: '#/components/schemas/Byline'
-        type_of_material:
-          type: string
-        _id:
-          type: string
-        word_count:
-          type: integer
-        score:
-          type: integer
-        uri:
-          type: string
-    Byline:
-      type: object
-      properties:
-        original:
-          type: string
-        person:
-          type: array
-          items:
-            $ref: '#/components/schemas/Person'
-        organization:
-          type: string
-    Keyword:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-        rank:
-          type: integer
-        major:
           type: string
     Headline:
       type: object
