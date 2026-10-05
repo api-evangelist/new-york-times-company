@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/article_search/article_search_v2.json",
+ "requested_url": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/article_search/article_search_v2.json",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 9213,
+ "sha256": "20bcce97259ebb4e6ed4b3c91b87703762a1fb0593a7a0571716dc34573a130f",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}

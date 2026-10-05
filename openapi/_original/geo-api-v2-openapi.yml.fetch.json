@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/nytimes/public_api_specs/HEAD/geo_api/geo_api_v2.yaml",
+ "requested_url": "https://raw.githubusercontent.com/nytimes/public_api_specs/HEAD/geo_api/geo_api_v2.yaml",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 5002,
+ "sha256": "3e2e0eaeba84667662ff33e6c559c602de3a0094e057b95babb8d9f9d475c6a4",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}

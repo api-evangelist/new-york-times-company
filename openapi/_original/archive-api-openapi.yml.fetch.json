@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/nytimes/public_api_specs/HEAD/archive_api/archive_api.yaml",
+ "requested_url": "https://raw.githubusercontent.com/nytimes/public_api_specs/HEAD/archive_api/archive_api.yaml",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 4994,
+ "sha256": "7b083e4ec492bf79134fbc227b1912b5860093eb9af9b043777385ba20b93333",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}

@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/times_tags/times_tags_v3.json",
+ "requested_url": "https://raw.githubusercontent.com/nytimes/public_api_specs/master/times_tags/times_tags_v3.json",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 2176,
+ "sha256": "03a92f4bff9fff60465b77bb3bfa2c058cdc42586191b7dd3bf7ca3d63ce4b65",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
