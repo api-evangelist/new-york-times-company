@@ -138,6 +138,47 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Byline:
+      type: object
+      properties:
+        original:
+          type: string
+        person:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        organization:
+          type: string
+    Multimedia:
+      type: object
+      properties:
+        rank:
+          type: integer
+        subtype:
+          type: string
+        caption:
+          type: string
+        credit:
+          type: string
+        type:
+          type: string
+        url:
+          type: string
+        height:
+          type: integer
+        width:
+          type: integer
+        legacy:
+          type: object
+          properties:
+            xlarge:
+              type: string
+            xlargewidth:
+              type: integer
+            xlargeheight:
+              type: integer
+        crop_name:
+          type: string
     Article:
       type: object
       properties:
@@ -188,17 +229,6 @@ components:
           type: integer
         major:
           type: string
-    Byline:
-      type: object
-      properties:
-        original:
-          type: string
-        person:
-          type: array
-          items:
-            $ref: '#/components/schemas/Person'
-        organization:
-          type: string
     Person:
       type: object
       properties:
@@ -218,36 +248,6 @@ components:
           type: string
         rank:
           type: integer
-    Multimedia:
-      type: object
-      properties:
-        rank:
-          type: integer
-        subtype:
-          type: string
-        caption:
-          type: string
-        credit:
-          type: string
-        type:
-          type: string
-        url:
-          type: string
-        height:
-          type: integer
-        width:
-          type: integer
-        legacy:
-          type: object
-          properties:
-            xlarge:
-              type: string
-            xlargewidth:
-              type: integer
-            xlargeheight:
-              type: integer
-        crop_name:
-          type: string
     Headline:
       type: object
       properties:

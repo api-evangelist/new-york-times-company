@@ -183,6 +183,17 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    MultiMedia:
+      type: object
+      properties:
+        type:
+          type: string
+        src:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
     Link:
       type: object
       properties:
@@ -246,17 +257,6 @@ components:
                   type: integer
                 credit:
                   type: string
-    MultiMedia:
-      type: object
-      properties:
-        type:
-          type: string
-        src:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
   securitySchemes:
     apikey:
       type: apiKey
