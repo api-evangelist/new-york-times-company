@@ -182,3 +182,9 @@ components:
       name: api-key
       type: apiKey
       in: query
+x-provenance:
+  method: harvested
+  publisher: The New York Times Company
+  source: https://raw.githubusercontent.com/nytimes/public_api_specs/HEAD/books_api/books_api.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
